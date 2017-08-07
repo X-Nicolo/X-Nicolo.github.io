@@ -132,7 +132,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"remove","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -626,6 +626,142 @@
 
 
         </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://i4.buimg.com/567571/a84b27b05b920e49.jpg"
+               alt="Nicolo" />
+          <p class="site-author-name" itemprop="name">Nicolo</p>
+           
+              <p class="site-description motion-element" itemprop="description">文艺工科狗，编码艺术家</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/X-Nicolo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、数据库基础知识"><span class="nav-number">1.</span> <span class="nav-text">一、数据库基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、关系数据模型："><span class="nav-number">1.1.</span> <span class="nav-text">1、关系数据模型：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#术语"><span class="nav-number">1.1.1.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#范式："><span class="nav-number">1.1.2.</span> <span class="nav-text">范式：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、MySQL入门"><span class="nav-number">2.</span> <span class="nav-text">二、MySQL入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、MySQL数据类型简介"><span class="nav-number">2.1.</span> <span class="nav-text">1、MySQL数据类型简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整数"><span class="nav-number">2.1.1.</span> <span class="nav-text">整数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实数（带有小数部分的数字）"><span class="nav-number">2.1.2.</span> <span class="nav-text">实数（带有小数部分的数字）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">2.1.3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#日期"><span class="nav-number">2.1.4.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型选择准则"><span class="nav-number">2.1.5.</span> <span class="nav-text">数据类型选择准则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、JDBC编程"><span class="nav-number">3.</span> <span class="nav-text">三、JDBC编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、JDBC简介"><span class="nav-number">3.1.</span> <span class="nav-text">1、JDBC简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDBC概述"><span class="nav-number">3.1.1.</span> <span class="nav-text">JDBC概述</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC的组成"><span class="nav-number">3.2.</span> <span class="nav-text">JDBC的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDBC-Driver-API"><span class="nav-number">3.2.1.</span> <span class="nav-text">JDBC Driver API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、JDBC编程之数据准备"><span class="nav-number">3.3.</span> <span class="nav-text">2、JDBC编程之数据准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建两张表："><span class="nav-number">3.3.1.</span> <span class="nav-text">建两张表：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入数据："><span class="nav-number">3.3.2.</span> <span class="nav-text">插入数据：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、JDBC编程之数据查询"><span class="nav-number">3.4.</span> <span class="nav-text">3、JDBC编程之数据查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDBC编程流程"><span class="nav-number">3.4.1.</span> <span class="nav-text">JDBC编程流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#实现程序："><span class="nav-number">3.4.1.1.</span> <span class="nav-text">实现程序：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、JDBC编程之数据更新"><span class="nav-number">3.5.</span> <span class="nav-text">4、JDBC编程之数据更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库连接方法"><span class="nav-number">3.5.1.</span> <span class="nav-text">数据库连接方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入数据方法"><span class="nav-number">3.5.2.</span> <span class="nav-text">插入数据方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新方法"><span class="nav-number">3.5.3.</span> <span class="nav-text">更新方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除记录的方法"><span class="nav-number">3.5.4.</span> <span class="nav-text">删除记录的方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、JDBC编程之事务处理"><span class="nav-number">3.6.</span> <span class="nav-text">5、JDBC编程之事务处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事务概述"><span class="nav-number">3.6.1.</span> <span class="nav-text">事务概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事务的四个基本特征"><span class="nav-number">3.6.2.</span> <span class="nav-text">事务的四个基本特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事物的语句"><span class="nav-number">3.6.3.</span> <span class="nav-text">事物的语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编程实现"><span class="nav-number">3.6.4.</span> <span class="nav-text">编程实现</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
     </main>
