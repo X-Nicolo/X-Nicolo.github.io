@@ -130,7 +130,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://x-nicolo.github.io/2016/09/24/爬虫入门（一）：轻量级爬虫/">
+    <link itemprop="mainEntityOfPage" href="https://x-nicolo.github.io/2016/09/24/jeklly+Github pages 添加评论/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nicolo">
@@ -339,7 +339,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/24/爬虫入门（一）：轻量级爬虫/" itemprop="url">爬虫入门（一）：轻量级爬虫</a></h1>
+                <a class="post-title-link" href="/2016/09/24/jeklly+Github pages 添加评论/" itemprop="url">jeklly+Github pages 添加评论</a></h1>
         
 
         <div class="post-meta">
@@ -391,7 +391,7 @@
 
           
           
-             <span id="/2016/09/24/爬虫入门（一）：轻量级爬虫/" class="leancloud_visitors" data-flag-title="爬虫入门（一）：轻量级爬虫">
+             <span id="/2016/09/24/jeklly+Github pages 添加评论/" class="leancloud_visitors" data-flag-title="jeklly+Github pages 添加评论">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -423,15 +423,10 @@
 
       
         
-          <p><em>今天下雨，下午没课，适合学习。(●’◡’●)</em></p>
-<p><img src="http://s1.51cto.com/wyfs02/M01/1A/F4/wKiom1MVOTDyJeX9AABAq-8lVgs679.png" alt="pachong"></p>
-<h3 id="1-爬虫简介"><a href="#1-爬虫简介" class="headerlink" title="1.爬虫简介"></a>1.爬虫简介</h3><ul>
-<li>爬虫：一段自动抓取互联网信息的程序</li>
-<li>价值：互联网数据，为我所用！<br><em>新闻聚合阅读器、最爆笑故事APP、图书价格对比网、Python技术文章大全</em></li>
-</ul>
+          <p>之前的个人博客主要是fork了其他人的源码。基于Jekyll+Github pages。在此基础上改了一些东西，适合自己的才是最好的嘛。最后才准备做评论这方面的东西。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/09/24/爬虫入门（一）：轻量级爬虫/#more" rel="contents">
+            <a class="btn" href="/2016/09/24/jeklly+Github pages 添加评论/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1459,6 +1454,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -1545,6 +1542,8 @@
       
         <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
           
         </div>
       
