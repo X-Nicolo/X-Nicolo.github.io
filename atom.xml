@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Nicolo</title>
+  <subtitle>静水流深,闻喧享静</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://x-nicolo.github.io/"/>
+  <updated>2017-07-31T08:52:48.787Z</updated>
+  <id>https://x-nicolo.github.io/</id>
+  
+  <author>
+    <name>Nicolo</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSP</title>
+    <link href="https://x-nicolo.github.io/2017/07/31/JSP/"/>
+    <id>https://x-nicolo.github.io/2017/07/31/JSP/</id>
+    <published>2017-07-31T07:23:37.000Z</published>
+    <updated>2017-07-31T08:52:48.787Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="window下Tomcat的下载安装及配置"><a href="#window下Tomcat的下载安装及配置" class="headerlink" title="window下Tomcat的下载安装及配置"></a>window下Tomcat的下载安装及配置</h2><p>1、安装<br>2、基本语法<br>3、项目导出及部署<br>4、JSP注释<br><a id="more"></a></p>
+<h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><p>绿色软件，下载解压即安装成功。</p>
+<h4 id="安装目录："><a href="#安装目录：" class="headerlink" title="安装目录："></a>安装目录：</h4><ul>
+<li>bin:存放启动和关闭tomcat的脚本</li>
+<li>conf：存放tomcat服务器的各种配置文件</li>
+<li>lib：存放tomcat的依赖jar包</li>
+<li>logs：存放tomcat执行时生成的日志文件</li>
+<li>temp：存放一些临时文件</li>
+<li>webapps：存放web应用</li>
+<li>work：存放一些中间文件</li>
+<li>LICENSE</li>
+<li>NOTTICE</li>
+<li>tomcat.ico</li>
+<li>Uninstall.exe<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4>安装目录</li>
+</ul>
+<h3 id="2、基本语法"><a href="#2、基本语法" class="headerlink" title="2、基本语法"></a>2、基本语法</h3><ol>
+<li>用 JSP 向浏览器输出 hello world<figure class="highlight mojolicious"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="perl">@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=ISO-8859-1"</span></span></div><div class="line"><span class="perl">    pageEncoding=<span class="string">"ISO-8859-1"</span></span><span class="xml">%&gt;</span></div><div class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></div><div class="line"><span class="xml">JSP表达式输出：<span class="tag">&lt;<span class="name">%=</span></span></span><span class="perl"><span class="string">"hello world"</span> </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="perl"></span></div><div class="line"><span class="perl">String str = <span class="string">"hello world"</span>;</span></div><div class="line"><span class="perl">out.<span class="keyword">print</span>(str);</span></div><div class="line"><span class="perl"></span></div><div class="line"><span class="perl"></span><span class="xml">%&gt;</span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="3、项目导出及部署"><a href="#3、项目导出及部署" class="headerlink" title="3、项目导出及部署"></a>3、项目导出及部署</h3><ul>
+<li>export-warfile</li>
+<li>将war文件放进.\Tomcat8\webapps目录下。</li>
+<li>启动tomcat后war文件自动解压</li>
+<li>浏览器浏览localhost:8080/JSPStyudy/01/hello.jsp</li>
+</ul>
+<h3 id="4、JSP注释"><a href="#4、JSP注释" class="headerlink" title="4、JSP注释"></a>4、JSP注释</h3><p>HTML注释：<br><figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="comment">&lt;!-- this is body--&gt;</span></span></div><div class="line"><span class="xml"><span class="comment">&lt;!-- today is </span></span><span class="vbscript">&lt;%=<span class="keyword">new</span> java.util.<span class="built_in">Date</span>().toString() %&gt;</span><span class="xml"><span class="comment"> --&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>JSP注释：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%<span class="comment">--</span></div><div class="line">this <span class="keyword">is</span> JSP comments.</div><div class="line"><span class="comment">--%&gt;</span></div></pre></td></tr></table></figure></p>
+<p>JSP程序段中的注释：<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;%<span class="comment">--</span></div><div class="line">   //<span class="built_in">String</span> str = <span class="string">"hello world"</span>; 单行注释</div><div class="line">   <span class="comment">/*多行注释*/</span></div><div class="line"><span class="comment">--%&gt;</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;window下Tomcat的下载安装及配置&quot;&gt;&lt;a href=&quot;#window下Tomcat的下载安装及配置&quot; class=&quot;headerlink&quot; title=&quot;window下Tomcat的下载安装及配置&quot;&gt;&lt;/a&gt;window下Tomcat的下载安装及配置&lt;/h2&gt;&lt;p&gt;1、安装&lt;br&gt;2、基本语法&lt;br&gt;3、项目导出及部署&lt;br&gt;4、JSP注释&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="java" scheme="https://x-nicolo.github.io/tags/java/"/>
+    
+      <category term="web" scheme="https://x-nicolo.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017上半年书单</title>
+    <link href="https://x-nicolo.github.io/2017/06/11/2017%E4%B8%8A%E5%8D%8A%E5%B9%B4%E4%B9%A6%E5%8D%95/"/>
+    <id>https://x-nicolo.github.io/2017/06/11/2017上半年书单/</id>
+    <published>2017-06-11T13:15:39.000Z</published>
+    <updated>2017-06-13T06:45:51.401Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-79de255ba8085d8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017上半年书单"></p>
+<hr>
+<p>千里万卷。</p>
+<hr>
+<ul>
+<li>《硬派健身》</li>
+<li>《人类简史》</li>
+<li>《腾讯传》</li>
+<li>《创京东》</li>
+<li>《毛泽东传》</li>
+<li>《人民的名义》</li>
+<li>《我与地坛》</li>
+<li>《鱼羊野史》</li>
+<li>《小米口碑营销内部手册：参与感》</li>
+<li>《人类群星闪耀时》</li>
+<li>《嫌疑人X的献身》</li>
+<li>《以色列：一个国家的诞生》</li>
+<li>《以色列2：在危机中生存》</li>
+<li>《半小时漫画中国史》</li>
+<li>《近忧远虑》</li>
+</ul>
+<a id="more"></a>
+<h1 id="《硬派健身》"><a href="#《硬派健身》" class="headerlink" title="《硬派健身》"></a>《硬派健身》</h1><p>最早看到斌卡是在知乎上的答题。这本书的主题的减肥篇。从理论和实际出发为读者提供相对应的对策。印象最深的是我一直做的深蹲的方法都是错的。而且我也从这里明白了一个道理：<em>管住嘴，迈开腿;七分吃，三分动。</em>这才是减重的真理！消耗大于输出才是减重唯一的标准。而且吃真的很重要，不是少吃，而是会吃。两个月瘦了快二十斤，学习的也很多。这个要说起来感觉能说一篇新文章。嗯，<em>坚持也很重要！</em>我的flag也没倒！</p>
+<h1 id="《人类简史》"><a href="#《人类简史》" class="headerlink" title="《人类简史》"></a>《人类简史》</h1><p>这是本好书，值得花时间再去细读，颠覆了许多以前的观点。<br>高中物理老师说过的话，我们为什么要学物理？就是要用现有的东西去推测未来。<br>学校学习都是潜移默化。现在受力分析估计已经不会了，但是老师的这话我就记住了，还觉得越来越有道理。</p>
+<h3 id="部分书摘"><a href="#部分书摘" class="headerlink" title="部分书摘"></a>部分书摘</h3><hr>
+<blockquote>
+<p>1.因为一旦人们发现历史能证明乐无常态而知足常乐，发现我们过去对快乐的历史认知可能都是错的，发现对快感的执着追求可能只会适得其反地导致痛苦，那么我们就有可能走向对自己的真正理解，也就可能知道自己想要的究竟是什么了。</p>
+<hr>
+<p>2.所以，究竟智人是怎么跨过这个门槛值，最后创造出了有数万居民的城市、有上亿人口的帝国？这里的秘密很可能就在于虚构的故事。就算是大批互不相识的人，只要同样相信某个故事，就能共同合作。</p>
+<hr>
+<p>3.人类和黑猩猩之间真正不同的地方就在于那些虚构的故事，它像胶水一样把千千万万的个人、家庭和群体结合在一起。这种胶水，让我们成了万物的主宰。</p>
+<hr>
+<p> 4.种种想让生活变得轻松的努力，反而给人带来无穷的麻烦；而且这可不是史上的最后一次。就算今天，仍然如此。有多少年轻的大学毕业生投身大企业、从事各种劳心劳力的工作，发誓要努力赚钱，好在35岁就退休，去从事他们真正有兴趣的事业？但等他们到了35岁，却发现自己背着巨额贷款，要付子女的学费，要养在高级住宅区的豪宅，每家得有两部车，而且觉得生活里不能没有高级红酒和国外的假期。他们该怎么做？他们会放下一切，回去野外采果子挖树根吗？当然不可能，而是加倍努力，继续把自己累得半死。</p>
+<hr>
+<p>5.人际关系和政治对立都是长期的事，无论报恩或报仇，常常都要花上好几年的时间。然而，在狩猎和采集这种自给自足的经济里，要做这种长期规划就会受到客观条件的限制。但说来也有趣，这让采集者省下了许多不必要的忧虑。毕竟，如果是那些无法影响的事，就算担心也没用。</p>
+<hr>
+<p>6.历史只告诉了我们极少数的人在做些什么，而其他绝大多数人的生活就是不停挑水耕田。</p>
+<hr>
+<p>7.支持它们的社会规范既不是人类自然的天性本能，也不是人际的交流关系，而是他们都相信着共同的虚构神话故事。</p>
+<hr>
+<p>8.伏尔泰就曾说：“世界上本来就没有神，但可别告诉我的仆人，免得他半夜偷偷把我宰了。”</p>
+<hr>
+<p>9.一如古埃及精英分子，现在大多数人一生汲汲营营，也都是想盖起某种金字塔，只不过这些金字塔在不同文化里会有不同的名字、形体和规模罢了。</p>
+<hr>
+<p>10.自从法国大革命之后，全球人民逐渐同意“自由”和“平等”都是基本的价值观。然而这两者根本就互相抵触！想要确保“平等”，就得限制住那些较突出的人；而要人人都能“自由”，也就必然影响所有人的平等。</p>
+<hr>
+<p>11.自从法国大革命之后，全球人民逐渐同意“自由”和“平等”都是基本的价值观。然而这两者根本就互相抵触！想要确保“平等”，就得限制住那些较突出的人；而要人人都能“自由”，也就必然影响所有人的平等。</p>
+<hr>
+<p>12.某些社会的解决方式，就是建立起集中的以物易物系统，分别从各个专业的农夫和制造商那里取得产品，再统一分配到最需要的人手上。这种社会规模最大、名声最著的就是苏联；不过最后可以说是凄惨收场。原本声称要让人人“各尽所能、各取所需”，但结果是“各尽所能的最小值，各抢所需的最大值”</p>
+<hr>
+<p>13.金钱正是有史以来最普遍也最有效的互信系统。</p>
+<hr>
+<p>14.所有人类创造的信念系统之中，只有金钱能够跨越几乎所有文化鸿沟，不会因为宗教、性别、种族、年龄或性取向而有所歧视。也多亏有了金钱制度，才让人就算互不相识、不清楚对方人品，也能携手合作。</p>
+<hr>
+<p>15.现代西方认为所谓公义的世界应该是由各个独立的民族国家组成，但古代中国的概念却正好相反，认为政治分裂的时代不仅动荡不安，而且公义不行。这种看法对中国的历史产生深远的影响。每次一个帝国朝代崩溃，这种政治理论主流就让各方竞逐的势力不安于各自为政，而一心追求统一。而且事实证明，最后总能统一，只是时间早晚的问题。</p>
+<hr>
+<p>16.我们看到有几百万虔诚的基督徒、穆斯林和犹太人居然能够相信既有全能的神，又有独立行事的魔鬼，倒也不用太过惊讶。更有甚者，无数的基督徒、穆斯林和犹太人居然还能想象善神需要人类的协助，好与魔鬼对抗，由此再推导引发了圣战和十字军东征。</p>
+<hr>
+<p>17.释迦牟尼认为，人遇到事情通常就会产生欲念，而欲念总是会造成不满。遇到不喜欢的事，就想躲开；遇到喜欢的事，就想维持并增加这份愉快。但正因如此，人心就永远不满、永远不安。这点在碰上不悦的时候格外明显，像是感觉疼痛的时候，只要疼痛持续，我们就一直感到不满，用尽办法想要解决。然而，就算是遇上欢乐的事，我们也从不会真正满足，而是一直担心这种欢乐终将结束或是无法再持续或增强。有些人多年来一直在寻找爱情，但等到真的找着了爱情，却还是不满足。有的开始整天担心对方可能会离开；有的又觉得自己太过屈就，应该再找更好的人。</p>
+<hr>
+<p>18.释迦牟尼找到一种方法可以跳出这种恶性循环。在事物带来快乐或痛苦的时候，重点是要看清事物的本质，而不是着重在它带来的感受，于是就能不再为此所困。虽然感受悲伤，但不要希望悲伤结束，于是虽然仍有悲伤，也能不再为此而困。即使仍然悲伤，也是一种丰硕的经验。虽然感受快乐，但不要希望快乐继续，于是虽然仍有快乐，也能不失去心中的平静。</p>
+<hr>
+<p>19.释迦牟尼将冥想落实在各种道德规范上，好让信众更能专注在实际的感受，而不会落入各种欲求和幻想之中。他要求信众不杀生、不邪淫、不偷盗，因为这些作为一定会让欲望如野火燎原，而一心追求权力、感官享受或财富。等到这些火焰彻底扑灭，原本的欲求就换成了圆满和寂静，称为涅槃（梵文的原义就是“熄灭”）。达到涅槃，也就是解脱了所有苦痛，能够无比清晰地感受身边的现实，没有什么幻想和幻象。虽然人们很有可能还是会遇到苦痛，但苦痛已经不再能影响他们。毕竟，无欲则无苦。</p>
+<hr>
+<p>20.我们之所以研究历史，不是为了要知道未来，而是要拓展视野，要了解现在的种种绝非“自然”，也并非无可避免。未来的可能性远超过我们的想象。</p>
+<hr>
+<p>21.在公元1500年，人类还被局限在地面上。虽然可以盖起高塔、爬上高山，但天空仍然是专属于飞鸟、天使和神的领域。而到了1969年7月20日，人类登陆月球。这不只是一项历史成就，更是一项演化上甚至是宇宙间的壮举。在过去40亿年演化期间，没有任何生物能够离开地球大气层，更不用谈要在月球上留下手印或足迹。<br>在地球上，微生物占了全部有机体大约99.99%，但人类要到非常晚近，才对微生物有所认识。这并不是因为微生物与我们无关，相反的是，我们每个人身上都有数十亿个单细胞生物，而且还不只是搭搭便车的关系。微生物可以说是我们最好的朋友，也是最致命的敌人。有些微生物可以帮助消化、健胃整肠，而有些则会导致疾病、造成感染。一直要到1674年，才有人第一次真正看见了微生物。当时安东·冯·列文虎克（Anton van Leeuwenhoek）自制了一台显微镜，用来观察一滴水，他看到里面有许多小生物动个不停，这让他大吃一惊。在随后的300年间，人类才开始认识了许许多多的微生物物种。时至今日，我们已经能够治疗大多数由微生物造成的致命传染病，也能够将微生物用于医疗和产业用途。像是我们可以用细菌来制造药物、生物燃料，或是杀死寄生虫。</p>
+<hr>
+<p>22.你觉得这些帝国就是邪恶的怪物，在全球各地四处散播死亡、压迫和歧视吗？随便把他们的罪行列出来，就足以编成一部百科全书了。你觉得这些帝国其实为属民提供了新的医药、更佳的经济环境、更多的安全吗？随便把他们的成就列出来，也足以编成另一部百科全书。正因为帝国与科学密切合作，就让它们有了如此强大的力量，能让整个世界大为改观；也是因为如此，我们很难简单断言它们究竟是善是恶。正是帝国创造了我们所认识的世界，而且，其中还包含我们用以判断世界的意识形态。</p>
+<hr>
+<p>23.对快乐与否的影响，家庭和社群要比金钱和健康来得重要。</p>
+<hr>
+</blockquote>
+<h1 id="《腾讯传》"><a href="#《腾讯传》" class="headerlink" title="《腾讯传》"></a>《腾讯传》</h1><p>立志成为一位优秀码农的我当然对腾讯的发家史很感兴趣。<br>没有一种成功的是不努力的。运气真的很重要很重要很重要。<br>有很多话想说，但是还觉得应该做好自己现在的事情。<br>踏实，坚韧，高瞻远瞩。实用的道理往往最简单。</p>
+<h3 id="部分书摘-1"><a href="#部分书摘-1" class="headerlink" title="部分书摘"></a>部分书摘</h3><hr>
+<blockquote>
+<p>1.“Pony喜欢开长会，每一个议题提出后，他都不会先表态，而是想要听到每一个人的态度和意见，所以会议往往开得很漫长。”</p>
+<hr>
+<p>2.此时的马化腾，还没有学会如何在公众面前表现幽默感。在接受采访时，他除了描绘腾讯的“远大前程”之外，重点介绍了上个月25日推出的QQ新版本。在这个升级版本中，第一次出现了群聊功能。<br>这个功能的灵感来自于腾讯内部的“饭友团”文化。那时候，腾讯内部存在很多“饭友团”，中午下班前大家通过邮件讨论并决定午餐如何解决，由于邮件存在延迟，且回复意见比较混乱，很难迅速达成一致意见，经常还会出现人员遗漏问题。针对这些问题，便有人提出这样一个设想：“能不能在QQ上面建立一个固定的人员列表，列表中人员可以同时参与即时讨论呢？”</p>
+<hr>
+<p>3.中国社会历来是一个充满了压抑感的等级社会，它既表现在宗族的内部，也体现在公共社会层面，人们在现实生活中战战兢兢，情感生活十分苍白和乏味。而虚拟社区的出现，如同一个突然出现的新世界，让压抑日久的人们可以戴着面具，实现一次不需要节制的狂欢。中国人在现实中的含蓄与在虚拟中的狂放构成了一个十分鲜明和讽刺性的反差。</p>
+<hr>
+<p>4.从此以后，产品经理制被确立了下来，“谁提出，谁执行”“一旦做大，独立成军”成为腾讯内部不成文的规定。这一新模式无形中造就了“赛马机制”，我们将看到，后来为腾讯带来众多“意外”的创新，如QQ空间、QQ游戏乃至微信，都不是顶层规划的结果，而是来自基层的业务单元的独立作业。工程师文化与产品经理制在内在的驱动力上有天然的冲突性，然而，却在腾讯实现了无缝融合。</p>
+<hr>
+<p>5.在一次飞行旅途中，筋疲力尽的刘炽平闭目斜躺在座位上，邻座的陈一丹突然把他拍醒，提出一个邀请：“喂，你愿意加入腾讯吗？”在上市筹备过程中，刘炽平的聪明、坚毅和快速学习能力得到了腾讯创始人团队的一致认可，“土鳖+洋龟”结合产生的化学作用更是值得期待。</p>
+<hr>
+<p>6.在2004年6月的那场记者见面会上，丁磊还带来一个爆炸性的武器，他宣称网易已研制成功一款类似于Skype的即时语音沟通工具，“我们真正的突破点是在任何环境下均可通信，语音质量达到了GSM的质量，下一版本我们的语音通信质量会超过电话的通信质量。网易在实验网中已完全通过测试，跟传统电话互通在技术上完全没问题。而且现在这个版本的泡泡已有这样的功能，软件已装在里面了，只要政策允许就可推出”。这是一个值得被记录下来的事实，它表明，中国的互联网企业早在2004年就完成了即时语音通信上的重大突破，若非遭到国有的电信运营商的蛮横阻挠，2011年的微信将早出生7年，而且这个机会应该属于丁磊的网易。</p>
+<hr>
+<p>7.紧盯市场动态，以最快的方式复制成功者模式，利用QQ用户优势进行后发超越。</p>
+<hr>
+<p>8.“后发是最稳妥的方式”</p>
+<hr>
+<p>9.“高级别的文明体从来都是在异常困难而非异常优越的环境中降生的。挑战越大，刺激越强”。</p>
+<hr>
+<p>10.“Don’t make me think！”</p>
+<hr>
+<p>11.创新亦非来自于实验室，而是市场的不断变换的需求。</p>
+<hr>
+<p>12.“成功的秘诀，在于把自己的脚放入他人的鞋子里，进而用他人的角度来考虑事物，服务就是这样的精神，站在客人的立场去看整个世界。”</p>
+<hr>
+<p>13.任何产品都有核心功能，其宗旨就是能帮助到用户，解决用户某一方面的需求，如节省时间、解决问题、提升效率等。核心能力要做到极致。要多想如何通过技术实现差异化，让人家做不到，或通过一年半载才能追上。</p>
+<hr>
+<p>14.我们希望的产品经理是非常资深的，最好是由做过前端、后端开发的技术研发人员晋升而来。</p>
+<hr>
+<p>15.过去，我们总在思考什么是对的。但是现在，我们要更多地想一想什么是能被认同的。</p>
+<hr>
+<p>16.“挑战者必须找到不同于领先者的新竞争方式以取得成功”</p>
+<hr>
+<p>17.张小龙指尖夹着KENT牌香烟，在自己的腾讯微博上打下了一行烟雾缭绕的“心情”：我对iPhone 5的唯一期待是，像iPad（3G）一样，不支持电话功能。这样，我少了电话费，但你可以用kik跟我短信，用Google Voice跟我通话，用Facetime跟我视频。</p>
+<hr>
+<p>18.“如果你说我是错的，你要证明你是对的。”</p>
+<hr>
+</blockquote>
+<h1 id="《创京东》"><a href="#《创京东》" class="headerlink" title="《创京东》"></a>《创京东》</h1><p>如果说BAT都有种种光环，那么京东绝对算上是逆袭的了。<br>志之所趋，无远弗届，穷山距海，不能限也。</p>
+<h3 id="部分书摘-2"><a href="#部分书摘-2" class="headerlink" title="部分书摘"></a>部分书摘</h3><hr>
+<blockquote>
+<p>1.过去京东的唯一推广方式就是给用户打折，那是赚今天的钱；打广告则是赚明天的钱。</p>
+<hr>
+<p>2.京东的策略就是，我是老大，我有钱，你没钱，咱们就耗着，耗到市场不好的时候，你们没钱就得死。</p>
+<hr>
+<p>3.在京东董事会，要么你说服我，要么我说服你，如果谁也不能说服谁，就投票。9个席位，刘强东代表5席。</p>
+<hr>
+<p>4.身在历史潮流中，不允许犹豫，快速决策比决策正确与否更重要。</p>
+<hr>
+<p>5.人的本性是向善的，总愿意往好的方向发展，就看企业给不给他这样的土壤。如果给他良好的平台，人会有积极、正向的行动；如果平台糟糕，做出来的绩效不被认可，就有劣币驱逐良币的风险。</p>
+<hr>
+<p>6.电商要颠覆渠道格局，至少要占30％。最后一公里的配售解决了，局就破了。</p>
+<hr>
+<p>7.中国教育让刘强东从小养成寻找唯一答案的思维方式：黑与白、好与坏、对与错。</p>
+<hr>
+<p>8.他原来是要做一件事，先找合适的人来做，实在找不到就自己做；现在是先想找什么样的人，这些人会思考什么是对的事，如何把它做好。</p>
+<hr>
+<p>9.腾讯从2004年开始做拍拍网，在时间上没有落后阿里巴巴多少，但两者的决心是天壤之别。那时候，淘宝是阿里巴巴的全部未来，阿里巴巴会调动最好最多的资源；而腾讯只是觉得是个机会，做好了很好，做不好也不影响大局。</p>
+<hr>
+<p>10.总结电商未来三大趋势或者三大利润增长点，无非三个，生鲜、跨境电商、O2O。</p>
+<hr>
+</blockquote>
+<h1 id="《毛泽东传》"><a href="#《毛泽东传》" class="headerlink" title="《毛泽东传》"></a>《毛泽东传》</h1><p>一代伟人，有功有过。</p>
+<p>对于毛主席我无法评价，但是伟大是必然的。虽然是一本由外国人写的传记。但是作者的思路和翻译的文笔都堪称经典。<br>王侯将相宁有种乎？一个农民的儿子成为几亿人的神，最终又回到了人的本位。毛主席惊世骇俗却也无法超发脱俗。里面很多简单叙述仔细琢磨，都是经过了深刻的思考才能表达的人生哲学。　　</p>
+<p>其实还是有一些疑问的，人真的只有断了七情六欲才能成大事吗？　　<br>发现书中的一个细节。他的第一任妻子杨开慧带着孩子在老家，在没有离婚的情况下他在井冈山娶了贺子珍，后来贺子珍精神出问题被送去治疗，又在没有离婚的情况在延安下娶了江青。他的孩子们也没有得到童年应有的父爱。这究竟是怎么的一种性格。</p>
+<h3 id="部分书摘-3"><a href="#部分书摘-3" class="headerlink" title="部分书摘"></a>部分书摘</h3><hr>
+<blockquote>
+<p>1.“记下随时产生的想法，自由地表达我们想到的东西，这样可以帮助我们保持平衡。”</p>
+<hr>
+<p>2.“世界上有两种人，”有一天毛泽东对萧三说，“一种人善于做具体事情，一种人善于做组织工作。前者要多于后者。但是，每个人都有他的长处。”</p>
+<hr>
+<p>3.毛泽东在一次集会上发表演说，主题是“使用国货，抵制日货”，完全不顾中国产品不能满足人民需要这一事实。他组织了女生小队（从一开始他就把妇女纳入了湖南学生联合会的核心组织之中）去检查长沙的商店，声色俱厉地警告店主们毁掉日本的进口货。</p>
+<hr>
+<p>4.他组织工会，发动了十多次重要罢工。他还不时地悄悄成立新的党小组。工作很有成效，两年之内在湖南成立了拥有5万工人的20个工会。经过仔细和谨慎挑选的湖南中共基层党员，从1921年年中的10名，猛增到一年后的123名。每当一个新工会建立起来，毛泽东就设法安插一个中共干部做它的书记。</p>
+<hr>
+<p>5.在1946年，国民党占有中国南方的全部以及贫瘠的、人烟稀少的遥远西部。共产党在北方势力强大。毛泽东的部队在人力上是蒋介石的三分之一，在武器上是五分之一。<br><strong>注：这里想到高晓松讲到的一个历史规律：历史的大概率事件，都是某个政权从北方开始统一全国。</strong>　　</p>
+<hr>
+</blockquote>
+<h1 id="《人民的名义》"><a href="#《人民的名义》" class="headerlink" title="《人民的名义》"></a>《人民的名义》</h1><p>被改编的电视剧大火，而书里写的却更加深刻。<br>想到上一本书里毛主席晚年的思想：这不是一个物质的世界，唯物并不显得那么真理，而是一个人与人关系的世界。</p>
+<h3 id="部分书摘-4"><a href="#部分书摘-4" class="headerlink" title="部分书摘"></a>部分书摘</h3><hr>
+<blockquote>
+<p>1.人在倒霉时，才懂得友谊的可贵。</p>
+<hr>
+<p>2.能力之外的一切资本都等于零！</p>
+<hr>
+<p>3.”油气集团是国家的，全民所有制，全民所有就是全民没有！”</p>
+<hr>
+<p>4.世事开始变得多少有些陌生，也许是人与人的关系改变了。</p>
+<hr>
+<p>5.这位省委书记难啊，领导着一个六千万人的大省，相当于欧洲一个大国，他要不疲惫而是活得轻松愉快，反倒让人奇怪了。</p>
+<hr>
+<p>6.好在我们党已经醒了，现在收拾世道人心还来得及.</p>
+<hr>
+</blockquote>
+<h1 id="《我与地坛》"><a href="#《我与地坛》" class="headerlink" title="《我与地坛》"></a>《我与地坛》</h1><p>我已不在地坛，地坛在我。</p>
+<p>初始史铁生在初中。这次才算是全部读完。整本书的思辨能力真的是太强大了。<br>描写他与母亲的种种画面，真的是刺痛我心了。<br>被身残的悲痛笼罩而忽略母亲的“愧疚”。必须活下去的“无奈”，天地间孓然苍凉的“孤寂”。</p>
+<h3 id="部分书摘-5"><a href="#部分书摘-5" class="headerlink" title="部分书摘"></a>部分书摘</h3><hr>
+<blockquote>
+<p>1.要是有些事我没说，地坛，你别以为是我忘了，我什么也没忘，但是有些事只适合收藏。不能说，也不能想，却又不能忘。它们不能变成语言，它们无法变成语言，一旦变成语言就不再是它们了。它们是一片朦胧的温馨与寂寥，是一片成熟的希望与绝望，它们的领地只有两处：心与坟墓。比如说邮票，有些是用于寄信的，有些仅仅是为了收藏。</p>
+<hr>
+<p>2.一个人，出生了，这就不再是一个可以辩论的问题，而只是上帝交给他的一个事实；上帝在交给我们这件事实的时候，已经顺便保证了它的结果，所以死是一件不必急于求成的事，死是一个必然会降临的节日。这样想过之后我安心多了，眼前的一切不再那么可怕。比如你起早熬夜准备考试的时候，忽然想起有一个长长的假期在前面等待你，你会不会觉得轻松一点儿？并且庆幸并且感激这样的安排？<br><strong>注：对未发生的事情毋需忧虑，因为还有可以努力的机会;对一定会发生的事情也毋需忧虑，因为它迟早要来。</strong></p>
+<hr>
+<p>３.剩下的就是怎样活的问题了。这却不是在某一个瞬间就能完全想透的，不是能够一次性解决的事，怕是活多久就要想它多久了，就像是伴你终生的魔鬼或恋人。</p>
+<hr>
+<p>4.那些年我们俩常一起在这园子里待到天黑，开怀痛骂，骂完沉默着回家，分手时再互相叮嘱：先别去死，再试着活一活看。</p>
+<hr>
+<p>5.其实总共只有三个问题交替着来骚扰我，来陪伴我。第一个是要不要去死，第二个是为什么活，第三个，我干吗要写作。</p>
+<hr>
+</blockquote>
+<h1 id="《鱼羊野史》"><a href="#《鱼羊野史》" class="headerlink" title="《鱼羊野史》"></a>《鱼羊野史》</h1><p>《鱼羊野史》这本书是我最近一段时间看的，作者高晓松，书大概有1400多页，类似于每天一个小故事，适合睡前读一读。从《晓说》到《晓松奇谈》再到优酷新开的《晓说》，以及这本书，都能展示出高晓松极高的造诣。关于他的家庭，折射出近代的一些变迁。从脱口秀到这本书，矮大紧总是能以一种新的角度去看一些事情，反而觉得很有趣。关于历史，关于人类以及这个世界上其他有趣的事情。印象最深的是《晓松奇谈》里的《胜利下的阴影》，另一个角度去看二战和战争，战争和胜利都很触目惊心。这本书历史和艺术涉猎都非常之广泛和有趣，但是某些方面确实也有偏差。总之，还是要接着和矮大紧老师学习的。</p>
+<h3 id="部分书摘-6"><a href="#部分书摘-6" class="headerlink" title="部分书摘"></a>部分书摘</h3><hr>
+<blockquote>
+<p>1.燕大的校训是“因自由，得真理，以服务”。大学不该是一个职业培训班，不是为了毕业找一工作，大学是让国家相信真理的最后阵地。</p>
+<hr>
+<p>2.当时北京要拆城墙，由北京市副市长、原清华历史学教授吴晗先生来主持，谦谦君子梁先生听到这个消息默默哭泣，而林先生指着吴晗破口大骂：“你们拆去的是真古董！你们迟早会后悔的，到时候你们要盖的是假古董。而且你是历史学教授，你知道什么是历史，这么多年的历史毁于一旦！”</p>
+<hr>
+<p>3.“老兵不死，只是慢慢消失。”</p>
+<hr>
+<p>4.美国人是全世界最适应市场经济的人民，很少有这种壁垒观念，也没说IBM被中国并购就不买这个产品了。</p>
+<hr>
+<p>5.其实学校就是这样，读书的时候，你并没有觉得这个学校有多么美好，但是你来到社会上，尤其到了四十岁，你才慢慢觉得学校带给你的东西真的很多</p>
+<hr>
+<p>6.泰国在二战中也加入了轴心国，由于它既不骁勇也不善战，虽然加入了轴心国，但也没作什么恶，没犯下什么反人类的罪行，所以大家也没把它怎么样。二战之后它又恢复了“暹罗”这个名字，但是到了1949年的这一天，民族主义战争爆发了，又改名叫“泰国”。</p>
+<hr>
+<p>7.历朝历代统一基本上都是北方统一南方，秦，晋，隋，元，清，当然还有我朝。明是唯一一个从南打到北，统一中原的王朝，不过有明一朝一直受到北元的骚扰，也可以说，并没有完成全国统一。所以，王师北定中原基本上是不太可能出现的。</p>
+<hr>
+<p>8.小说的最后还描写雨连续下了四个月，住在树下的人身上都长了青苔。这种描述让你觉得整个人生、整个生活不但是孤独的，而且是远离人群的。</p>
+<hr>
+<p>9.艺术和科学是人类最重要的两条平行线，一直是你追我赶地在向前发展。今天的这个时代是科技远远领先的时代，而艺术经常会在科学遇到阻碍的时候有较快发展，比如在战争等对人类造成重大伤害之后，科技的发展会暂时停下来，而艺术的发展就会追上去。</p>
+<hr>
+<p>10.经常也突然就没掉了活着的意愿和意思。<br>那些接近星空的人是会明了着选择结束生命，完成自己亲手处理的意愿吧。于他们自己来说，并非灰色。<br><strong>注：持续保持输出本身就是一种消耗。</strong></p>
+<hr>
+<p>11.在近代化的进程中，原本我们可以启动得更早，却都落在日本的后面，这就是酿成另一场更大的悲剧——甲午战争的惨败的一大原因。人生如大国决策，关键时刻，面临多项选择。或照本宣科，或行出自己的车辙。若骄奢，不尽早褪去青涩，便必落马于曲折。</p>
+<hr>
+<p>12.当时红星签了一个叫许巍的歌手，之前谁都没听说过这个人，只知道他来自西安。我们那时对西安有一种特别美好的想象，因为大家知道西安来的张楚、西安来的郑钧，现在西安又来了一个人，所以都特别感兴趣，于是好多人就跑到“旅游棚”里去听他唱歌。</p>
+<hr>
+<p>13.1976年是中国的多事之秋，我们的毛主席、周总理、朱总司令都是在那一年去世的，再加上唐山大地震，这应该是新中国历史上最惨痛的一年吧。</p>
+</blockquote>
+<hr>
+<hr>
+<hr>
+<hr>
+<p>就这些吧。读书是闲暇时间的乐趣，是消耗时间的“毒品”。<br>看到知乎上一个问题，”读书的意义是什么？”下面的高票回答，觉得很棒，分享引用。</p>
+<blockquote>
+<p>杨绛先生的父亲有一次问杨绛：“阿季，三天不让你看书，你怎么样?”<br>她说：“不好过。”“一星期不让你看书呢?”<br>她说：“一星期都白活了。”<br>父亲笑了，说：“我也这样。”<br>很多人都爱追问读书的意义、读书的用处，其实真正手边不离书的人，很少这样问。因为读书对于真正爱书的人来讲，就如同吃饭睡觉，必须却也凡常，没什么特别需要追问的意义和用处。读书就读书，可以体验乐趣，但不必去强调意义。不读书就不读书，一点儿也不丢人，人各有追求、各有所爱，很正常，但是不必去强调你是为什么才不读书（累、没时间、没精力、家里地方小没地儿摆书…）也更不要去否定读书这件事本身。真正离不开书的人，书就是很平常的生活必需，没什么特别的意义，就像人处在什么境况下都会去吃饭睡觉，饭上餐桌，你落座，拿起筷子之前大概不会去特别地思考一下“我为什么吃饭？吃完了还要排泄，那么吃饭到底有用没用？吃饭的真正意义是什么？我吃了这一口我能得到什么，下一口又能收获什么？” 读书也是这样，如果必须问一个意义，那么于爱她的人来说，她最重要的意义或许就是“陪伴”以及“丰富”，手边有书，就永远不孤独、不乏味，书里有比眼睛里更生动的世界。世间许多事从来都如此，当我们执着追寻它的意义的时候，就已经失去了它所能带给我们的最珍贵的东西。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-79de255ba8085d8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;2017上半年书单&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;千里万卷。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;《硬派健身》&lt;/li&gt;
+&lt;li&gt;《人类简史》&lt;/li&gt;
+&lt;li&gt;《腾讯传》&lt;/li&gt;
+&lt;li&gt;《创京东》&lt;/li&gt;
+&lt;li&gt;《毛泽东传》&lt;/li&gt;
+&lt;li&gt;《人民的名义》&lt;/li&gt;
+&lt;li&gt;《我与地坛》&lt;/li&gt;
+&lt;li&gt;《鱼羊野史》&lt;/li&gt;
+&lt;li&gt;《小米口碑营销内部手册：参与感》&lt;/li&gt;
+&lt;li&gt;《人类群星闪耀时》&lt;/li&gt;
+&lt;li&gt;《嫌疑人X的献身》&lt;/li&gt;
+&lt;li&gt;《以色列：一个国家的诞生》&lt;/li&gt;
+&lt;li&gt;《以色列2：在危机中生存》&lt;/li&gt;
+&lt;li&gt;《半小时漫画中国史》&lt;/li&gt;
+&lt;li&gt;《近忧远虑》&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://x-nicolo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="读书" scheme="https://x-nicolo.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构笔记（一）</title>
+    <link href="https://x-nicolo.github.io/2017/06/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>https://x-nicolo.github.io/2017/06/08/数据结构/</id>
+    <published>2017-06-08T01:17:54.000Z</published>
+    <updated>2017-06-08T07:33:16.774Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="第1章-数据结构绪论"><a href="#第1章-数据结构绪论" class="headerlink" title="第1章 数据结构绪论"></a>第1章 数据结构绪论</h2><h2 id="第2章-算法"><a href="#第2章-算法" class="headerlink" title="第2章 算法"></a>第2章 算法</h2><h2 id="第3章-线性表"><a href="#第3章-线性表" class="headerlink" title="第3章 线性表"></a>第3章 线性表</h2><hr>
+<a id="more"></a>
+<h2 id="第1章-数据结构绪论-1"><a href="#第1章-数据结构绪论-1" class="headerlink" title="第1章 数据结构绪论"></a>第1章 数据结构绪论</h2><ul>
+<li>程序设计 = 数据结构 + 算法</li>
+</ul>
+<h3 id="逻辑结构与物理结构"><a href="#逻辑结构与物理结构" class="headerlink" title="逻辑结构与物理结构"></a>逻辑结构与物理结构</h3><h4 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h4><ol>
+<li>集合结构</li>
+<li>线性结构</li>
+<li>树形结构</li>
+<li>图形结构</li>
+</ol>
+<h4 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h4><ul>
+<li>物理结构：是指数据的逻辑结构在计算机中的存储形式。</li>
+</ul>
+<ol>
+<li>顺序存储结构：把数据元素存放在地址连续的存储单元里，其数据间的逻辑关系和物理关系是一致的。</li>
+<li>链式存储结构：把数据元素存放在任意的存储单元里，这组存储单元可以是连续的，也可以是不连续的。</li>
+</ol>
+<h2 id="第2章-算法-1"><a href="#第2章-算法-1" class="headerlink" title="第2章 算法"></a>第2章 算法</h2><p>算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作。</p>
+<h3 id="算法的特性"><a href="#算法的特性" class="headerlink" title="算法的特性"></a>算法的特性</h3><ol>
+<li>输入输出：有零个或多个输入，至少有一个或多个输出。</li>
+<li>有穷性</li>
+<li>确定性</li>
+<li>可行性</li>
+</ol>
+<h3 id="算法设计的要求"><a href="#算法设计的要求" class="headerlink" title="算法设计的要求"></a>算法设计的要求</h3><ol>
+<li>正确性</li>
+<li>可读性</li>
+<li>健壮性</li>
+<li>时间效率高和存储量低</li>
+</ol>
+<h3 id="算法时间复杂度"><a href="#算法时间复杂度" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h3><p>定义：在进行算法分析时，语句总的执行次数T(n)是关于问题规模n的函数，进而分析T(n)随n的变化情况并确定T(n)的数量级。算法的时间复杂度，也就是算法的时间度量，记作：T(n) = O(f(n))。它表示随问题规模n的增大，算法执行时间的增长率和f(n)的增长率相同，称作算法的渐进时间复杂度，简称为时间复杂度。其中f(n)是问题规模n的某个函数。<br>这样用大写O()来体现算法时间复杂度的记法，称之为大O记法。</p>
+<h3 id="推导大O阶"><a href="#推导大O阶" class="headerlink" title="推导大O阶"></a>推导大O阶</h3><ol>
+<li>用常数1取代运行时间中的所有加法常数</li>
+<li>在修改后的运行次数函数中，只保留最高阶项。</li>
+<li>如果最高阶项存在且不是1，则去除与这个项相乘的常数。<br>得到的结果就是大O阶。</li>
+</ol>
+<p>常用的时间复杂度所消耗的时间从小到大依次是：<br><em>O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n(2)) &lt; O(n(3)) &lt; O(2(2)) &lt; O(n!) &lt; O(n(n))</em></p>
+<h3 id="算法的空间复杂度"><a href="#算法的空间复杂度" class="headerlink" title="算法的空间复杂度"></a>算法的空间复杂度</h3><p>算法的空间复杂度通过计算算法所需的存储空间实现，算法空间复杂度的计算公式记作：S(n) = O(f(n))，其中，n为问题的规模，f(n)为语句关于n所占存储空间的函数。</p>
+<h2 id="第3章-线性表-1"><a href="#第3章-线性表-1" class="headerlink" title="第3章 线性表"></a>第3章 线性表</h2><p>线性表(List)：零个或多个数据元素的有限序列。</p>
+<p>a(i-1)是a(i)的直接前驱元素，a(i+1)是a(i)的直接后继元素。</p>
+<h3 id="线性表的抽象数据类型定义"><a href="#线性表的抽象数据类型定义" class="headerlink" title="线性表的抽象数据类型定义"></a>线性表的抽象数据类型定义</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ADT</span> 线性表（<span class="selector-tag">List</span>）</div><div class="line"><span class="selector-tag">Data</span></div><div class="line">    线性表的数据对象集合为&#123;<span class="selector-tag">a1</span>,<span class="selector-tag">a2</span>,...,<span class="selector-tag">an</span>&#125;,每个元素的类型均为<span class="selector-tag">DataType</span>。其中，除第一个元素<span class="selector-tag">a1</span>外，每一个元素有且只有一个直接前驱元素，除了最后一个元素<span class="selector-tag">an</span>外，每一个元素有且只有一个直接后继元素。数据元素之间的关系是一对一的关系。</div><div class="line"><span class="selector-tag">Operation</span></div><div class="line">    <span class="selector-tag">InitList</span>(*L):初始化操作，建立一个空的线性表<span class="selector-tag">L</span>。</div><div class="line"></div><div class="line">    <span class="selector-tag">ListEmpty</span>(L):若线性表为空，返回<span class="selector-tag">true</span>，否则返回<span class="selector-tag">false</span>。</div><div class="line"></div><div class="line">    <span class="selector-tag">ClearList</span>(*L):将线性表清空。</div><div class="line"></div><div class="line">    <span class="selector-tag">GetElem</span>(L,i,*e):将线性表<span class="selector-tag">L</span>中的第<span class="selector-tag">i</span>个位置元素返回给<span class="selector-tag">e</span>。</div><div class="line"></div><div class="line">    <span class="selector-tag">LocaEleme</span>(L,i,*e):将线性表<span class="selector-tag">L</span>中查找与定位值<span class="selector-tag">e</span>相等的元素，如果查找成功，返回该元素在表中序号表示成功；否则，返回<span class="selector-tag">0</span>表示失败。</div><div class="line"></div><div class="line">    <span class="selector-tag">ListInsert</span>(*L,i,e):在线性表<span class="selector-tag">L</span>中的第<span class="selector-tag">i</span>个位置插入新元素<span class="selector-tag">e</span>。</div><div class="line"></div><div class="line">    <span class="selector-tag">ListDelete</span>(*L,i,e):在线性表<span class="selector-tag">L</span>中的第<span class="selector-tag">i</span>个位置元素，并用<span class="selector-tag">e</span>返回其值。</div><div class="line">    <span class="selector-tag">ListLength</span>(L):返回线性表<span class="selector-tag">L</span>的元素个数。</div><div class="line"><span class="selector-tag">endADT</span></div></pre></td></tr></table></figure>
+<h3 id="线性表的顺序存储结构"><a href="#线性表的顺序存储结构" class="headerlink" title="线性表的顺序存储结构"></a>线性表的顺序存储结构</h3><ul>
+<li><p>顺序存储定义：指的是用一段地址连续的存储单元依次存储线性表的数据元素。</p>
+</li>
+<li><p>顺序存储方式：一维数组来实现顺序存储结构。</p>
+</li>
+</ul>
+<p>线性表的顺序存储的结构代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 20 <span class="comment">/*存储空间初始分配量*/</span></span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;<span class="comment">/*ElemType类型根据实际情况而定，这里假设为int*/</span></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line">    ElemType data[MAXSIZE];<span class="comment">/*数组存储数据元素，最大值为MAXSIZE*/</span></div><div class="line">    <span class="keyword">int</span> length;<span class="comment">/*线性表当前长度*/</span></div><div class="line">&#125;SQList;</div></pre></td></tr></table></figure></p>
+<p>顺序存储结构需要三个属性：</p>
+<ul>
+<li>存储空间的起始位置：数组data,它的存储位置就是存储空间的存储位置。</li>
+<li>线性表的最大存储容量:数组长度MaxSize。</li>
+<li>线性表的当前长度：Length。</li>
+</ul>
+<p>用数组存储顺序表意味着要分配固定长度的数组空间，由于线性表中可以进行插入好人删除操作，因此分配的数组空间要大于等于当前线性表的长度。</p>
+<p>存储器中的每个存储元素都有自己的编号，这个编号成为地址。</p>
+<h3 id="顺序存储结构的插入与删除"><a href="#顺序存储结构的插入与删除" class="headerlink" title="顺序存储结构的插入与删除"></a>顺序存储结构的插入与删除</h3><ul>
+<li>获得元素操作<br>实现GetElem操作，将线性表L中的第i个位置元素值返回。就程序而言，只要i的数值在数组下标范围内，就是把数组第i-1下标的值返回即可。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ok 1</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</div><div class="line">Status是函数的类型，其值是函数结果状态代码，如OK等</div><div class="line">初始条件：顺序线性表L已存在，<span class="number">1</span>&lt;= i &lt;= ListLength(L)</div><div class="line">操作结果：用e返回L中第i个数据元素的值</div><div class="line">Status GetElem (SqList L, <span class="keyword">int</span> i, ElemType *e)</div><div class="line">&#123;</div><div class="line"><span class="keyword">if</span>(L.length==<span class="number">0</span> || i&gt;L.length)</div><div class="line">    <span class="keyword">return</span> ERROR;</div><div class="line">    *e=L.data[i<span class="number">-1</span>];</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h4><p>插入算法的思路：</p>
+<ul>
+<li>如果插入位置不合理，抛出异常；</li>
+<li>如果线性表长度大于等于数组长度，则抛出异常或动态增加容量；</li>
+<li>从最后一个元素开始向前遍历到第i个位置，分别将它们都向后移动一个位置；</li>
+<li>将要插入元素填入位置i处；</li>
+<li>表长加1；<br>代码实现：</li>
+</ul>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">初始条件：顺序线性表Ｌ已存在，１&lt;= i &lt;= ListLength(L)</div><div class="line">操作结果：在L中第i个位置之前插入新的数据元素e,L的长度加<span class="number">1</span></div><div class="line"></div><div class="line">Status ListInsert(SqLsit *L, <span class="keyword">int</span> i,ElemType e)</div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> k;</div><div class="line">    <span class="keyword">if</span> (L-&gt;length == MAXSIZE)<span class="comment">/*顺序线性表已经满*/</span></div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span> || i&gt;L-&gt;length+<span class="number">1</span>)<span class="comment">/*当i不在范围内时*/</span></div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">if</span>(i&lt;=L-&gt;length)<span class="comment">/*若插入数据位置不在表尾*/</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(k=L-&gt;length<span class="number">-1</span>;k&gt;=i<span class="number">-1</span>;k--)<span class="comment">/*将要插入位置后数据元素向后移动一位*/</span></div><div class="line">            L-&gt;data[k+<span class="number">1</span>] = L-&gt;data[k];</div><div class="line">    &#125;</div><div class="line">    L-&gt;data[i<span class="number">-1</span>] = e;<span class="comment">/*将新元素插入*/</span></div><div class="line">    L-length++;</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h4><p>算法思路：</p>
+<ul>
+<li>如果删除位置不合理，抛出异常;</li>
+<li>取出删除元素;</li>
+<li>从删除元素位置开始遍历到最后一个元素位置，分别将它们都向前移动一个位置;</li>
+<li>表长减1.</li>
+</ul>
+<h4 id="线性表顺序存储结构的优缺点"><a href="#线性表顺序存储结构的优缺点" class="headerlink" title="线性表顺序存储结构的优缺点　　"></a>线性表顺序存储结构的优缺点　　</h4><p><em>优点</em></p>
+<ul>
+<li>无须为表示表中元素之间的逻辑关系而增加额外的存储空间</li>
+<li>可以快速的存取表中任一位置元素</li>
+</ul>
+<p><em>缺点</em></p>
+<ul>
+<li>插入和删除操作需要移动大量元素</li>
+<li>当线性表长度变化较大时，难以确定存储空间的容量</li>
+<li>造成存储空间的”碎片”</li>
+</ul>
+<h3 id="线性表的链式存储结构"><a href="#线性表的链式存储结构" class="headerlink" title="线性表的链式存储结构"></a>线性表的链式存储结构</h3><p>为了表示每个数据元素ai与其直接后继数据元素ai+1之间的逻辑关系，对数据元素ai来说，除了存储其本身的信息之外，还需存储一个指示其直接后继的信息（即直接后继的存储位置）。我们把存储数据元素信息的域称为数据域，把存储直接后继位置的域称为指针域。指针域中存储的信息称为指针或链。<br>数据域 + 指针域 = 结点</p>
+<p>链表中第一个结点的存储位置叫做头指针，最后一个结点指针为“空”，用NULL或^表示。</p>
+<h4 id="头指针与头结点的异同"><a href="#头指针与头结点的异同" class="headerlink" title="头指针与头结点的异同"></a>头指针与头结点的异同</h4><h5 id="头指针"><a href="#头指针" class="headerlink" title="头指针"></a>头指针</h5><ul>
+<li>头指针是指链表指向第一个结点的指针，若链表有头结点，则是指向头结点的指针</li>
+<li>头指针具有标示作用，所以常用头指针冠以链表的名字</li>
+<li>无论链表是否为空，头指针均不为空。头指针是链表的必要元素。</li>
+</ul>
+<h5 id="头结点"><a href="#头结点" class="headerlink" title="头结点"></a>头结点</h5><ul>
+<li>头结点是为了操作的统一和方便而设立的，放在第一元素的结点之前，其数据域一般无意义（也可存放链表的长度）</li>
+<li>有了头结点，对在第一元素结点前插入结点和删除第一结点，其操作与其他结点的操作系统就统一了</li>
+<li>头结点不一定是链表必须要素</li>
+</ul>
+<h3 id="单链表的读取"><a href="#单链表的读取" class="headerlink" title="单链表的读取"></a>单链表的读取</h3><p><em>获取链表第i个数据的算法思路</em></p>
+<ol>
+<li>声明一个结点p指向链表第一个结点，初始化j从1开始；</li>
+<li>当j&lt;i时，就遍历链表，让p的指针向后移动，不断指向下一结点，j累加1；</li>
+<li>若到链表末尾p为空，则说明第i个元素不存在；</li>
+<li>否则查找成功，返回结点p的数据。</li>
+</ol>
+<h3 id="单链表的插入与删除"><a href="#单链表的插入与删除" class="headerlink" title="单链表的插入与删除"></a>单链表的插入与删除</h3><p><em>单链表第i个数据插入结点的算法思路</em></p>
+<ol>
+<li>声明一节点p指向链表第一个结点，初始化j从1开始；</li>
+<li>当j&lt;i时，就遍历链表，让p的指针向后移动，不断指向下一结点，j累加1；</li>
+<li>若到链表末尾p为空，则说明第i个元素不存在；</li>
+<li>否则查找成功，在系统中生成一个空结点s；</li>
+<li>将数据元素e赋值给s-&gt;data；</li>
+<li>单链接的插入标准语句s -&gt; next = p -&gt; next; p -&gt;next = s;</li>
+<li>返回成功。</li>
+</ol>
+<p><em>单链表第i个数据删除结点的算法思路</em></p>
+<ol>
+<li>声明一节点p指向链表第一个结点，初始化j从1开始；</li>
+<li>当j&lt;i时，就遍历链表，让p的指针向后移动，不断指向下一个结点，j累加1；</li>
+<li>若到链表末尾p为空，则说明第i个元素不存在；</li>
+<li>否则查找成功，将欲删除的结点p-&gt;next赋值给q;</li>
+<li>单链表的删除标准语句p-&gt;next = q-&gt;next；</li>
+<li>将q结点中的数据赋值给e，作为返回；</li>
+<li>释放q结点；</li>
+<li>返回成功。</li>
+</ol>
+<p><em>对于插入或删除数据越频繁的操作，单链表的效率优势就越是明显</em></p>
+<h3 id="单链表的整表创建"><a href="#单链表的整表创建" class="headerlink" title="单链表的整表创建"></a>单链表的整表创建</h3><p><em>单链表整表创建的算法思路:</em></p>
+<ol>
+<li>声明一结点p和计数器变量i；</li>
+<li>初始化一空链表L;</li>
+<li>让L的头结点的指针指向NULL，即建立一个带头结点的单链表；</li>
+<li>循环<ul>
+<li>生成一新结点赋值给p；</li>
+<li>随机生成一数字赋值给p的数据域p-&gt;datd;</li>
+<li>将p插入到头结点与前一新结点之间。</li>
+</ul>
+</li>
+</ol>
+<p>###　单链表的整表删除</p>
+<p><em>单链表整表删除的算法思路如下：</em></p>
+<ol>
+<li>声明一结点p和q；</li>
+<li>将第一个结点赋值给p；</li>
+<li>循环<ul>
+<li>将下一结点赋值给q；</li>
+<li>释放p;</li>
+<li>将q赋值给p。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;第1章-数据结构绪论&quot;&gt;&lt;a href=&quot;#第1章-数据结构绪论&quot; class=&quot;headerlink&quot; title=&quot;第1章 数据结构绪论&quot;&gt;&lt;/a&gt;第1章 数据结构绪论&lt;/h2&gt;&lt;h2 id=&quot;第2章-算法&quot;&gt;&lt;a href=&quot;#第2章-算法&quot; class=&quot;headerlink&quot; title=&quot;第2章 算法&quot;&gt;&lt;/a&gt;第2章 算法&lt;/h2&gt;&lt;h2 id=&quot;第3章-线性表&quot;&gt;&lt;a href=&quot;#第3章-线性表&quot; class=&quot;headerlink&quot; title=&quot;第3章 线性表&quot;&gt;&lt;/a&gt;第3章 线性表&lt;/h2&gt;&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="数据结构" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【更正】Java调用Python</title>
+    <link href="https://x-nicolo.github.io/2017/06/05/%E3%80%90%E6%9B%B4%E6%AD%A3%E3%80%91Java%E8%B0%83%E7%94%A8Python/"/>
+    <id>https://x-nicolo.github.io/2017/06/05/【更正】Java调用Python/</id>
+    <published>2017-06-05T09:21:25.000Z</published>
+    <updated>2017-06-05T09:36:47.466Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p><a href="https://x-nicolo.github.io/2017/02/28/Java%E8%B0%83%E7%94%A8Python/">错误一</a><br><a href="https://x-nicolo.github.io/2017/03/14/Java%E8%B0%83%E7%94%A8Python%E7%9A%84%E9%94%99%E8%AF%AF-1/">错误二</a><br>之前两篇博客都讨论过这个问题，现在才算是弄清楚了。　　<br>这个反转真的是。。。够了。。。　　<br>还需要学习啊。</p>
+<hr>
+<a id="more"></a>
+<h1 id="JAVA-to-Python"><a href="#JAVA-to-Python" class="headerlink" title="JAVA to Python"></a>JAVA to Python</h1><h2 id="关于Java如何调用Python的问题"><a href="#关于Java如何调用Python的问题" class="headerlink" title="关于Java如何调用Python的问题"></a>关于Java如何调用Python的问题</h2><h3 id="方法一：Java自带函数gettime-runtime-exe"><a href="#方法一：Java自带函数gettime-runtime-exe" class="headerlink" title="方法一：Java自带函数gettime.runtime.exe()"></a>方法一：Java自带函数gettime.runtime.exe()</h3><p>功能：模拟cmd命令行。<br>例如：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">String s</span> = <span class="string">"python C:/Python27/py/studentInf/all.py"</span> + <span class="string">" "</span> + stuId + <span class="string">" "</span> + stuPassword + <span class="string">" "</span> + userId + <span class="string">" "</span> + schoolId;</div><div class="line"><span class="attribute">Process process</span> = Runtime.getRuntime().exec(s);</div></pre></td></tr></table></figure></p>
+<p>Python接收参数:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">import</span> <span class="selector-tag">sys</span></div><div class="line"><span class="selector-tag">xs</span><span class="selector-class">.login</span>(<span class="selector-tag">sys</span><span class="selector-class">.argv</span><span class="selector-attr">[1]</span>, <span class="selector-tag">sys</span><span class="selector-class">.argv</span><span class="selector-attr">[2]</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="方法二：利用jython-jar"><a href="#方法二：利用jython-jar" class="headerlink" title="方法二：利用jython.jar"></a>方法二：利用jython.jar</h3><p>该方法可以解决传递形参的问题。也可以执行Python程序。<br>遇到的问题：需要确定好jython的路径问题和其他设置的路径问题。</p>
+<h4 id="注意：该方法只适用Python2。"><a href="#注意：该方法只适用Python2。" class="headerlink" title="注意：该方法只适用Python2。"></a>注意：该方法只适用Python2。</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;https://x-nicolo.github.io/2017/02/28/Java%E8%B0%83%E7%94%A8Python/&quot;&gt;错误一&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://x-nicolo.github.io/2017/03/14/Java%E8%B0%83%E7%94%A8Python%E7%9A%84%E9%94%99%E8%AF%AF-1/&quot;&gt;错误二&lt;/a&gt;&lt;br&gt;之前两篇博客都讨论过这个问题，现在才算是弄清楚了。　　&lt;br&gt;这个反转真的是。。。够了。。。　　&lt;br&gt;还需要学习啊。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="java" scheme="https://x-nicolo.github.io/tags/java/"/>
+    
+      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
+    
+      <category term="python" scheme="https://x-nicolo.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pip无法正常使用解决办法</title>
+    <link href="https://x-nicolo.github.io/2017/06/05/pip%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>https://x-nicolo.github.io/2017/06/05/pip无法正常使用解决办法/</id>
+    <published>2017-06-05T09:17:50.000Z</published>
+    <updated>2017-06-05T09:18:30.692Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>python -m pip install xxx<br>相当于import,叫做当做模块来启动</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;解决办法：&quot;&gt;&lt;a href=&quot;#解决办法：&quot; class=&quot;headerlink&quot; title=&quot;解决办法：&quot;&gt;&lt;/a&gt;解决办法：&lt;/h3&gt;&lt;p&gt;python -m pip install xxx&lt;br&gt;相当于import,叫做当做模块来启动&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
+    
+      <category term="python" scheme="https://x-nicolo.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>eclipse导入文件乱码问题</title>
+    <link href="https://x-nicolo.github.io/2017/06/05/eclipse%E5%AF%BC%E5%85%A5%E6%96%87%E4%BB%B6%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+    <id>https://x-nicolo.github.io/2017/06/05/eclipse导入文件乱码问题/</id>
+    <published>2017-06-05T09:15:51.000Z</published>
+    <updated>2017-06-05T09:17:13.251Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先导入的文件成为了乱码是因为workspace的编码方式不对<br>linux下默认编码是UTF-8，windows的是GBK，</p>
+<p>那么怎么修改workspace的编码方式呢<br>很简单在window—-preference—workspace可以设置只要把编码改成utf-8就可以喽</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先导入的文件成为了乱码是因为workspace的编码方式不对&lt;br&gt;linux下默认编码是UTF-8，windows的是GBK，&lt;/p&gt;
+&lt;p&gt;那么怎么修改workspace的编码方式呢&lt;br&gt;很简单在window—-preference—workspace可以设置只要把
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三季人</title>
+    <link href="https://x-nicolo.github.io/2017/06/03/%E4%B8%89%E5%AD%A3%E4%BA%BA/"/>
+    <id>https://x-nicolo.github.io/2017/06/03/三季人/</id>
+    <published>2017-06-03T02:10:05.000Z</published>
+    <updated>2017-06-03T02:41:40.241Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p>夏虫不可以语冰，不做价值评断和道德审判。</p>
+<hr>
+<a id="more"></a>
+<blockquote>
+<p>早晨，子贡在大院门口打扫院子。有人来到，问子贡：“您是孔子吗？”<br>子贡答道：“有什么事需要向我们老师请教？”<br>“我想请教关于时间的问题？”<br>“这个问题我知道，可以回答你”<br>“那你说说一年有几季？”<br>“四季。”子贡笑答。<br>“不对，一年只有三季！”<br>“四季！！”  、<br>“三季！！”<br>“四季！！！”子贡理直气壮。<br>“三季！！！”来人毫不示弱。<br>然后就争论不止，一直争论到中午也没消停。<br>孔子听到声音，从院内出来，子贡上前讲明原委，让孔子评定。<br>孔子先是不答，观察一阵后说：“一年的确只有三季。”<br>来人听此，大笑而去。<br>待来人走后，子贡忙问老师：“这与您所教有别啊，且一年的确有四季啊！”<br>“这一年到底应是几季？”孔子答：“四季”<br>子贡不解。孔子继而说道：“这时和刚才不同，方才那人一身绿衣。他分明是田间的蚱蜢。蚱蜢者，春天生，秋天亡，一生只经历过春、夏、秋三季，哪里见过冬天？所以在他的思维里，根本就没有‘冬季’这个概念。你跟这样的人那就是争上三天三夜也不会有结果的。你若不顺着他说，他能这么爽快就走吗？你虽然上了个小当，但却学到了莫大一个乖。”<br>说完，子贡立刻明白了。</p>
+</blockquote>
+<h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p>大多数总是以社会大众心中对善恶的标准来看待周围的事物：“一件事情应该是什么样子”。<br>实则是在道德审判上也盲目从众。<br>知之为知之，是知也。<br>但并不是知无不言言无不尽才是最好的。</p>
+<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>哪些人是强势，哪些人是弱势，哪些值得同情，哪些不是好人。<br>从一开始对善恶都有一个预设，然后用各种的例子来说服自己和其他人。<br>根本没有脱离了程序正义以外的所谓实质正义。<br>站在不同的立场上，事情可能变得完全不同。</p>
+<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><p>道德本来就是一个见仁见智的东西。<br>大部分的道德标准，不算是与生俱来带有合理性的。<br>而是默认的一种规则，这种规则不一定是正确的。<br>道德不一定是理性的产物。</p>
+<h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><p>最近听到一个朋友诉说了一些事情。<br>让我觉得生活真的好难，让自己快乐也许才是最重要的。<br>人也需要有独立思考的能力，这一点很重要。<br>并不是别人说风就是雨，要有自己的判断。</p>
+<h3 id="五"><a href="#五" class="headerlink" title="五"></a>五</h3><p>快乐的前提是看待一切事物都能以积极的心态。<br>平常心，不抱怨，不争吵。<br>少做价值评断和道德审判。<br>不想自己也成为别人眼中的三季人。</p>
+<h3 id="六"><a href="#六" class="headerlink" title="六"></a>六</h3><p>试着努力去体会所谓的精神。<br>好的生活习惯和积极的进取心态，知行合一。<br>说到做到才是执行力的最大体现。<br>嗯，我瘦了二十斤。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;夏虫不可以语冰，不做价值评断和道德审判。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://x-nicolo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="日常" scheme="https://x-nicolo.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC编程</title>
+    <link href="https://x-nicolo.github.io/2017/05/31/JDBC%E7%BC%96%E7%A8%8B/"/>
+    <id>https://x-nicolo.github.io/2017/05/31/JDBC编程/</id>
+    <published>2017-05-31T01:45:01.000Z</published>
+    <updated>2017-06-04T13:14:23.458Z</updated>
+    
+    <content type="html"><![CDATA[<p>JDBC： Java Database Connectivity<br>一、数据库基础知识<br>二、MySQL入门<br>三、JDBC编程<br><a id="more"></a></p>
+<h2 id="一、数据库基础知识"><a href="#一、数据库基础知识" class="headerlink" title="一、数据库基础知识"></a>一、数据库基础知识</h2><h3 id="1、关系数据模型："><a href="#1、关系数据模型：" class="headerlink" title="1、关系数据模型："></a>1、关系数据模型：</h3><h4 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h4><ul>
+<li>关系：一张二维表</li>
+<li>元祖：表中的一行</li>
+<li>属性：表中的一列</li>
+<li>属性域：属性的取值范围</li>
+<li>主键：唯一的表示表中的元祖</li>
+<li>外键：一个关系中包含另一个关系的主键</li>
+</ul>
+<h4 id="范式："><a href="#范式：" class="headerlink" title="范式："></a>范式：</h4><p>范式：数据库设计需要满足的规范.</p>
+<ul>
+<li>1NF：对属性的原子性约束，不可再分解。不能有嵌套表。</li>
+<li>2NF: 对记录的唯一性约束，要求记录有唯一标示，实体必须是唯一的。所有的主键字段都要依赖与非主键字段。</li>
+<li>3NF：对字段冗余性的约束，要求任何字段都不能派生于其他字段。也就是说非主键字段直接不能相互依赖。</li>
+</ul>
+<h2 id="二、MySQL入门"><a href="#二、MySQL入门" class="headerlink" title="二、MySQL入门"></a>二、MySQL入门</h2><h3 id="1、MySQL数据类型简介"><a href="#1、MySQL数据类型简介" class="headerlink" title="1、MySQL数据类型简介"></a>1、MySQL数据类型简介</h3><h4 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h4><ul>
+<li>TINYINT：1个字节，8位</li>
+<li>SMAILLINT：2个字节，16位</li>
+<li>MEDIUMINT：3个字节，24位</li>
+<li>INT：4个字节，32位</li>
+<li>BIGINT：8个字节，64位</li>
+</ul>
+<h4 id="实数（带有小数部分的数字）"><a href="#实数（带有小数部分的数字）" class="headerlink" title="实数（带有小数部分的数字）"></a>实数（带有小数部分的数字）</h4><ul>
+<li>FLOAT：4个字节，32位</li>
+<li>DOUBLE：8个字节，64位</li>
+<li>DECIMAL：存储精确的小数，指定小数点前后的位数。eg.DECIMAL（20，2），表示小数点后存储两个数字，小数点前存储18个数字。</li>
+</ul>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
+<li>VARCHAR:用于保存可变长度的字符串。</li>
+<li>CHAR:固定长度的字符串。0~255任意值。</li>
+<li>TEXT、BLOB：存储较长的字符串。</li>
+</ul>
+<h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><ul>
+<li>DATETIME：保存大范围的值，从1001~9999年，精度为秒。8个字节。</li>
+<li>TIMESTAMP：时间戳类型，1970.1.1~2038年，即格林威治时间到现在所经历的秒数。4个字节。</li>
+</ul>
+<h4 id="数据类型选择准则"><a href="#数据类型选择准则" class="headerlink" title="数据类型选择准则"></a>数据类型选择准则</h4><ul>
+<li>最小原则</li>
+<li>简单原则</li>
+<li>避免索引列上的NULL</li>
+</ul>
+<h2 id="三、JDBC编程"><a href="#三、JDBC编程" class="headerlink" title="三、JDBC编程"></a>三、JDBC编程</h2><h3 id="1、JDBC简介"><a href="#1、JDBC简介" class="headerlink" title="1、JDBC简介"></a>1、JDBC简介</h3><h4 id="JDBC概述"><a href="#JDBC概述" class="headerlink" title="JDBC概述"></a>JDBC概述</h4><ul>
+<li>ODBC(Open Database Connectivity)</li>
+<li>JDBC(Java Database Connectivity)</li>
+</ul>
+<h3 id="JDBC的组成"><a href="#JDBC的组成" class="headerlink" title="JDBC的组成"></a>JDBC的组成</h3><ul>
+<li>JDBC API:面向开发人员</li>
+<li>JDBC Driver API：面向底层驱动开发商</li>
+</ul>
+<h4 id="JDBC-Driver-API"><a href="#JDBC-Driver-API" class="headerlink" title="JDBC Driver API"></a>JDBC Driver API</h4><p>主要编程接口：</p>
+<ul>
+<li>DriverManager：装载驱动程序，并为创建数据库连接提供支持</li>
+<li>Connection:连接某一指定的数据库</li>
+<li>Statement：执行SQL语句，获取查询结果的方法。</li>
+</ul>
+<p>JDBC驱动程序主要有四种类型：</p>
+<ul>
+<li>JDBC-ODBC bridge</li>
+<li>部分Java技术的本地API驱动程序</li>
+<li>全部基于Java技术的本地API驱动程序</li>
+<li>全部基于Java技术的本地协议驱动程序</li>
+</ul>
+<h3 id="2、JDBC编程之数据准备"><a href="#2、JDBC编程之数据准备" class="headerlink" title="2、JDBC编程之数据准备"></a>2、JDBC编程之数据准备</h3><h4 id="建两张表："><a href="#建两张表：" class="headerlink" title="建两张表："></a>建两张表：</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">creat <span class="keyword">table</span> tbl_user(</div><div class="line">id <span class="keyword">int</span>(<span class="number">11</span>) <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line">name varchar(<span class="number">50</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> '',</div><div class="line">email varchar(<span class="number">50</span>) nit <span class="literal">null</span> <span class="keyword">default</span> '',</div><div class="line">primary key(id))</div><div class="line">engine = InnoDB</div><div class="line"><span class="keyword">default</span> charset = utf8;</div><div class="line"></div><div class="line"></div><div class="line">creat <span class="keyword">table</span> tbl_address(</div><div class="line">id <span class="keyword">int</span>(<span class="number">11</span>) <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line">city varchar(<span class="number">20</span>) <span class="keyword">default</span> <span class="literal">null</span>,</div><div class="line">country varchar(<span class="number">20</span>) <span class="keyword">default</span> <span class="literal">null</span>,</div><div class="line">primary key (id))</div><div class="line">engine = InnoDB</div><div class="line"><span class="keyword">default</span> charset = utf8;</div></pre></td></tr></table></figure>
+<p><em>注：</em><br><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">id:</span><span class="string">没有业务含义的逻辑主键</span></div><div class="line"><span class="string">auto_increment</span>：自增长</div><div class="line"><span class="keyword">default</span> <span class="string">''</span> ：默认值为空字符串</div><div class="line">engine = InnoDB：设置MySQL的存储引擎，InnoDB是存储引擎的一种，支持事物。</div></pre></td></tr></table></figure></p>
+<h4 id="插入数据："><a href="#插入数据：" class="headerlink" title="插入数据："></a>插入数据：</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tbl_user(<span class="keyword">id</span>, <span class="keyword">name</span>, <span class="keyword">password</span>, email)</div><div class="line"><span class="keyword">values</span></div><div class="line">(<span class="number">1</span>, <span class="string">'xiaosa'</span>, <span class="string">'123456'</span>, <span class="string">'xiaosa.nicolo@qq.com'</span>),</div><div class="line">(<span class="number">2</span>, <span class="string">'nicolo'</span>, <span class="string">'123456'</span>, <span class="string">'1241251168@qq.com'</span>);</div><div class="line"></div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tbl_address(city, country, user_id)</div><div class="line"><span class="keyword">values</span>(<span class="string">'xian'</span>, <span class="string">'china'</span>, <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tbl_address(city, country, user_id)</div><div class="line"><span class="keyword">values</span>(<span class="string">'beijing'</span>, <span class="string">'china'</span>, <span class="number">2</span>);</div></pre></td></tr></table></figure>
+<h3 id="3、JDBC编程之数据查询"><a href="#3、JDBC编程之数据查询" class="headerlink" title="3、JDBC编程之数据查询"></a>3、JDBC编程之数据查询</h3><p>安装驱动，下载mysql-connector-java。<br>将mysql-connector-java-5.1.42-bin.jar包拷到WEB-INF目录下。</p>
+<h4 id="JDBC编程流程"><a href="#JDBC编程流程" class="headerlink" title="JDBC编程流程"></a>JDBC编程流程</h4><ol>
+<li>加载驱动</li>
+<li>打开连接</li>
+<li>执行查询</li>
+<li>处理结果</li>
+<li>清理环境</li>
+</ol>
+<h5 id="实现程序："><a href="#实现程序：" class="headerlink" title="实现程序："></a>实现程序：</h5><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> JDBCTest&#123;</div><div class="line">    pubilc <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args)&#123;</div><div class="line">    String sql = <span class="string">"SELECT * FROM tbl_user"</span>;</div><div class="line">    Connection conn = <span class="keyword">null</span>;</div><div class="line">    Statement st = <span class="keyword">null</span>;</div><div class="line">    ResultSet rs = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="comment">//注册MySQL的JDBC驱动程序，class类是继承Object类</span></div><div class="line">        <span class="comment">//forName方法用来初始化参数指定的类并创立一个对应的实例对象</span></div><div class="line">        <span class="keyword">Class</span>.forName(<span class="string">"com.mysql,jdbc.Driver"</span>);</div><div class="line"></div><div class="line">        <span class="comment">//获取MySQL的数据库连接</span></div><div class="line">        <span class="comment">//getConnection方法需要传入三个参数：MySQL数据库的URL、MySQL数据库的用户名、密码</span></div><div class="line">        <span class="comment">////locahost:主机，3306：MySQL的端口,jsp_db:将要使用的数据库</span></div><div class="line">        conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://locahost:3306/jsp_db"</span>,<span class="string">"root"</span>,<span class="string">""</span>);</div><div class="line"></div><div class="line">        <span class="comment">//创建st对象</span></div><div class="line">        st = conn.createStatement();</div><div class="line"></div><div class="line">        <span class="comment">//使用executeQuery方法发生sql语句返回rs结果集</span></div><div class="line">        rs = st.executeQuery(sql);</div><div class="line"></div><div class="line">        <span class="keyword">while</span>(rs.<span class="keyword">next</span>())&#123;</div><div class="line">            System.out.<span class="keyword">print</span>(rs.getInt(<span class="string">"id"</span>) * <span class="string">" "</span>);</div><div class="line">            System.out.<span class="keyword">print</span>(rs.getString(<span class="string">"name"</span>) * <span class="string">" "</span>);</div><div class="line">            System.out.<span class="keyword">print</span>(rs.getString(<span class="string">"password"</span>) * <span class="string">" "</span>);</div><div class="line">            System.out.<span class="keyword">print</span>(rs.getString(<span class="string">"email"</span>) * <span class="string">" "</span>);</div><div class="line">            System.out.<span class="keyword">println</span>();</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;<span class="keyword">finally</span>&#123;</div><div class="line">            <span class="keyword">try</span>&#123;</div><div class="line">                <span class="comment">//关闭rs结果集</span></div><div class="line">                rs.closee();</div><div class="line">                &#125;<span class="keyword">catch</span>(Exception e2)&#123;</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">            <span class="keyword">try</span>&#123;</div><div class="line">                <span class="comment">//关闭st对象</span></div><div class="line">                st close();</div><div class="line">                &#125;<span class="keyword">catch</span>(Exception e3)&#123;</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">            <span class="keyword">try</span>&#123;</div><div class="line">                <span class="comment">//关闭数据库连接</span></div><div class="line">                conn close();</div><div class="line">                &#125;<span class="keyword">catch</span>(Exception e4)&#123;</div><div class="line"></div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4、JDBC编程之数据更新"><a href="#4、JDBC编程之数据更新" class="headerlink" title="4、JDBC编程之数据更新"></a>4、JDBC编程之数据更新</h3><h4 id="数据库连接方法"><a href="#数据库连接方法" class="headerlink" title="数据库连接方法"></a>数据库连接方法</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public static<span class="built_in"> Connection </span>getConnection()&#123;</div><div class="line">   <span class="built_in"> Connection </span>conn = <span class="literal">null</span>;</div><div class="line">    try&#123;</div><div class="line">        Class.forName(<span class="string">"con.mysql.jdbc.Driver"</span>);</div><div class="line">        conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://locahost:3306/jsp_db"</span>,<span class="string">"root"</span>,<span class="string">" "</span>);</div><div class="line">    &#125;catch(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    return conn;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h4 id="插入数据方法"><a href="#插入数据方法" class="headerlink" title="插入数据方法"></a>插入数据方法</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> insert()&#123;</div><div class="line">    <span class="comment">//获取数据库连接</span></div><div class="line">    Connection conn = getConnection();</div><div class="line"></div><div class="line">    <span class="built_in">try</span>&#123;</div><div class="line">        <span class="keyword">String</span> sql = <span class="string">"INSERT INTO tbl_user(name, password, email)"</span> + <span class="string">"VALUES('Tom', '123456', 'tom@qq.com')"</span>;</div><div class="line">        Statement st = conn.createStatement();</div><div class="line">        <span class="keyword">int</span> count = St.executeUpdate(sql);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="string">"向用户表中插入了"</span> + count + <span class="string">" 条记录"</span>)；</div><div class="line">        conn.<span class="built_in">close</span>();</div><div class="line">    &#125;<span class="built_in">catch</span>(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="更新方法"><a href="#更新方法" class="headerlink" title="更新方法"></a>更新方法</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> update()&#123;</div><div class="line"><span class="comment">//获取数据库连接</span></div><div class="line">    Connection conn = getConnection();</div><div class="line"></div><div class="line">    <span class="built_in">try</span>&#123;</div><div class="line">        <span class="keyword">String</span> sql = <span class="string">"UPDATE tbl_user SET email = 'tom@126.com' WHERE name = 'Tom'"</span>;</div><div class="line">        Statement st = conn.createStatement();</div><div class="line">        <span class="keyword">int</span> count = St.executeUpdate(sql);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="string">"向用户表中更新了"</span> + count + <span class="string">" 条记录"</span>)；</div><div class="line">        conn.<span class="built_in">close</span>();</div><div class="line">    &#125;<span class="built_in">catch</span>(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="删除记录的方法"><a href="#删除记录的方法" class="headerlink" title="删除记录的方法"></a>删除记录的方法</h4><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public static void dele()&#123;</div><div class="line">//获取数据库连接</div><div class="line">    Connection conn = getConnection();</div><div class="line"></div><div class="line">    try&#123;</div><div class="line">        String sql = <span class="string">"<span class="keyword">DELETE</span> FROM tbl_user WHERE name = 'Tom'"</span>;</div><div class="line">        Statement st = conn.createStatement();</div><div class="line">        int count = St.executeUpdate(sql);</div><div class="line">        System.out.println(<span class="string">"从用户表中删除了"</span> + count + <span class="string">" 条记录"</span>)；</div><div class="line">        conn.close();</div><div class="line">    &#125;catch(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="5、JDBC编程之事务处理"><a href="#5、JDBC编程之事务处理" class="headerlink" title="5、JDBC编程之事务处理"></a>5、JDBC编程之事务处理</h3><h4 id="事务概述"><a href="#事务概述" class="headerlink" title="事务概述"></a>事务概述</h4><ul>
+<li>事务：数据库维护数据一致性的单位，在每个事务结束时都能保持事务的一致性。</li>
+</ul>
+<h4 id="事务的四个基本特征"><a href="#事务的四个基本特征" class="headerlink" title="事务的四个基本特征"></a>事务的四个基本特征</h4><ul>
+<li><p>原子性：事务中的操作都被视为一个逻辑单元。<br>这个事务中的逻辑单元要么全部成功，要么全部失败。事务中的元素是一个整体，是不可分割的。</p>
+</li>
+<li><p>一致性：事务开始之前和事务结束以后，数据库都处于一致性状态。数据库的完整性约束没有被破坏。</p>
+</li>
+<li><p>隔离性：对数据库的修改的多个事务是互相隔离的。说明事务必须是独立的。</p>
+</li>
+<li><p>持久性：事务完成之后，它对数据的影响是永久的，</p>
+</li>
+</ul>
+<h4 id="事物的语句"><a href="#事物的语句" class="headerlink" title="事物的语句"></a>事物的语句</h4><ul>
+<li>开始事物：BEGIN TRANSACTION</li>
+<li>提交事物：COMMIT TRANSACTION</li>
+<li>回滚事物: ROLLBACK TRANSACTION</li>
+</ul>
+<h4 id="编程实现"><a href="#编程实现" class="headerlink" title="编程实现"></a>编程实现</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">public <span class="keyword">class</span> TransactionTest&#123;</div><div class="line"></div><div class="line">public static Connection getConnection()&#123;</div><div class="line">    <span class="comment">//数据库连接</span></div><div class="line">    Connection conn = null;</div><div class="line"></div><div class="line">    try&#123;</div><div class="line">        <span class="keyword">Class</span>.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</div><div class="line">        conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://localhost:3306/jsp_db, root, "</span> ");</div><div class="line">    &#125;catch(Exception <span class="keyword">e</span>)&#123;</div><div class="line">        <span class="keyword">e</span>.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> conn;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public static void insertUserData()&#123;</div><div class="line">    <span class="comment">//插入用户数据</span></div><div class="line"></div><div class="line">    Connection conn = getConnection;</div><div class="line"></div><div class="line">    try&#123;</div><div class="line">        String sql = <span class="string">"INSERT INTO tbl_user(id, name, password, email)"</span> + <span class="string">"VALUES(10, 'Tom', '123456', 'tom@gmail.com')"</span>;</div><div class="line">        Statement <span class="keyword">st</span> = conn.createStatement();</div><div class="line">        int <span class="keyword">count</span> = <span class="keyword">st</span>.executeUpdate(sql);</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"向用户表插入了 "</span> + <span class="keyword">count</span> + <span class="string">" 条记录"</span>);</div><div class="line">        conn.<span class="keyword">close</span>();</div><div class="line">    &#125;catch(Exception <span class="keyword">e</span>)&#123;</div><div class="line">        <span class="keyword">e</span>.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public static void insertAddressData()&#123;</div><div class="line"></div><div class="line"> Connection conn = getConnection();</div><div class="line"> try&#123;</div><div class="line"> Sting sql = <span class="string">"INSERT INTO tbl_address(id, city, country, user_id)"</span> + <span class="string">"VALUES(1, 'xian','Chian', '10')"</span>;</div><div class="line"> Statement <span class="keyword">st</span> = conn.createStatement();</div><div class="line"> int <span class="keyword">count</span> = <span class="keyword">st</span>.executeUpdate(sql);</div><div class="line"> System.<span class="keyword">out</span>.println(<span class="string">"向地址表中插入了 "</span> + <span class="keyword">count</span> +<span class="string">" 条记录"</span>);</div><div class="line">&#125;catch(Exception <span class="keyword">e</span>)&#123;</div><div class="line">        <span class="keyword">e</span>.printStackTrace();</div><div class="line">    &#125;</div><div class="line">public static void main(String[] agrs)&#123;</div><div class="line">    insertUserData();</div><div class="line">    insertAddressData();</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JDBC： Java Database Connectivity&lt;br&gt;一、数据库基础知识&lt;br&gt;二、MySQL入门&lt;br&gt;三、JDBC编程&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="java" scheme="https://x-nicolo.github.io/tags/java/"/>
+    
+      <category term="数据库" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="MySQL" scheme="https://x-nicolo.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Hexo】bat自动处理hexo命令</title>
+    <link href="https://x-nicolo.github.io/2017/05/27/%E3%80%90Hexo%E3%80%91bat%E8%87%AA%E5%8A%A8%E5%A4%84%E7%90%86hexo%E5%91%BD%E4%BB%A4/"/>
+    <id>https://x-nicolo.github.io/2017/05/27/【Hexo】bat自动处理hexo命令/</id>
+    <published>2017-05-27T01:30:57.000Z</published>
+    <updated>2017-05-27T02:22:18.793Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-bdf7adae569d6197.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<hr>
+<p>每次写新文章都得hexo new “xxx”，写完再hexo g -d，挺麻烦的。<br>就不能写一个脚本来自动执行吗？</p>
+<hr>
+<a id="more"></a>
+<h2 id="一、创建hexo文章"><a href="#一、创建hexo文章" class="headerlink" title="一、创建hexo文章"></a>一、创建hexo文章</h2><p>之前写文章都得打开cmd,输入hexo new “XXX”。<br>然后再去目录下找生成的.md文件打开编辑。<br>这样的机械动作不应该用程序就可以做到吗？</p>
+<h3 id="创建hexo文章-bat"><a href="#创建hexo文章-bat" class="headerlink" title="创建hexo文章.bat"></a>创建hexo文章.bat</h3><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off</div><div class="line"><span class="built_in">set</span> /p <span class="built_in">name</span>=input pages <span class="built_in">name</span>:</div><div class="line"><span class="built_in">echo</span> <span class="built_in">name</span>:%<span class="built_in">name</span>%</div><div class="line"><span class="built_in">echo</span> please wait</div><div class="line">hexo new %<span class="built_in">name</span>% &amp;&amp; <span class="built_in">call</span> <span class="number">3</span>.bat %<span class="built_in">name</span>%</div><div class="line">pause</div></pre></td></tr></table></figure>
+<h3 id="3-bat"><a href="#3-bat" class="headerlink" title="3.bat"></a>3.bat</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">start</span> /<span class="keyword">min</span> /w mshta vbscript:setTimeout(<span class="string">"window.close()"</span>,<span class="number">1000</span>)</div><div class="line">echo The InputValue <span class="keyword">is</span> %<span class="number">1</span></div><div class="line"><span class="keyword">set</span> <span class="keyword">name</span>=%<span class="number">1</span></div><div class="line">echo %<span class="keyword">name</span>%</div><div class="line"><span class="keyword">start</span> /d <span class="string">"C:\asoft\Sublime Text 3"</span>   sublime_text.exe  <span class="string">"D:\Hexo\source\_posts\%name%.md"</span></div><div class="line">pause</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/2847713-6f1684844132ac71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>每次点击“创建hexo文章.bat”输入文章名，sublime Text就会自动打开编辑了。</p>
+<h2 id="二、发布文章到github"><a href="#二、发布文章到github" class="headerlink" title="二、发布文章到github"></a>二、发布文章到github</h2><p>编辑完markdown文章后再发到github上，博客才会显示。<br>一般命令：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo clean</span></div><div class="line"><span class="attribute">hexo g</span></div><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure></p>
+<p>写成脚本：</p>
+<h3 id="发布文章到github-bat"><a href="#发布文章到github-bat" class="headerlink" title="发布文章到github.bat"></a>发布文章到github.bat</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">start</span> <span class="number">1.</span>bat</div><div class="line"><span class="built_in">start</span> /<span class="built_in">min</span> /w mshta vbscript:setTimeout(<span class="string">"window.close()"</span>,<span class="number">1200</span>)</div><div class="line"><span class="built_in">start</span> <span class="number">4.</span>bat</div></pre></td></tr></table></figure>
+<h3 id="1-bat"><a href="#1-bat" class="headerlink" title="1.bat"></a>1.bat</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@echo off</div><div class="line">echo clean</div><div class="line">echo Please wait</div><div class="line">hexo clean</div><div class="line"><span class="keyword">exit</span></div></pre></td></tr></table></figure>
+<h3 id="4-bat"><a href="#4-bat" class="headerlink" title="4.bat"></a>4.bat</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">g</span> -<span class="built_in">d</span></div><div class="line"><span class="keyword">pause</span></div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/2847713-57506d843ae39783.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>写完文章后，点击“发布文章到github.bat”就可以将文章发到github上，就可以在博客上显示了。<br>等有时间再研究下怎么写一个客户端。<br>（这篇文章使用本文程序发布）</p>
+<h3 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h3><p>bat自动处理hexo命令.rar <a href="http://opms50p58.bkt.clouddn.com/bat%E8%87%AA%E5%8A%A8%E5%A4%84%E7%90%86hexo%E5%91%BD%E4%BB%A4.rar" title="点击下载" target="_blank" rel="external">点击下载</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-bdf7adae569d6197.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;每次写新文章都得hexo new “xxx”，写完再hexo g -d，挺麻烦的。&lt;br&gt;就不能写一个脚本来自动执行吗？&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://x-nicolo.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="hexo" scheme="https://x-nicolo.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java本地文件操作</title>
+    <link href="https://x-nicolo.github.io/2017/05/25/Java%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <id>https://x-nicolo.github.io/2017/05/25/Java本地文件操作/</id>
+    <published>2017-05-25T05:29:48.000Z</published>
+    <updated>2017-05-26T08:05:54.122Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p>学而不思则罔，思而不学则殆。</p>
+<hr>
+<h1 id="java本地文件操作"><a href="#java本地文件操作" class="headerlink" title="java本地文件操作"></a>java本地文件操作</h1><p>一、File类简介<br>二、文件的创建、删除、重命名<br>三、文件夹的创建、重命名、删除<br>四、文件属性的读取<br>五、文件属性的设置<br>六、遍历文件夹<br>七、文件的简单读写</p>
+<a id="more"></a>
+<h2 id="一、File类的简介"><a href="#一、File类的简介" class="headerlink" title="一、File类的简介"></a>一、File类的简介</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> <span class="keyword">file</span>;</div><div class="line"><span class="keyword">import</span> java.io.<span class="keyword">File</span>;</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> HelloFile &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="comment">//创建文件对象</span></div><div class="line">        <span class="keyword">File</span> <span class="keyword">file</span> = <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"hello.txt"</span>);</div><div class="line">        <span class="comment">//判断文件 ，返回布尔</span></div><div class="line">        <span class="keyword">file</span>.isFile();</div><div class="line">        System.out.<span class="keyword">println</span>(<span class="keyword">file</span>.isFile());</div><div class="line">        <span class="comment">//路径（文件夹）</span></div><div class="line">        <span class="keyword">file</span>.isDirectory();</div><div class="line">        System.out.<span class="keyword">println</span>(<span class="keyword">file</span>.isDirectory());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="literal">false</span></div><div class="line"><span class="literal">false</span></div></pre></td></tr></table></figure></p>
+<h2 id="二、文件的创建、删除、重命名"><a href="#二、文件的创建、删除、重命名" class="headerlink" title="二、文件的创建、删除、重命名"></a>二、文件的创建、删除、重命名</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> HelloFile &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="comment">//创建文件对象</span></div><div class="line">        <span class="keyword">File</span> <span class="keyword">file</span> = <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"hello.txt"</span>);</div><div class="line">        <span class="comment">//hello.txt会存在于当前目录</span></div><div class="line">        <span class="comment">//相对路径格式：xxx//hello.txt</span></div><div class="line">        <span class="comment">//绝对路径格式：D://AAA//BBB//hello.txt</span></div><div class="line">        <span class="comment">//"../hello.txt" 表示上一级文件结构</span></div><div class="line">        <span class="comment">//是否存在</span></div><div class="line">        <span class="keyword">if</span>(<span class="keyword">file</span>.exists())&#123;</div><div class="line">        <span class="comment">//文件</span></div><div class="line">        System.out.<span class="keyword">println</span>(<span class="keyword">file</span>.isFile());</div><div class="line">        <span class="comment">//路径（文件夹）</span></div><div class="line">        System.out.<span class="keyword">println</span>(<span class="keyword">file</span>.isDirectory());</div><div class="line">        <span class="comment">//重命名</span></div><div class="line">        <span class="comment">//文件结构必须处于同一个分区</span></div><div class="line">        <span class="comment">//文件处于不同的分区，需要使用文件的拷贝，而不是重命名</span></div><div class="line"><span class="comment">//        File nameto = new File("src/new Hello.txt");</span></div><div class="line"><span class="comment">//        file.renameTo(nameto);</span></div><div class="line">        <span class="comment">//文件删除</span></div><div class="line"><span class="comment">//        file.delete();</span></div><div class="line"><span class="comment">//        System.out.println("文件删除成功");</span></div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            System.out.<span class="keyword">println</span>(<span class="string">"文件不存在"</span>);</div><div class="line">            <span class="comment">//创建文件</span></div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">file</span>.createNewFile();</div><div class="line">                System.out.<span class="keyword">println</span>(<span class="string">"文件已经成功创建"</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">                System.out.<span class="keyword">println</span>(<span class="string">"文件无法创建"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="三、文件夹的创建、重命名、删除"><a href="#三、文件夹的创建、重命名、删除" class="headerlink" title="三、文件夹的创建、重命名、删除"></a>三、文件夹的创建、重命名、删除</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//文件夹的创建、重命名、删除</span></div><div class="line"><span class="keyword">public</span> class HelloFile &#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line"></div><div class="line">       <span class="comment">//文件夹的创建</span></div><div class="line">        <span class="built_in">File</span> folder = <span class="keyword">new</span> <span class="built_in">File</span>(<span class="string">"my new folder"</span>);</div><div class="line">        folder.<span class="built_in">mkdir</span>();</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="string">"文件夹创建完成"</span>);</div><div class="line"></div><div class="line">       <span class="comment">//关于folder.mkdir(),返回一个布尔类型</span></div><div class="line">        <span class="built_in">if</span>(folder.<span class="built_in">mkdir</span>())&#123;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"文件夹创建完成"</span>);</div><div class="line">        &#125;<span class="built_in">else</span>&#123;</div><div class="line">            <span class="built_in">if</span>(folder.<span class="built_in">exists</span>())&#123;</div><div class="line">                System.out.<span class="built_in">println</span>(<span class="string">"文件夹已经存在不用创建了"</span>);</div><div class="line">            &#125;<span class="built_in">else</span>&#123;</div><div class="line">                System.out.<span class="built_in">println</span>(<span class="string">"文件夹创建失败"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//文件夹的重命名</span></div><div class="line">        <span class="built_in">File</span> folder = <span class="keyword">new</span> <span class="built_in">File</span>(<span class="string">"my new folder"</span>);</div><div class="line">        <span class="built_in">File</span> newfolder = <span class="keyword">new</span> <span class="built_in">File</span>(<span class="string">"my new folder-new"</span>);</div><div class="line">        <span class="built_in">if</span>(folder.renameTo(newfolder))&#123;<span class="comment">//返回值布尔类型</span></div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"done"</span>);</div><div class="line">        &#125;<span class="built_in">else</span>&#123;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"fail"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">       <span class="comment">//文件夹的删除</span></div><div class="line">        <span class="built_in">File</span> folder = <span class="keyword">new</span> <span class="built_in">File</span>(<span class="string">"my new folder/two"</span>);</div><div class="line">        folder.<span class="keyword">delete</span>();<span class="comment">//返回值布尔类型</span></div><div class="line">        <span class="comment">//被删除的文件夹必须为空才会删除成功</span></div><div class="line">        <span class="built_in">if</span>(folder.<span class="keyword">delete</span>())&#123;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"done"</span>);</div><div class="line">        &#125;<span class="built_in">else</span>&#123;</div><div class="line">            System.out.<span class="built_in">println</span>(<span class="string">"fail"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="四、文件属性的读取"><a href="#四、文件属性的读取" class="headerlink" title="四、文件属性的读取"></a>四、文件属性的读取</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">public <span class="keyword">class</span> HelloFile &#123;</div><div class="line"></div><div class="line">    public static void main(String[] <span class="keyword">args</span>) &#123;</div><div class="line">        <span class="comment">//文件属性的读取</span></div><div class="line">        <span class="keyword">File</span> <span class="keyword">file</span> = new <span class="keyword">File</span>(<span class="string">"text.txt"</span>);</div><div class="line">        <span class="comment">//判断文件是否存在</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"判断文件是否存在"</span>+<span class="keyword">file</span>.exists());</div><div class="line">        <span class="comment">//读取文件名称</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"读取文件名称"</span>+<span class="keyword">file</span>.getName());</div><div class="line">        <span class="comment">//读取文件路径</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"读取文件路径"</span>+<span class="keyword">file</span>.getPath());</div><div class="line">        <span class="comment">//读取文件绝对路径</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"读取文件绝对路径"</span>+<span class="keyword">file</span>.getAbsolutePath());</div><div class="line">        <span class="comment">//获取文件父级路径</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"获取文件父级路径"</span>+new <span class="keyword">File</span>(<span class="keyword">file</span>.getAbsolutePath()).getParent());</div><div class="line">        <span class="comment">//读取文件大小</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"读取文件大小"</span>+<span class="keyword">file</span>.<span class="built_in">length</span>()+<span class="string">"byte"</span>);<span class="comment">//字节</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"读取文件大小"</span>+(float)<span class="keyword">file</span>.<span class="built_in">length</span>()/1000+<span class="string">"KB"</span>);</div><div class="line">        <span class="comment">//判断文件是否被隐藏</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"判断文件是否被隐藏"</span>+<span class="keyword">file</span>.isHidden());</div><div class="line">        <span class="comment">//判断文件是否可读</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"判断文件是否可读"</span>+<span class="keyword">file</span>.canRead());</div><div class="line">        <span class="comment">//判断文件是否可写</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"判断文件是否可写"</span>+<span class="keyword">file</span>.canWrite());</div><div class="line">        <span class="comment">//判断文件是否为文件夹</span></div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"判断文件是否为文件夹"</span>+<span class="keyword">file</span>.isDirectory());</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="五、文件属性的设置"><a href="#五、文件属性的设置" class="headerlink" title="五、文件属性的设置"></a>五、文件属性的设置</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> HelloFile &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</div><div class="line">        <span class="comment">//文件属性的设置</span></div><div class="line">        <span class="keyword">File</span> <span class="keyword">file</span> = <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"text.txt"</span>);</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">file</span>.exists())&#123;</div><div class="line">            <span class="comment">//将文件设定为可写</span></div><div class="line">            <span class="keyword">file</span>.setWritable(<span class="keyword">true</span>);</div><div class="line">            <span class="keyword">file</span>.setWritable(<span class="keyword">false</span>);</div><div class="line">            <span class="comment">//将文件设定为可读</span></div><div class="line">            <span class="keyword">file</span>.setReadable(<span class="keyword">false</span>);</div><div class="line">            <span class="keyword">file</span>.setReadable(<span class="keyword">true</span>);</div><div class="line">            <span class="comment">//将文件设定为只读</span></div><div class="line">            <span class="keyword">file</span>.setReadOnly();</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="六、遍历文件夹"><a href="#六、遍历文件夹" class="headerlink" title="六、遍历文件夹"></a>六、遍历文件夹</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//遍历文件夹</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> printFiles(<span class="keyword">File</span> dir)&#123;</div><div class="line">    printFiles(<span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"绝对路径"</span>));</div><div class="line">    <span class="keyword">if</span> (dir.isDirectory()) &#123;</div><div class="line">        <span class="keyword">File</span> <span class="keyword">next</span>[] = dir.listFiles();<span class="comment">//listFiles()返回一个数组</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i= <span class="number">0</span>;i&lt;<span class="keyword">next</span>.length;i++)&#123;</div><div class="line">            System.out.<span class="keyword">println</span>(<span class="keyword">next</span>[i].getName());</div><div class="line">            <span class="keyword">if</span>(<span class="keyword">next</span>[i].isDirectory())&#123;</div><div class="line">                printFiles(<span class="keyword">next</span>[i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="七、文件的简单读写"><a href="#七、文件的简单读写" class="headerlink" title="七、文件的简单读写"></a>七、文件的简单读写</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">package file;</div><div class="line"><span class="keyword">import</span> java.io.<span class="built_in">File</span>;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">public</span> class HelloFile &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">     <span class="built_in">File</span> file = <span class="keyword">new</span> <span class="built_in">File</span>(<span class="string">"test.txt"</span>);</div><div class="line">    <span class="built_in">if</span>(file.<span class="built_in">exists</span>())&#123;</div><div class="line">        System.err.<span class="built_in">println</span>(<span class="string">"exist"</span>);</div><div class="line">        <span class="built_in">try</span>&#123;</div><div class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(file);</div><div class="line">            InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(fis,<span class="string">"UTF-8"</span>);</div><div class="line">            BufferedReader br = <span class="keyword">new</span> InputStreamReader(isr);</div><div class="line">            <span class="keyword">String</span> <span class="built_in">line</span>;</div><div class="line">            <span class="built_in">while</span>(<span class="built_in">line</span> = br.readLine() != NUll)&#123;</div><div class="line">                System.out.<span class="built_in">println</span>(<span class="built_in">line</span>);</div><div class="line">            &#125;</div><div class="line">            br.<span class="built_in">close</span>();</div><div class="line">            isr.<span class="built_in">close</span>();</div><div class="line">            fis.<span class="built_in">close</span>();</div><div class="line"></div><div class="line"></div><div class="line">        &#125;<span class="built_in">catch</span> (FileNotFoundException e) &#123;</div><div class="line">        &#125;<span class="built_in">catch</span> (UnsupportedEncodingException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;<span class="built_in">catch</span> (Exception e) &#123;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">    &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;学而不思则罔，思而不学则殆。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;java本地文件操作&quot;&gt;&lt;a href=&quot;#java本地文件操作&quot; class=&quot;headerlink&quot; title=&quot;java本地文件操作&quot;&gt;&lt;/a&gt;java本地文件操作&lt;/h1&gt;&lt;p&gt;一、File类简介&lt;br&gt;二、文件的创建、删除、重命名&lt;br&gt;三、文件夹的创建、重命名、删除&lt;br&gt;四、文件属性的读取&lt;br&gt;五、文件属性的设置&lt;br&gt;六、遍历文件夹&lt;br&gt;七、文件的简单读写&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="java" scheme="https://x-nicolo.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java中的JSON操作</title>
+    <link href="https://x-nicolo.github.io/2017/05/23/JSON/"/>
+    <id>https://x-nicolo.github.io/2017/05/23/JSON/</id>
+    <published>2017-05-23T01:18:58.000Z</published>
+    <updated>2017-05-23T09:54:02.985Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="JSON简介"><a href="#JSON简介" class="headerlink" title="JSON简介"></a>JSON简介</h2><p>JSON：JavaScript 对象表示法（JavaScript Object Notation）<br>JSON是存储和交换文本信息的语法。</p>
+<a id="more"></a>
+<p>JSON的特点：<br>1、JSON是轻量级的文本数据交换格式<br>2、JSON独立于语言和平台<br>3、JSON具有自我描述性，更易理解</p>
+<h3 id="JSON与XML"><a href="#JSON与XML" class="headerlink" title="JSON与XML"></a>JSON与XML</h3><p>类似XML，比XML更小、更快，更易解析。<br>1、没有结束标签<br>2、更短<br>3、读写的速度更快<br>4、使用数组<br>5、不使用保留字</p>
+<h3 id="JSON的语法"><a href="#JSON的语法" class="headerlink" title="JSON的语法"></a>JSON的语法</h3><p>JSON语法是JavaScript对象表示法的子集。<br>1、数据在名称/值对中（键值对）<br>2、数据由逗号分隔<br>3、花括号保存对象<br>4、方括号保存数组<br>JSON值可以是：<br>1、数字（整数或浮点数）<br>2、字符串（在双引号中）<br>3、逻辑值（true或false）<br>4、数组（在方括号中）<br>5、对象（在花括号中）<br>6、null</p>
+<h3 id="JSON对象"><a href="#JSON对象" class="headerlink" title="JSON对象"></a>JSON对象</h3><p>JSON对象在花括号中书写，对象可以包含多个名称/值对。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attr">"firstName"</span>:<span class="string">"Jphn"</span>,<span class="attr">"lasrName"</span>:<span class="string">"Doe"</span>&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="JSON数组"><a href="#JSON数组" class="headerlink" title="JSON数组"></a>JSON数组</h3><p>JSON数组在方括号中书写，数组可包含多个对象：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="attr">"employees"</span>:[</div><div class="line">&#123;<span class="attr">"firstName"</span>:<span class="string">"John"</span>,<span class="attr">"lastName"</span>:<span class="string">"Doe"</span>&#125;,</div><div class="line">&#123;<span class="attr">"firstName"</span>:<span class="string">"Anna"</span>,<span class="attr">"lastName"</span>:<span class="string">"Smith"</span>&#125;,</div><div class="line">&#123;<span class="attr">"firstName"</span>:<span class="string">"Peter"</span>,<span class="attr">"lastName"</span>:<span class="string">"Jones"</span>&#125;,</div><div class="line">]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="使用Java读取JSON数据"><a href="#使用Java读取JSON数据" class="headerlink" title="使用Java读取JSON数据"></a>使用Java读取JSON数据</h2><p>下载google-gson-2.2.4包<br>使用gson-2.2.4.jar</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//待读取的JSON文件</span></div><div class="line">&#123;<span class="string">"cat"</span>:<span class="string">"it"</span>,<span class="comment">//string类型</span></div><div class="line"><span class="string">"languages"</span>:[</div><div class="line">&#123;<span class="string">"id"</span>:<span class="number">1</span>,<span class="string">"ide"</span>:<span class="string">"Eclipse"</span>,<span class="string">"name"</span>:<span class="string">"Java"</span>&#125;,</div><div class="line">&#123;<span class="string">"id"</span>:<span class="number">2</span>,<span class="string">"ide"</span>:<span class="string">"XCode"</span>,<span class="string">"name"</span>:<span class="string">"Swift"</span>&#125;,</div><div class="line">&#123;<span class="string">"id"</span>:<span class="number">3</span>,<span class="string">"ide"</span>:<span class="string">"Visual Studio"</span>,<span class="string">"name"</span>:<span class="string">"C#"</span>&#125;</div><div class="line">],<span class="comment">//整型</span></div><div class="line"><span class="string">"pop"</span>:ture<span class="comment">//布尔类型</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">import com.google.gson.JsonObject;</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ReadJSON</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> class <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span>&#123;</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//建立一个JSON的解析器</span></div><div class="line">    <span class="comment">//可用解析器解析字符串或者输入流</span></div><div class="line">    JsonParser parser = <span class="keyword">new</span> JosnParser();</div><div class="line">    <span class="comment">//建立一个JSON对象</span></div><div class="line"></div><div class="line">    JsonObject <span class="keyword">object</span> = parser.parse(<span class="keyword">new</span> FileReader(<span class="string">"test.json"</span>))</div><div class="line"></div><div class="line">    <span class="comment">//读取对象值</span></div><div class="line">    <span class="comment">//由键索引键值，并依据键值数据类型，转换其格式</span></div><div class="line">    System.<span class="keyword">out</span>.println(<span class="string">"cat="</span> + <span class="keyword">object</span>.<span class="keyword">get</span>(<span class="string">"cat"</span>).getAsString());</div><div class="line"></div><div class="line">    System.<span class="keyword">out</span>.println(<span class="string">"pop="</span> + <span class="keyword">object</span>.<span class="keyword">get</span>(<span class="string">"pop"</span>).getAsBoolean());</div><div class="line"></div><div class="line">    <span class="comment">//读取数组</span></div><div class="line">    JsonArray array = <span class="keyword">object</span>.<span class="keyword">get</span>(<span class="string">"languages"</span>).getAsJsonArray;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span>;i &lt; array.size();i++)&#123;</div><div class="line">         System.<span class="keyword">out</span>.println(<span class="string">"-----------"</span>);</div><div class="line">         JsonObject subObject = array.<span class="keyword">get</span>(i).getAsJsonObject();</div><div class="line">         System.<span class="keyword">out</span>.println(<span class="string">"id="</span> + subobject.<span class="keyword">get</span>(<span class="string">"id"</span>).getAsInt());</div><div class="line">         System.<span class="keyword">out</span>.println(<span class="string">"name="</span> + subobject.<span class="keyword">get</span>(<span class="string">"name"</span>).getAsString());</div><div class="line">         System.<span class="keyword">out</span>.println(<span class="string">"ide="</span> + subobject.<span class="keyword">get</span>(<span class="string">"ide"</span>).getAsString());</div><div class="line">     &#125;</div><div class="line"></div><div class="line">&#125;<span class="keyword">catch</span> (JsonIOException e)&#123;</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;<span class="keyword">catch</span> (JsonSyntaxException e)&#123;</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;<span class="keyword">catch</span> (FileNotFoundException e)&#123;</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="使用Java创建JSON数据"><a href="#使用Java创建JSON数据" class="headerlink" title="使用Java创建JSON数据"></a>使用Java创建JSON数据</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">import com.google.gson.JsonObject;</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CreatJSON</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> class <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span>&#123;</div><div class="line">    <span class="comment">//创立JSON对象</span></div><div class="line">    JsonObject <span class="keyword">object</span> = <span class="keyword">new</span> JsonObject();</div><div class="line"></div><div class="line">    <span class="comment">//添加键值对</span></div><div class="line">    <span class="keyword">object</span>.addProperty(<span class="string">"cat"</span>,<span class="string">"it"</span>);</div><div class="line"></div><div class="line">    <span class="comment">//添加数组</span></div><div class="line">    JsonArray array = <span class="keyword">new</span> JsonArray();</div><div class="line"></div><div class="line">    JsonObject lan1 = <span class="keyword">new</span> JsonObject();</div><div class="line">    lan1.addProperty(<span class="string">"id"</span>,<span class="number">1</span>);</div><div class="line">    lan1.addProperty(<span class="string">"name"</span>,<span class="string">"Java"</span>);</div><div class="line">    lan1.addProperty(<span class="string">"ide"</span>,<span class="string">"Eclipse"</span>);</div><div class="line">    array.<span class="keyword">add</span>(lan1);</div><div class="line"></div><div class="line">    JsonObject lan2 = <span class="keyword">new</span> JsonObject();</div><div class="line">    lan2.addProperty(<span class="string">"id"</span>,<span class="number">2</span>);</div><div class="line">    lan2.addProperty(<span class="string">"name"</span>,<span class="string">"Swift"</span>);</div><div class="line">    lan2.addProperty(<span class="string">"ide"</span>,<span class="string">"XCode"</span>);</div><div class="line">    array.<span class="keyword">add</span>(lan2);</div><div class="line"></div><div class="line">    JsonObject lan3 = <span class="keyword">new</span> JsonObject();</div><div class="line">    lan3.addProperty(<span class="string">"id"</span>,<span class="number">3</span>);</div><div class="line">    lan3.addProperty(<span class="string">"name"</span>,<span class="string">"C#"</span>);</div><div class="line">    lan3.addProperty(<span class="string">"ide"</span>,<span class="string">"Visual Studio"</span>);</div><div class="line">    array.<span class="keyword">add</span>(lan3);</div><div class="line"></div><div class="line">    <span class="comment">//将这个数组添加进去</span></div><div class="line">    <span class="keyword">object</span>.<span class="keyword">add</span>(<span class="string">"languages"</span>,array);</div><div class="line"></div><div class="line">    <span class="comment">//添加布尔</span></div><div class="line">    <span class="keyword">object</span>.addProperty(<span class="string">"pop"</span>,ture);</div><div class="line"></div><div class="line">    <span class="comment">//输出</span></div><div class="line">    System.<span class="keyword">out</span>.println(<span class="keyword">object</span>.toString());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;JSON简介&quot;&gt;&lt;a href=&quot;#JSON简介&quot; class=&quot;headerlink&quot; title=&quot;JSON简介&quot;&gt;&lt;/a&gt;JSON简介&lt;/h2&gt;&lt;p&gt;JSON：JavaScript 对象表示法（JavaScript Object Notation）&lt;br&gt;JSON是存储和交换文本信息的语法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="java" scheme="https://x-nicolo.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>斯坦福大学机器学习学习笔记（二）</title>
+    <link href="https://x-nicolo.github.io/2017/05/22/%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://x-nicolo.github.io/2017/05/22/斯坦福大学机器学习课程个人学习笔记（二）/</id>
+    <published>2017-05-22T10:18:58.000Z</published>
+    <updated>2017-05-24T14:17:04.741Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="监督学习应用与梯度下降"><a href="#监督学习应用与梯度下降" class="headerlink" title="监督学习应用与梯度下降"></a>监督学习应用与梯度下降</h1><hr>
+<p>分类问题：离散变量</p>
+<p>回归问题：连续变量</p>
+<hr>
+<a id="more"></a>
+<h2 id="回归方法"><a href="#回归方法" class="headerlink" title="回归方法"></a>回归方法</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>有一个房屋销售的数据：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-a6453e61948270a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>是否可以根据这样的数据预测未来的房价？<br>plot:<br><img src="http://upload-images.jianshu.io/upload_images/2847713-b0a92540cddf6a1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>m:训练样本数目<br>x:输入变量（特征）<br>y:输出变量（目标变量）<br>（x,y）:样本<br>i(th):第i个训练样本<br>(x(i),y(i)):训练样本中的第i行，第i列</p>
+<h3 id="监督学习过程（模型）"><a href="#监督学习过程（模型）" class="headerlink" title="监督学习过程（模型）"></a>监督学习过程（模型）</h3><p>1、先找到一个训练集合（training set）<br>2、传给一个学习算法（Learning algorithm）<br>3、产生一个输出函数（h）,称之为假设<br>4、向h传入一个输入特征x，。得到映射的一个y。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-748ab3b69df86519.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><p>线性回归假设特征和结果满足线性关系。</p>
+<p>用x1,x2,…xn描述特征里面的分量。<br>x1:表示房间的面积<br>x2:表示房间的数量<br>根据以上，可以得到一个估计函数：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-bcf27557addd9c3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>令x0=1，向量表示即<br><img src="http://upload-images.jianshu.io/upload_images/2847713-268c22e662079c87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>Theta’s are called parameters.</p>
+<p>该怎样来选取theta的值，来让假设h对所有房屋做出准确的预测呢？</p>
+<p>在给定的训练集合里区域训练得出h,在训练数据上尽可能准确。</p>
+<p>给定一些特征x，以及一些正确的价格y，希望取得预测和实际价格的平方差尽可能的小。</p>
+<p>为了以上，用预测值减去实际值，得到一个better的结果，。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-42d302ec14b19f00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>该函数是对x(i）的估计值与真实值y(i)差的平方和，1/2<br>是为了在求导时方便计算。</p>
+<p>调整theta使得j(theta)取得最小值。则该问题归结为求极小值问题。<br>可用的方法：最小平方回归、最小二乘。</p>
+<h2 id="梯度下降法（下山速度最快问题）"><a href="#梯度下降法（下山速度最快问题）" class="headerlink" title="梯度下降法（下山速度最快问题）"></a>梯度下降法（下山速度最快问题）</h2><p>（上学期的工程优化刚学过。。。）<br>1、先对theta随机赋值，也可以是0向量。<br>2、改变theta的值，使得j(theta)按梯度下降的方向进行减少。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-bfb250b22be92539.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>梯度方向由j(theta)对jtheta的偏导数确定，由于求的是极小值，因此梯度方向是偏导数的反方向。<br>结果为：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-d0a6f07c267f80eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>矩阵计算：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-d43f16eea93768bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>迭代更新的方式有 两种，一种是批梯度下降，也就是对全部的训练数据求得误差后再对theta进行更新，另外一种是增量梯度下降，每扫描一步都要对theta进行更新。前一种能够不断收敛，后一种方法结果可能不断在收敛处徘徊。<br>一般来说，梯度下降法收敛速度还是比较慢的，。<br>另一种直接计算结果的方法是最小二乘法。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;监督学习应用与梯度下降&quot;&gt;&lt;a href=&quot;#监督学习应用与梯度下降&quot; class=&quot;headerlink&quot; title=&quot;监督学习应用与梯度下降&quot;&gt;&lt;/a&gt;监督学习应用与梯度下降&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;分类问题：离散变量&lt;/p&gt;
+&lt;p&gt;回归问题：连续变量&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="机器学习" scheme="https://x-nicolo.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>斯坦福大学机器学习学习笔记（一）</title>
+    <link href="https://x-nicolo.github.io/2017/05/22/%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://x-nicolo.github.io/2017/05/22/斯坦福大学机器学习课程个人学习笔记（一）/</id>
+    <published>2017-05-22T09:18:58.000Z</published>
+    <updated>2017-05-22T09:37:58.886Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="机器学习的动机与应用"><a href="#机器学习的动机与应用" class="headerlink" title="机器学习的动机与应用"></a>机器学习的动机与应用</h1><h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><p>CS-229  Andrew Ng<br><a id="more"></a></p>
+<hr>
+<p>第一次了解到吴恩达是在《最强大脑》节目看到的。<br>百度代表的人工智能和《最强大脑》的选手PK。<br>吴恩达代表百度，说着英语。<br>这次开始看斯坦福大学的机器学习的教程，加深的了吴恩达的认识。<br>真是伟大的人啊。</p>
+<hr>
+<h3 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h3><p>监督学习<br><img src="http://upload-images.jianshu.io/upload_images/2847713-69cd5052757a71e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h3><p>无监督学习<br>聚类算法</p>
+<p>（先列个大纲吧，以后慢慢补细节）</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;机器学习的动机与应用&quot;&gt;&lt;a href=&quot;#机器学习的动机与应用&quot; class=&quot;headerlink&quot; title=&quot;机器学习的动机与应用&quot;&gt;&lt;/a&gt;机器学习的动机与应用&lt;/h1&gt;&lt;h2 id=&quot;Machine-Learning&quot;&gt;&lt;a href=&quot;#Machine-Learning&quot; class=&quot;headerlink&quot; title=&quot;Machine Learning&quot;&gt;&lt;/a&gt;Machine Learning&lt;/h2&gt;&lt;p&gt;CS-229  Andrew Ng&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="机器学习" scheme="https://x-nicolo.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>五月中旬</title>
+    <link href="https://x-nicolo.github.io/2017/05/21/%E4%BA%94%E6%9C%88%E4%B8%AD%E6%97%AC/"/>
+    <id>https://x-nicolo.github.io/2017/05/21/五月中旬/</id>
+    <published>2017-05-21T11:38:46.000Z</published>
+    <updated>2017-05-21T12:14:48.524Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p><em>相对论表明：忙碌的时候就显得时间过得特别快。</em>  </p>
+<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/2847713-093423e068429fbe.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_3285.JPG"></p>
+<a id="more"></a>  
+<p>五月中旬过得特别快特别快<br>快到抓不住时间，母亲节回不了家  </p>
+<p>周末剪了两天自然辩证法的视频<br>配音，字幕一个都不少<br>想要把事情做到更好就一定是要去花时间的  </p>
+<p>周一的英美文化，我的演讲<br>Prezi展示，早都做好了<br>各种事情一直拖了快一个月才到我讲<br>这大概是我学习英语生涯的最后一次演讲了吧<br>扇贝单词打卡到800天就卸载了<br>以后学英语的时间只能是越来越少 </p>
+<p>接下来准备周四的比赛答辩<br>我们Holi的快铃<br>全国研究生移动终端校内赛<br>我一直都以为我是一个话少的码农<br>然而我却成了那个能说的产品经理  </p>
+<p>PPT也是件麻烦的事情<br>突然感觉乔布斯的工作也不好做<br>把产品说的天花乱坠确实和敲代码把它实现是一样难  </p>
+<p>周四早上比赛演示答辩<br>最大的收获是看到了其他队的作品<br>说实话，感觉都挺不错的！  </p>
+<p>就是感觉周围还有一群这样的人挺好的<br>从一个简单的出发点开始，踏实做事<br>好的想法和作品还是值得学习的<br>结果也是好的，也算是研究生阶段的第一个奖  </p>
+<p>还是相信能和其他人把这个东西做好<br>毕竟他是我们一点一点搭起来的<br>要学习的东西还很多  </p>
+<p>慢慢的有这样的一个感觉<br>有时间去学习，也是件幸福的事情<br>获得新鲜感，获得心安理得</p>
+<p>嗯，都挺好的<br>我还需要接着努力啊，学习啊  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;&lt;em&gt;相对论表明：忙碌的时候就显得时间过得特别快。&lt;/em&gt;  &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-093423e068429fbe.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;IMG_3285.JPG&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://x-nicolo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="生活" scheme="https://x-nicolo.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【转】【一键关闭445端口】关于防范勒索软件病毒攻击的紧急通知</title>
+    <link href="https://x-nicolo.github.io/2017/05/14/%E5%85%B3%E4%BA%8E%E9%98%B2%E8%8C%83%E5%8B%92%E7%B4%A2%E8%BD%AF%E4%BB%B6%E7%97%85%E6%AF%92%E6%94%BB%E5%87%BB%E7%9A%84%E7%B4%A7%E6%80%A5%E9%80%9A%E7%9F%A5/"/>
+    <id>https://x-nicolo.github.io/2017/05/14/关于防范勒索软件病毒攻击的紧急通知/</id>
+    <published>2017-05-14T01:09:09.000Z</published>
+    <updated>2017-05-14T01:35:51.435Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-2d966ab025b89947.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<hr>
+<p>病毒袭来，转自信息化建设处。一键关闭445端口，并提供Windows各版本补丁下载。</p>
+<hr>
+<a id="more"></a>
+<p>校园网用户：</p>
+<p>近期，国内多所院校出现勒索软件感染情况，磁盘文件会被病毒加密，并显示类似下图所示的勒索界面，只有支付高额赎金才能解密恢复文件，对学习资料和个人数据造成严重损失。</p>
+<p>根据网络安全机构通报，这是不法分子利用NSA黑客武器库泄漏的“永恒之蓝”发起的病毒攻击事件。“永恒之蓝”会扫描开放445文件共享端口的Windows机器，无需用户任何操作，只要开机上网，不法分子就能在电脑和服务器中植入勒索软件、远程控制木马、虚拟货币挖矿机等恶意程序。</p>
+<p>针对这一情况，我校校园网出口已经封掉漏洞端口并在网内启用了其他预防的安全策略，但是用户主机还是可能成为受攻击的对象，在此提醒广大校园网用户，为了您和周围师生的信息安全，请用户尽量做到如下几点：</p>
+<p>1、为计算机安装最新的安全补丁，微软已发布补丁MS17-010修复了“永恒之蓝”攻击的系统漏洞，请尽快安装此安全补丁，网址为<a href="https://technet.microsoft.com/zh-cn/library/security/MS17-010" target="_blank" rel="external">https://technet.microsoft.com/zh-cn/library/security/MS17-010</a>；</p>
+<p>2、强化网络安全意识：不明链接不要点击，不明文件不要下载，不明邮件不要打开；   </p>
+<p>3、尽快（今后定期）备份自己电脑中的重要文件资料到移动硬盘、U盘，备份完后脱机保存该磁盘；</p>
+<p>4、建议仍在使用Windows XP，Windows 2003操作系统的用户尽快升级到 Window 7/Windows 10，或 Windows 2008/2012/2016操作系统。</p>
+<p>5、由于本次Wannacry蠕虫事件的巨大影响，微软总部决定发布已停服的XP和部分服务器版特别补丁<a href="https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks" target="_blank" rel="external">https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks</a></p>
+<p>6、校园网用户如有感染勒索病毒的，为避免影响其他用户，请及时拨打<em>88201710</em> 进行上报，我处将安排工作人员配合处理。</p>
+<p>在此特别提醒各单位的系统管理员，除了上述几点外，请对本单位的业务系统主机进行检查，并关闭445、135、137、138、139端口，关闭网络共享（操作方法见附件），个人用户也可参考操作。</p>
+<p>信息化建设处</p>
+<p>2017年5月13日</p>
+<p><strong>附件</strong><br><strong>一键关闭端口</strong><br><a href="http://opms50p58.bkt.clouddn.com/%E4%B8%80%E9%94%AE%E5%85%B3%E9%97%AD445%E7%AB%AF%E5%8F%A3.rar" target="_blank" rel="external">点击下载</a>  </p>
+<p><strong>其他：</strong><br>NSA武器库免疫补丁下载 解决Windows永恒之蓝 ONION勒索病毒攻击<br>补丁下载地址（官方补丁根据自己系统下载 32位 64位）<br>win7 : <a href="https://mirror.sdu.edu.cn/ms17-010/win7/" target="_blank" rel="external">点击下载</a><br>win8 : <a href="https://mirror.sdu.edu.cn/ms17-010/win8/" target="_blank" rel="external">点击下载</a><br>win10 : <a href="https://mirror.sdu.edu.cn/ms17-010/win10/" target="_blank" rel="external">点击下载</a><br>全部官方版本补丁:<a href="https://technet.microsoft.com/zh-cn/library/security/MS17-010" target="_blank" rel="external">点击下载</a><br>XP win2003 以下 :<a href="https://dl.360safe.com/nsa/nsatool.exe" target="_blank" rel="external">点击下载</a>  （360的）</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-2d966ab025b89947.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;病毒袭来，转自信息化建设处。一键关闭445端口，并提供Windows各版本补丁下载。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://x-nicolo.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="病毒" scheme="https://x-nicolo.github.io/tags/%E7%97%85%E6%AF%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【会声会影】半小时学会基本简单操作</title>
+    <link href="https://x-nicolo.github.io/2017/05/09/%E4%BC%9A%E5%A3%B0%E4%BC%9A%E5%BD%B1-%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C/"/>
+    <id>https://x-nicolo.github.io/2017/05/09/会声会影-简单操作/</id>
+    <published>2017-05-09T07:45:20.000Z</published>
+    <updated>2017-05-09T14:31:51.549Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://opms50p58.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170509150241.png" alt=""></p>
+<p><em>第一次使用会声会影，是在2014年5月份左右。</em> </p>
+<p><em>为科协纳新做的一个宣传片，现在看起来好浮夸。</em>  </p>
+<p><em>第二次使用会声会影，是在2016年。</em>  </p>
+<p><em>为西电华为创新俱乐部六周年庆做的宣传片，这个还是比较满意的。</em>  </p>
+<p><em>第三次使用会声会影，是帮同学的弟弟拍、剪了一个高考的鼓励视频，很短，也很用心去做。</em>  </p>
+<p><em>第四次使用会声会影，是现在，2017年，自然辩证法课的团队视频展示。</em>  </p>
+<p><em>据此，大概可以体会到一个设计师，一个UI师和程序员会有一样的急躁心情。</em>  </p>
+<a id="more"></a>  
+<h2 id="重要的事情放在前面说"><a href="#重要的事情放在前面说" class="headerlink" title="重要的事情放在前面说"></a>重要的事情放在前面说</h2><ul>
+<li><strong>巧妇难为无米之炊</strong> </li>
+</ul>
+<p>制作视频的前提是有合适合理合情的视频材料。<br>当然这里说的是会声会影的基本简单操作，大神自然可以忽略素材的问题。<br>只有图片素材的，最后不套用模板做出来的就是像电子相册一样。<br>套用模板的也像电子相册。浓浓的乡土气息就会扑面而来。  </p>
+<ul>
+<li><strong>艺术细胞还真是爸妈给的</strong>  </li>
+</ul>
+<p>我们一直在说人与人直接的差别其实没有多大。<br>但是事实是人与人直接的差别其实还是很大的。<br>天赋上会有一小段差别，人性的差别有时比人与狗直接的差别还大。<br>所以说了这么多，就是想说审美还是很重要的，人与人之间的审美差异也很重要。  </p>
+<ul>
+<li><strong>大道至简</strong>   </li>
+</ul>
+<p>我们做任何事情都不应该忘记我们的初衷。<br>视频重要的是内容！内容！！内容！！!<br>那些看起来花里胡哨的反而会落入俗套。  </p>
+<p>我个人特别喜欢锤子科技每次新机发布会前期的大字报宣传。<br>海报突出主题，让人第一眼就了解到你想让他知道的东西。  </p>
+<p>而不是让人去在一大堆五颜六色的东西里面去找你想传达给别人的东西。<br>除非你是某知名大公司大人物，万众瞩目，别人总想从其中挖出一些东西。  </p>
+<p>然后就算是鼎鼎大名的Apple，它在户外的广告牌也是十分霸气！<br>整整一片广告牌买下，一个新款机子的照片，加一句动人心扉的广告词，这就是它想表达的。  </p>
+<p>编程的思想，做视频的思想，生活的思想，万物归一—大道至简。    </p>
+<h2 id="会声会影安装、注册、汉化"><a href="#会声会影安装、注册、汉化" class="headerlink" title="会声会影安装、注册、汉化"></a>会声会影安装、注册、汉化</h2><p>我做了四次视频，装了三次会声会影。<br>每次抓急做完视频，就删掉它，立flag不再做了。<br>整个过程是在是太伤脑子了。不会的话比敲代码还费脑子。  </p>
+<ul>
+<li><strong>安装</strong>  </li>
+</ul>
+<p>我用的是会声会影x8。网上都可以下载到。   </p>
+<pre><code>VideoStudioUltimateX8_64bit_Setup.exe
+</code></pre><ul>
+<li><strong>注册</strong>  </li>
+</ul>
+<p>注册期间会要序列号。注册机网上也可找到。</p>
+<pre><code>COREL Products Keygen v3.9.exe  
+</code></pre><p><img src="http://opms50p58.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170509153510.png" alt=""><br>打开注册机就是那个魔性的配音，讲道理我能听一下午。<br>在注册机里面找x8的版本，复制产生的序列码，复制粘贴到安装需要的地方。<br>单机版就这样就行了。有其他需要的或者版也可以用这个注册机进行注册激活。  </p>
+<ul>
+<li><strong>汉化</strong>  </li>
+</ul>
+<p>英文版的总是用起来比较别扭。汉化以后就显得这个傻瓜软件更傻瓜了，马上就可以上手。  </p>
+<pre><code>会声会影X8_64位_简体中文包_免费版_顶渲Ma5老师汉化.exe  
+</code></pre><p>用的一个比较好的汉化版，网络上也可找到。  </p>
+<h2 id="界面介绍"><a href="#界面介绍" class="headerlink" title="界面介绍"></a>界面介绍</h2><p><img src="http://opms50p58.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170509154750.png" alt="">  </p>
+<p> 这是一个视频剪辑的操作画面。<br>上面的白色框就是预览的，可以用来预览素材，和编辑后的效果。</p>
+<h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p><img src="http://opms50p58.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170509155042.png" alt="">  </p>
+<p>这几个图标分别是<br><strong>媒体：</strong> 存放素材。<br><strong>模板：</strong>提供一些开始结尾或者自定义的一些模板。<br><strong>转场：</strong>提供素材直接的切换方式，有点像PPT切换的那种效果。也可以应用到视频和视频的转场，或者视频和图片的转场。<br>这里需要提醒下：不要过度的使用这类技能，你以为很炫酷的东西其实很俗套。要合理使用合适的转场。<br><strong>标题：</strong>为视频添加文字、字幕。<br><strong>图形：</strong>给素材加上一些图形特效。<br><strong>滤镜：</strong>这个不用多说了，这里滤镜的效果可以预览下再使用。<br><strong>路径：</strong>可以选择这个素材怎么进入，在停留期间如何运动，怎么出镜。好的模板里都是自定义路径的。      </p>
+<h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p><img src="http://opms50p58.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170509161036.png" alt="">  </p>
+<p>轨道管理器：依据时间线来混合所有素材。  </p>
+<p><strong>视频轨：</strong>这个是作为主轨。这个轨道必须是从视频一开始就有内容，不能有内容中断，内容不能空缺。它就和时间轴一样，从这个视频的创建到结束，它每时每刻里面都得有内容。当然，会声会影已经把这个限制了。编辑者必须这样来。<br>这个轨道里可以添加视频素材，图片素材。这两种素材可以互相间隔着放。直接可以加转场，素材本身可以添加滤镜，转场等等。<br><strong>覆盖轨道：</strong>这个轨道主要是对视频轨道的辅助。<br>不需要每时每刻轨道里都得有内容，只需要在你想放的时间点上放素材即可。后面的几个轨道除了声音轨，其他轨道和覆盖轨一样。  </p>
+<p>如何把一张图片放到一个视频里呢？就是把图片放在这个轨道里！在同一时间点他就会和上面的视频同时出现！这里的话能玩的多了！也可以把视频放在这个覆盖轨里，这样同一时间就会出现两个视频框：视频轨和覆盖轨道。画中画这里也可以实现。<br>覆盖轨是视频编辑的重要利器。有时候一个覆盖轨还不够，就可以在轨道管理器里增加轨道。后续的轨道也是。不够可以加。只有视频轨和声音轨不能加。<br>有创意都可以在覆盖轨里实现，可以去看看好的模板里是怎么玩覆盖轨的。  </p>
+<p><strong>标题轨：</strong> 此轨道用来写文字，视频里的文字都在这个轨道里完成。可以用会声会影自带的文字特效来生成文字，也自己来自定义文字效果。    </p>
+<p>想在同一个时间点上在视频两处或多出添加文字，就可增加标题轨数目了。  </p>
+<p><strong>声音轨：</strong>用来放配音。<br><strong>音乐轨：</strong>用来放背景音乐。一般情况下找来的视频素材会有声音，可以右键选择静音功能，之后自己再添加声音和音乐。   </p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p><strong>对视频的操作：</strong><br><img src="http://opms50p58.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170509164437.png" alt="">  </p>
+<p>视频素材就像是一个有弹性的皮筋。<br>你拿到手的素材就是一个已经拉到最长长度的皮筋，它的长度在其他条件不变下是不能再长了。我为什么要这么说？因为是快镜头、慢镜头的操作下，视频的长度是可以增加的。  </p>
+<p>但是，这样就可以对视频进行缩减操作，比如说一个视频里你只想要中间部分，而不想要开头和末尾该肿么办？橡皮筋是可以伸缩的，把两头都给缩一下就行了。视频也和橡皮筋一样，把两头缩一下就行。在轨道里拖动视频的两头左右移动来控制视频播放的内容。<em>这里需要注意一点：视频和皮筋一样，它虽然两头被缩了，只能播放中间的那一段，但是它仍然是一个完整的视频！等你把它从两端再往回拉的时候，它的原来长度就又出来了。</em>  </p>
+<p>这样剪视频的时候，就可以把一个素材多次使用。  </p>
+<p>音乐和对视频的操作是一样的。  </p>
+<p><strong>对图片的操作：</strong>  </p>
+<p>图片和视频有点不太一样，视频像皮筋的话，图片就像如意金箍棒。<br>图片存在在轨道里的时间是没有限制的。想让它停留的时间久一点，就在覆盖轨里把它拉的长一点。<br>标题（文字）的操作和对图片的操作是一样的。根据需要调整它出现是时间和时间长度。  </p>
+<p>这样一个基本的操作就可以了。<br>对视频的剪辑，做电子相册等等这些功能以上的简单操作都快完成。  </p>
+<h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><p><strong>视频输出：</strong><br><img src="http://opms50p58.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170509165903.png" alt=""><br>介绍三种输出格式：    </p>
+<p><strong>AVI：</strong>输出的视频清晰度和质量都比较高，但是占用空间也很大。  </p>
+<p><strong>MPEG-4：</strong>就是生成后缀为MP4格式的视频，推荐使用。清晰度和质量不错，占用内存也不算很大。对播放器的要求也不挑剔。  </p>
+<p><strong>WMV:</strong>流媒体文件，生成的视频质量不错，占用的内存也不是很大。但是播放器对该类型的支持没MP4格式广泛。  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://opms50p58.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170509150241.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;第一次使用会声会影，是在2014年5月份左右。&lt;/em&gt; &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;为科协纳新做的一个宣传片，现在看起来好浮夸。&lt;/em&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;第二次使用会声会影，是在2016年。&lt;/em&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;为西电华为创新俱乐部六周年庆做的宣传片，这个还是比较满意的。&lt;/em&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;第三次使用会声会影，是帮同学的弟弟拍、剪了一个高考的鼓励视频，很短，也很用心去做。&lt;/em&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;第四次使用会声会影，是现在，2017年，自然辩证法课的团队视频展示。&lt;/em&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;据此，大概可以体会到一个设计师，一个UI师和程序员会有一样的急躁心情。&lt;/em&gt;  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://x-nicolo.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="会声会影" scheme="https://x-nicolo.github.io/tags/%E4%BC%9A%E5%A3%B0%E4%BC%9A%E5%BD%B1/"/>
+    
+      <category term="视频" scheme="https://x-nicolo.github.io/tags/%E8%A7%86%E9%A2%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纪念多说</title>
+    <link href="https://x-nicolo.github.io/2017/05/04/%E7%BA%AA%E5%BF%B5%E5%A4%9A%E8%AF%B4/"/>
+    <id>https://x-nicolo.github.io/2017/05/04/纪念多说/</id>
+    <published>2017-05-04T06:15:09.000Z</published>
+    <updated>2017-05-04T06:33:49.017Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://i1.piimg.com/567571/7021d919f5d859a4.png" alt=""><br><em>早些时间里在一些论坛里的评论框不是多说，就是disqus。</em>  </p>
+<a id="more"></a>  
+<h2 id="在知识都能变现的日子里"><a href="#在知识都能变现的日子里" class="headerlink" title="在知识都能变现的日子里"></a>在知识都能变现的日子里</h2><p>被顶起来的第二个帖子说的很对，不能变现的项目做了这么久，真的是挺辛苦的。<br>前段时间读完了<em>《腾讯传》</em> ，对多说的这个遭遇腾讯起步也遇到过。在明知道这个项目是大众需要的东西，但是看不到盈利点。腾讯早年也是把OICQ的用户一点点做起来到QICQ，到QQ。不能变现，也是拆东墙补西墙。后来接的小广告，会员制，移动梦网，到QQ秀等虚拟物品才缓过神来，对变现的套路是越玩越深，发展成今天的腾讯帝国。  </p>
+<p>多说就显得没这么幸运了。一个评论框怎么变现？各大论坛里都再用，盈利点在哪里? 投资人估计也是没信心了。  </p>
+<p>之前博客用的也是多说评论。听到这个消息就去更新了下主题，有可选的几种。最好看的就是畅言了，可是它要备案。然后就选择了现在用的网易云，看起来也不错。我为什么要纠结的这个问题，难道是因为会有人给我评论吗？   </p>
+<p>在现在的这个互联网时代，教育居然都能产业化，连知识都想着变现，你觉得还有什么不能变现。  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i1.piimg.com/567571/7021d919f5d859a4.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;em&gt;早些时间里在一些论坛里的评论框不是多说，就是disqus。&lt;/em&gt;  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="https://x-nicolo.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="多说" scheme="https://x-nicolo.github.io/tags/%E5%A4%9A%E8%AF%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub Pages自定义域名</title>
+    <link href="https://x-nicolo.github.io/2017/05/04/GitHub-Pages-%E6%94%B9%E5%8F%98%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%BAyourname-github-io/"/>
+    <id>https://x-nicolo.github.io/2017/05/04/GitHub-Pages-改变自定义域名为yourname-github-io/</id>
+    <published>2017-05-04T05:28:11.000Z</published>
+    <updated>2017-05-11T08:51:24.735Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://i4.buimg.com/567571/4a3ca3bb37bb5607.png" alt=""></p>
+<hr>
+<p><em>为了不备案也不被和谐。</em></p>
+<hr>
+<a id="more"></a>
+<h2 id="将自定义的Github-Pages域名改为原来的yourname-github-io"><a href="#将自定义的Github-Pages域名改为原来的yourname-github-io" class="headerlink" title="将自定义的Github Pages域名改为原来的yourname.github.io"></a>将自定义的Github Pages域名改为原来的yourname.github.io</h2><p>其实很简单：</p>
+<ul>
+<li>删除本目录下的CANME文件，或者改写CANME文件里的内容为空。</li>
+</ul>
+<p>运行：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo clean</span></div><div class="line"></div><div class="line"><span class="attribute">hexo g</span></div><div class="line"></div><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure>
+<ul>
+<li>清除浏览器缓存，打开OK！</li>
+</ul>
+<p><em>那么我之前又是怎么自定义域名的呢？</em></p>
+<h2 id="为Github-Pages博客绑定一个免费顶级域名"><a href="#为Github-Pages博客绑定一个免费顶级域名" class="headerlink" title="为Github Pages博客绑定一个免费顶级域名"></a>为Github Pages博客绑定一个免费顶级域名</h2><p>最早用GitHub Pages做个人博客，初始的二级域名就是<a href="https://x-nicolo.github.io/" title="https://x-nicolo.github.io/"><em>https://x-nicolo.github.io/</em></a>，之后用了一个免费顶级域名，在<a href="https://my.freenom.com/clientarea.php" title="freenom" target="_blank" rel="external"><em>Freenom</em></a> 申请，最长可以申请一年的免费域名使用权。申请了一个<em>.cf</em>  的域名。</p>
+<p><strong>申请流程：</strong></p>
+<ul>
+<li>注册用户</li>
+</ul>
+<ul>
+<li>查询选择一个可用的域名</li>
+</ul>
+<ul>
+<li>checkout,continue,填写相关用户信息，提交订单</li>
+</ul>
+<ul>
+<li>拥有自己的顶级域名了，可以在 <a href="https://my.freenom.com/clientarea.php?action=domains" title="MyDomains " target="_blank" rel="external"> <em>MyDomains</em></a> 查看。</li>
+</ul>
+<p><strong>添加CNAME文件</strong><br>在github pages项目根目录上新建一个CNAME文件，在CNAME文件上编辑刚才申请到的域名。比如：<em>xiaosablog.cf</em></p>
+<p><strong>在DNSPod添加A记录</strong></p>
+<ul>
+<li><a href="https://www.dnspod.cn/" title="注册DNSPod" target="_blank" rel="external">注册DNSPod</a>，进入管理中心，选择添加域名。</li>
+</ul>
+<ul>
+<li>为域名添加记录，这里的NS记录是自动生成。</li>
+</ul>
+<ul>
+<li>个人博客可以通过 <em>xiaosablog.cf</em> 和 <em>www.xiaosablog.cf</em> 都能访问，所以需要添加两组A记录。其记录值设置为：192.30.252.153 和 192.30.252.154。这是github pages给出的。根据CNAME文件，这里指定了其所对应的域名，github会自动处理，将<em>x-nicolo.github.io</em> 和<em>xiaosablog.cf</em> 对应起来。</li>
+</ul>
+<p><strong>修改域名DNS地址</strong></p>
+<ul>
+<li>到Freenom修改DNS地址，把域名解析交给DNSPod。</li>
+</ul>
+<ul>
+<li><a href="https://my.freenom.com/clientarea.php?action=domains" target="_blank" rel="external">MyDomains </a> -&gt; Manage Domain -&gt; Management Tools -&gt; NameServers把DNSPod中的两个NS记录写入。</li>
+</ul>
+<ul>
+<li>点击保存，然后等待全球递归DNS服务器刷新（最多72小时).我当时好像就等了72小时。。。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i4.buimg.com/567571/4a3ca3bb37bb5607.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;为了不备案也不被和谐。&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="日常" scheme="https://x-nicolo.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>要下雨了</title>
+    <link href="https://x-nicolo.github.io/2017/05/02/%E8%A6%81%E4%B8%8B%E9%9B%A8%E4%BA%86/"/>
+    <id>https://x-nicolo.github.io/2017/05/02/要下雨了/</id>
+    <published>2017-05-02T09:33:02.000Z</published>
+    <updated>2017-05-04T07:38:25.872Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://i1.piimg.com/567571/ff956a55450ab0d4.jpg" alt=""></h2><h2 id="西安的天气就和小孩子的喜怒无常一样。"><a href="#西安的天气就和小孩子的喜怒无常一样。" class="headerlink" title="西安的天气就和小孩子的喜怒无常一样。"></a><em>西安的天气就和小孩子的喜怒无常一样。</em></h2><a id="more"></a>
+<h2 id="五一劳动节"><a href="#五一劳动节" class="headerlink" title="五一劳动节"></a>五一劳动节</h2><p>和室友去东边玩了下，感觉西安能玩的地方不多了，对我来说。<br><img src="http://i4.buimg.com/567571/682bba19f9cf371b.png" alt=""><br><img src="http://i2.muimg.com/567571/2c35e10c87cc342f.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://i1.piimg.com/567571/ff956a55450ab0d4.jpg&quot; alt=&quot;&quot;&gt;&lt;/h2&gt;&lt;h2 id=&quot;西安的天气就和小孩子的喜怒无常一样。&quot;&gt;&lt;a href=&quot;#西安的天气就和小孩子的喜怒无常一样。&quot; class=&quot;headerlink&quot; title=&quot;西安的天气就和小孩子的喜怒无常一样。&quot;&gt;&lt;/a&gt;&lt;em&gt;西安的天气就和小孩子的喜怒无常一样。&lt;/em&gt;&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://x-nicolo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="旧事" scheme="https://x-nicolo.github.io/tags/%E6%97%A7%E4%BA%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>时间有点快</title>
+    <link href="https://x-nicolo.github.io/2017/04/26/%E6%97%B6%E9%97%B4%E6%9C%89%E7%82%B9%E5%BF%AB/"/>
+    <id>https://x-nicolo.github.io/2017/04/26/时间有点快/</id>
+    <published>2017-04-26T13:46:21.000Z</published>
+    <updated>2017-05-04T07:32:31.356Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://i1.piimg.com/567571/bf24791e37ebcd17.png" alt=""></p>
+<p><em>晚上坐在电脑前，感觉这段时间过得有点快。</em><br><a id="more"></a></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=36051225&auto=1&height=66"></iframe>
+
+<h2 id="周末的定义"><a href="#周末的定义" class="headerlink" title="周末的定义"></a>周末的定义</h2><p>以前只是想尽快把属于自己的工作在最短的时间里做好。<br>还没有周末的概念。  </p>
+<p>读研后发现，周末是个好发明。  </p>
+<p>不管什么事情，只要周五下午的最后一班结束，所有的事情都瞬时静止下来。<br>不是说自己变懒了，不去完成工作。<br>而是要和人打交道的工作没法进行了。<br>大家都去过周末了。<br>所以周末还是好好休息吧，好好挥霍吧。  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i1.piimg.com/567571/bf24791e37ebcd17.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;晚上坐在电脑前，感觉这段时间过得有点快。&lt;/em&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://x-nicolo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="旧事" scheme="https://x-nicolo.github.io/tags/%E6%97%A7%E4%BA%8B/"/>
+    
+  </entry>
+  
+</feed>
