@@ -117,7 +117,7 @@
 <meta name="description" content="文艺工科狗，编码艺术家">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nicolo">
-<meta property="og:url" content="https://x-nicolo.github.io/tags/Web/index.html">
+<meta property="og:url" content="https://x-nicolo.github.io/tags/web/index.html">
 <meta property="og:site_name" content="Nicolo">
 <meta property="og:description" content="文艺工科狗，编码艺术家">
 <meta property="og:locale" content="zh-Hans">
@@ -132,7 +132,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -152,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="https://x-nicolo.github.io/tags/Web/"/>
+  <link rel="canonical" href="https://x-nicolo.github.io/tags/web/"/>
 
 
 
 
 
-  <title>标签: Web | Nicolo</title>
+  <title>标签: web | Nicolo</title>
   
 
 
@@ -314,7 +314,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Web<small>标签</small>
+        <h1>web<small>标签</small>
         </h1>
       </div>
 
@@ -326,37 +326,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2016/10/18/用Python开发微信公众号（一）/" itemprop="url">
+            <a class="post-title-link" href="/2017/07/31/JSP/" itemprop="url">
               
-                <span itemprop="name">用Python开发微信公众号（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-18T10:35:52+08:00"
-              content="2016-10-18" >
-          10-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/15/Web（二）Django概述/" itemprop="url">
-              
-                <span itemprop="name">Web（二）：Django概述</span>
+                <span itemprop="name">JSP</span>
               
             </a>
         
@@ -364,37 +336,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-15T16:53:50+08:00"
-              content="2016-10-15" >
-          10-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/10/12/Web（一）概述/" itemprop="url">
-              
-                <span itemprop="name">Web（一）:概述</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-12T20:02:29+08:00"
-              content="2016-10-12" >
-          10-12
+              datetime="2017-07-31T15:23:37+08:00"
+              content="2017-07-31" >
+          07-31
         </time>
       </div>
 
@@ -432,8 +376,6 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -782,6 +724,61 @@
               }
             });
           } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/cheat.js"></script> } else {
             var newcounter = new Counter();
             /* Set ACL */
             var acl = new AV.ACL();
