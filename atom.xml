@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2017-08-08T10:45:44.000Z</updated>
+  <updated>2017-08-09T03:12:45.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SSM简单介绍</title>
+    <link href="https://x-nicolo.github.io/2017/08/09/SSM%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://x-nicolo.github.io/2017/08/09/SSM简单介绍/</id>
+    <published>2017-08-09T03:12:45.000Z</published>
+    <updated>2017-08-09T03:12:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>SSM系统的简单技术实现</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SSM系统的简单技术实现&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="后台,SSM,java" scheme="https://x-nicolo.github.io/tags/%E5%90%8E%E5%8F%B0-SSM-java/"/>
+    
+  </entry>
   
   <entry>
     <title>Nxet!</title>
@@ -1250,30 +1274,6 @@
     
     
       <category term="日常" scheme="https://x-nicolo.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>要下雨了</title>
-    <link href="https://x-nicolo.github.io/2017/05/02/%E8%A6%81%E4%B8%8B%E9%9B%A8%E4%BA%86/"/>
-    <id>https://x-nicolo.github.io/2017/05/02/要下雨了/</id>
-    <published>2017-05-02T09:33:02.000Z</published>
-    <updated>2017-05-04T07:38:25.872Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://i1.piimg.com/567571/ff956a55450ab0d4.jpg" alt=""></h2><h2 id="西安的天气就和小孩子的喜怒无常一样。"><a href="#西安的天气就和小孩子的喜怒无常一样。" class="headerlink" title="西安的天气就和小孩子的喜怒无常一样。"></a><em>西安的天气就和小孩子的喜怒无常一样。</em></h2><a id="more"></a>
-<h2 id="五一劳动节"><a href="#五一劳动节" class="headerlink" title="五一劳动节"></a>五一劳动节</h2><p>和室友去东边玩了下，感觉西安能玩的地方不多了，对我来说。<br><img src="http://i4.buimg.com/567571/682bba19f9cf371b.png" alt=""><br><img src="http://i2.muimg.com/567571/2c35e10c87cc342f.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://i1.piimg.com/567571/ff956a55450ab0d4.jpg&quot; alt=&quot;&quot;&gt;&lt;/h2&gt;&lt;h2 id=&quot;西安的天气就和小孩子的喜怒无常一样。&quot;&gt;&lt;a href=&quot;#西安的天气就和小孩子的喜怒无常一样。&quot; class=&quot;headerlink&quot; title=&quot;西安的天气就和小孩子的喜怒无常一样。&quot;&gt;&lt;/a&gt;&lt;em&gt;西安的天气就和小孩子的喜怒无常一样。&lt;/em&gt;&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://x-nicolo.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="旧事" scheme="https://x-nicolo.github.io/tags/%E6%97%A7%E4%BA%8B/"/>
     
   </entry>
   
