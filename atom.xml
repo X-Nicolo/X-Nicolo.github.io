@@ -23,23 +23,31 @@
     <updated>2017-08-09T03:22:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>SSM：Struts、Spring、Mybatis<br>SSM三层集成框架系统总体设计：模块划分、数据库表，存储过程</p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>J2EE框架是一种非常流行的Web开发框架。J2EE框架完整地定义了一套标准的应用开发体系结构和部署环境。基于SSH的轻量级组件模型的出现，为中小企业的应用开发提供了新的解决问题的方法。但SSH框架中持久层技术Hibernate是一种“全自动”式的ORM实现方案，该方案对数据库设计模式要求苛刻，且限制使用存储过程，给数据操作较多、表结构多变的系统的开发带来了很大的不便。SSM轻量级开发框架解决了这个问题，该框架中的数据持久层技术是MyBatis。MyBatis是一种“半自动”式的ORM实现方案，它在SQL开发的工作量和数据库移植性方面的让步，为系统设计提供了最大的自由空间。</p>
-<h2 id="相关技术"><a href="#相关技术" class="headerlink" title="相关技术"></a>相关技术</h2><ol>
-<li>J2EE简介<br>基于J2EE的Web应用被划分为表示层、控制层、业务逻辑层和数据持久层，每一层在系统现实中起到不同的作用。这四层开发模式能够更好的实现“高内聚、低耦合”。讲项目划分为不同的层次，有利于系统的开发、部署和维护。</li>
-<li>J2EE的分层</li>
-</ol>
-<ul>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>J2EE框架是一种非常流行的Web开发框架。J2EE框架完整地定义了一套标准的应用开发体系结构和部署环境。基于SSH的轻量级组件模型的出现，为中小企业的应用开发提供了新的解决问题的方法。但SSH框架中持久层技术Hibernate是一种“全自动”式的ORM实现方案，该方案对数据库设计模式要求苛刻，且限制使用存储过程，给数据操作较多、表结构多变的系统的开发带来了很大的不便。SSM轻量级开发框架解决了这个问题，该框架中的数据持久层技术是MyBatis。MyBatis是一种“半自动”式的ORM实现方案，它在SQL开发的工作量和数据库移植性方面的让步，为系统设计提供了最大的自由空间。<br><a id="more"></a></p>
+<h2 id="相关技术"><a href="#相关技术" class="headerlink" title="相关技术"></a>相关技术</h2><h3 id="1-J2EE简介"><a href="#1-J2EE简介" class="headerlink" title="1. J2EE简介"></a>1. J2EE简介</h3><p>基于J2EE的Web应用被划分为表示层、控制层、业务逻辑层和数据持久层，每一层在系统实现中起到不同的作用。这四层开发模式能够更好的实现“高内聚、低耦合”。将项目划分为不同的层次，有利于系统的开发、部署和维护。</p>
+<h3 id="2-J2EE的分层"><a href="#2-J2EE的分层" class="headerlink" title="2. J2EE的分层"></a>2. J2EE的分层</h3><ul>
 <li>表现层：JSP页面+JavaScript。表现层主要负责处理客户端界面。它是Web应用的末端，通过页面元素标签的布局和CSS样式，进行页面设计。表现层利用轻量级JavaScript脚本技术–jQuery进行页面数据处理。Ajax技术可以实现页面局部刷新，给用户提供良好的界面体验效果。</li>
 <li>控制层：JavaBean(处理前后台参数传递)+Action（控制页面跳转+逻辑控制）。控制层是表现层和业务逻辑层之间的桥梁。控制层负责接收和响应用户的请求；封装用户数据；将用户请求提交给业务逻辑层进行处理并将处理结果通过EJB、页面标签或回调函数返回给客户端界面。</li>
 <li>业务逻辑层：Service接口+具体实现（调用Dao组件，处理业务逻辑）。业务逻辑层主要负责业务逻辑，是整个应用的核心。业务逻辑层关联控制层和数据持久层。该层一方面接收控制层传入的请求数据，通过业务逻辑处理把处理结果数据作为响应返回给控制层；另一方面为数据持久层提供操作的数据，并接收数据持久层返回的数据。</li>
 <li>数据持久层：Dao接口+SQL具体实现+数据库。数据持久层负责与数据库交互。数据持久层负责在数据对象和关系数据库之间建立一种映射关系，实现对数据的持久化访问。数据持久层提供了数据访问方法，能够使程序员避免手工编写程序访问数据持久层。数据持久层能够完成对各种数据进行持久化的编程工作，并为业务逻辑层提供服务。</li>
 </ul>
-]]></content>
+<h4 id="2-1-表示层框架"><a href="#2-1-表示层框架" class="headerlink" title="2.1 表示层框架"></a>2.1 表示层框架</h4><p>Struts 1.0/Struts 2.0是当前Web系统开发使用最广泛的表示层框架技术。<br>Struts1.0是最早的MVC框架，包括模型、视图、控制器三部分。模型由实现业务逻辑的JavaBean构成；控制层由ActionServlet来实现；视图主要由一组JSP文件构成。</p>
+<h4 id="2-2-业务逻辑层框架"><a href="#2-2-业务逻辑层框架" class="headerlink" title="2.2 业务逻辑层框架"></a>2.2 业务逻辑层框架</h4><p>Spring是开发人员首选的业务逻辑层轻量级解决方案。Spring被称为JavaEE应用的一站式解决方案。Spring本身提供了一个设计优良的MVC框架–SpringMVC，该框架一直被数据操作量少的小型项目广泛使用。<br>Spring是J2EE框架的中间层容器，具有强大的整合框架能力。Spring可以向上与MVC框架无缝整合，向下可以与各种持久层框架无缝整合。Spring框架能够通过配置文件很好的将控制层框架和数据持久层框架整合到一起。强大的整合框架能力使之成业务逻辑层首选实现框架。</p>
+<h4 id="2-3-数据持久层框架"><a href="#2-3-数据持久层框架" class="headerlink" title="2.3 数据持久层框架"></a>2.3 数据持久层框架</h4><p>数据持久层框架的作用是将数据库存储从服务层中分离出来，降低耦合度。持久层设计的关键问题就是如何在对象和关系型数据库之间建立一种映射关系。持久层框架现分为两大主流：自己编写JDBC实现SQL语句；使用O/RMapping技术实现的“全自动”式（如Hibernate）和“半自动”式（如iBatis,MyBatis）的ORM实现方案。</p>
+<h5 id="2-3-1-JDBC框架"><a href="#2-3-1-JDBC框架" class="headerlink" title="2.3.1 JDBC框架"></a>2.3.1 JDBC框架</h5><p>JDBC框架是一种能够解决性能障碍的持久层框架。该框架只有在请求的时候才能被调用，能够节省内存。可是JDBC的实现当时需要开发人员非常精通SQL和JDBC，需要写很多的DAO方法，而且每一次数据请求都要开启和关闭数据连接。</p>
+<h5 id="2-3-2-Hibernate框架"><a href="#2-3-2-Hibernate框架" class="headerlink" title="2.3.2 Hibernate框架"></a>2.3.2 Hibernate框架</h5><p>JDBC框架适合小型简单项目。对于企业级项目，Hibernate是被广为推行的一个运行效率较高的持久层框架。它将Java对象（POJO）映射成持久化类，使应用程序能够以面向对象的方式来操作POJO，并将这些操作转换为底层的SQL语句来执行。企业级大型项目使用Hibernate，能够大大提高项目开发效率。</p>
+<h5 id="2-3-3-MyBatis框架介绍"><a href="#2-3-3-MyBatis框架介绍" class="headerlink" title="2.3.3 MyBatis框架介绍"></a>2.3.3 MyBatis框架介绍</h5><p>MyBatis是iBatis的升级版本。MyBatis为Java提供了更为强大的功能。</p>
+<ul>
+<li>MyBatis实现了Dao接口绑定，使用更加方便。MyBatis使用简单的XML或注解用于配置和原始映射，将接口和JAVA的POJOs(Plan Old JAVA Objects，普通的JAVA对象)映射成数据库中的记录。</li>
+<li>对象关系映射的改进，数据操作执行效率更高。在MyBatis中，除了兼容ibatis2.x中的“嵌套查询”方式外，还提供了直接“嵌套结果”的方式，其效果相当于直接通过一句SQL语句将查询出的数据传输对象(DTO)自动封装成所需要的对象。</li>
+<li>MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索。</li>
+</ul>
+<h2 id="基于J2EE的SSM框架开发技术"><a href="#基于J2EE的SSM框架开发技术" class="headerlink" title="基于J2EE的SSM框架开发技术"></a>基于J2EE的SSM框架开发技术</h2>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;SSM：Struts、Spring、Mybatis&lt;br&gt;SSM三层集成框架系统总体设计：模块划分、数据库表，存储过程&lt;/p&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;J2E
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;J2EE框架是一种非常流行的Web开发框架。J2EE框架完整地定义了一套标准的应用开发体系结构和部署环境。基于SSH的轻量级组件模型的出现，为中小企业的应用开发提供了新的解决问题的方法。但SSH框架中持久层技术Hibernate是一种“全自动”式的ORM实现方案，该方案对数据库设计模式要求苛刻，且限制使用存储过程，给数据操作较多、表结构多变的系统的开发带来了很大的不便。SSM轻量级开发框架解决了这个问题，该框架中的数据持久层技术是MyBatis。MyBatis是一种“半自动”式的ORM实现方案，它在SQL开发的工作量和数据库移植性方面的让步，为系统设计提供了最大的自由空间。&lt;br&gt;
     
     </summary>
     
