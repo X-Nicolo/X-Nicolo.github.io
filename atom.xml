@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2017-08-09T03:12:45.000Z</updated>
+  <updated>2017-08-09T03:22:27.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -19,15 +19,15 @@
     <title>SSM简单介绍</title>
     <link href="https://x-nicolo.github.io/2017/08/09/SSM%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/"/>
     <id>https://x-nicolo.github.io/2017/08/09/SSM简单介绍/</id>
-    <published>2017-08-09T03:12:45.000Z</published>
-    <updated>2017-08-09T03:12:45.000Z</updated>
+    <published>2017-08-09T03:22:27.000Z</published>
+    <updated>2017-08-09T03:22:27.000Z</updated>
     
-    <content type="html"><![CDATA[<p>SSM系统的简单技术实现</p>
+    <content type="html"><![CDATA[<p>SSM：Struts、Spring、Mybatis<br>SSM三层集成框架系统总体设计：模块划分、数据库表，存储过程</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;SSM系统的简单技术实现&lt;/p&gt;
+      &lt;p&gt;SSM：Struts、Spring、Mybatis&lt;br&gt;SSM三层集成框架系统总体设计：模块划分、数据库表，存储过程&lt;/p&gt;
 
     
     </summary>
@@ -35,7 +35,11 @@
       <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="后台,SSM,java" scheme="https://x-nicolo.github.io/tags/%E5%90%8E%E5%8F%B0-SSM-java/"/>
+      <category term="java" scheme="https://x-nicolo.github.io/tags/java/"/>
+    
+      <category term="SSM" scheme="https://x-nicolo.github.io/tags/SSM/"/>
+    
+      <category term="后台" scheme="https://x-nicolo.github.io/tags/%E5%90%8E%E5%8F%B0/"/>
     
   </entry>
   
