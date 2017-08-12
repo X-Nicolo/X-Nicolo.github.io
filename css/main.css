@@ -1069,7 +1069,7 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background: url("http://opms50p58.bkt.clouddn.com/people.jpg");
+  background: url("http://opms50p58.bkt.clouddn.com/testbg.jpg");
 }
 .header-inner {
   position: relative;
@@ -2100,7 +2100,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4f7895;
+  background: #83ffeb;
 }
 .links-of-blogroll {
   font-size: 13px;
