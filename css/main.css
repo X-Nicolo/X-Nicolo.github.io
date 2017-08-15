@@ -1069,7 +1069,7 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background: url("http://opms50p58.bkt.clouddn.com/ball4.jpg");
+  background: url("http://opms50p58.bkt.clouddn.com/ball5.jpg");
 }
 .header-inner {
   position: relative;
@@ -1189,7 +1189,7 @@ pre .javascript .function {
   transition-delay: 0s;
 }
 .menu .menu-item a:hover {
-  border-bottom-color: #222;
+  border-bottom-color: #fff;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -2100,7 +2100,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #55ff3d;
+  background: #3ee0ff;
 }
 .links-of-blogroll {
   font-size: 13px;
