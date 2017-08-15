@@ -1189,7 +1189,7 @@ pre .javascript .function {
   transition-delay: 0s;
 }
 .menu .menu-item a:hover {
-  border-bottom-color: #fff;
+  border-bottom-color: #222;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -2100,7 +2100,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3ee0ff;
+  background: #2a3600;
 }
 .links-of-blogroll {
   font-size: 13px;
