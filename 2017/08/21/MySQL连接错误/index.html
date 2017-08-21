@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Holi,爬虫," />
+  <meta name="keywords" content="bug,MySQl," />
 
 
 
@@ -114,18 +114,20 @@
 
 
 
-<meta name="description" content="一个完整的（大）数据处理可以分为这几个阶段：    数据收集 数据存储 数据建模 数据分析 数据变现。">
-<meta name="keywords" content="Holi,爬虫">
+<meta name="description" content="ERROR 1045 (28000): Access denied for user’root’@’localhost’(using password:YES)">
+<meta name="keywords" content="bug,MySQl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【爬虫】（五）数据存储之CSV">
-<meta property="og:url" content="https://x-nicolo.github.io/2017/02/14/数据存储之CSV/index.html">
+<meta property="og:title" content="MySQL连接错误">
+<meta property="og:url" content="https://x-nicolo.github.io/2017/08/21/MySQL连接错误/index.html">
 <meta property="og:site_name" content="Nicolo">
-<meta property="og:description" content="一个完整的（大）数据处理可以分为这几个阶段：    数据收集 数据存储 数据建模 数据分析 数据变现。">
+<meta property="og:description" content="ERROR 1045 (28000): Access denied for user’root’@’localhost’(using password:YES)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-05-21T12:27:54.704Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2847713-5ab02602ced5504d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-08-21T09:38:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【爬虫】（五）数据存储之CSV">
-<meta name="twitter:description" content="一个完整的（大）数据处理可以分为这几个阶段：    数据收集 数据存储 数据建模 数据分析 数据变现。">
+<meta name="twitter:title" content="MySQL连接错误">
+<meta name="twitter:description" content="ERROR 1045 (28000): Access denied for user’root’@’localhost’(using password:YES)">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2847713-5ab02602ced5504d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -154,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="https://x-nicolo.github.io/2017/02/14/数据存储之CSV/"/>
+  <link rel="canonical" href="https://x-nicolo.github.io/2017/08/21/MySQL连接错误/"/>
 
 
 
 
 
-  <title>【爬虫】（五）数据存储之CSV | Nicolo</title>
+  <title>MySQL连接错误 | Nicolo</title>
   
 
 
@@ -333,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://x-nicolo.github.io/2017/02/14/数据存储之CSV/">
+    <link itemprop="mainEntityOfPage" href="https://x-nicolo.github.io/2017/08/21/MySQL连接错误/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nicolo">
@@ -350,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【爬虫】（五）数据存储之CSV</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL连接错误</h1>
         
 
         <div class="post-meta">
@@ -362,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-14T17:05:03+08:00">
-                2017-02-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T17:38:42+08:00">
+                2017-08-21
               </time>
             
 
@@ -402,7 +404,7 @@
 
           
           
-             <span id="/2017/02/14/数据存储之CSV/" class="leancloud_visitors" data-flag-title="【爬虫】（五）数据存储之CSV">
+             <span id="/2017/08/21/MySQL连接错误/" class="leancloud_visitors" data-flag-title="MySQL连接错误">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,7 +429,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  465
+                  642
                 </span>
               
 
@@ -443,7 +445,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -464,39 +466,30 @@
       
 
       
-        <p><strong>一个完整的（大）数据处理可以分为这几个阶段：</strong>  </p>
-<ul>
-<li>数据收集</li>
-<li>数据存储</li>
-<li>数据建模</li>
-<li>数据分析</li>
-<li>数据变现。<a id="more"></a>  
-</li>
-</ul>
-<p>Holi的项目进度，已经从入门到处理了。  </p>
-<p>第一步的数据收集基本已经完成。  </p>
-<p>现在是第二步的数据存储。  </p>
-<p>讲道理，不懂点前端知识还真不好下手。  </p>
-<p>看到一堆标签也是很烦的，还好这些东西就想剥洋葱一样，一层一层剥开。  </p>
-<p>配合上《爱丽丝梦游仙境》的BeautifulSoup，就方便多了。  </p>
-<p>CSV（ Comma-Separated Values，逗号分隔值）是存储表格数据的常用文件格式。  </p>
-<p>Microsoft Excel 和很多应用都支持 CSV 格式，因为它很简洁。  </p>
-<p>Python 的 csv 库可以非常简单地修改 CSV 文件，甚至从零开始创建一个 CSV 文件:  </p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> csv  </div><div class="line"></div><div class="line">csvFile = <span class="keyword">open</span>(<span class="string">"../files/test.csv"</span>, <span class="string">'w+'</span>)</div><div class="line"><span class="keyword">try</span>:</div><div class="line">	writer = csv.writer(csvFile)</div><div class="line">	writer.writerow((<span class="string">'number'</span>, <span class="string">'number plus 2'</span>, <span class="string">'number times 2'</span>))</div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">		writer.writerow( (i, i+<span class="number">2</span>, i*<span class="number">2</span>))</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">	csvFile.close()</div><div class="line">```  </div><div class="line">  </div><div class="line">这种方案来处理教务处的数据，就很方便。  </div><div class="line"></div><div class="line">这里拿处理课表的来说。  </div><div class="line"></div><div class="line">解析课表的网页源码会看到有一个table的标签，这个很重要。  </div><div class="line"></div><div class="line">    &lt;table id=<span class="string">"tableObj"</span> width=<span class="string">"99%"</span> border=<span class="string">"0"</span> cellspacing=<span class="string">"0"</span> cellpadding=<span class="string">"0"</span> <span class="class"><span class="keyword">class</span>="<span class="title">arranging_arrange</span>"&gt;</span></div><div class="line"></div><div class="line">确定了table和<span class="class"><span class="keyword">class</span>，就看开始剥洋葱了。</span></div></pre></td></tr></table></figure>
-<p>import csv<br>from urllib.request import urlopen<br>from bs4 import BeautifulSoup<br>html = urlopen(“课表url”)<br>bsObj = BeautifulSoup(html)</p>
-<h1 id="看网页源码的class"><a href="#看网页源码的class" class="headerlink" title="看网页源码的class"></a>看网页源码的class</h1><p>table = bsObj.findAll(“table”,{“class”:”arranging_arrange”})[0] </p>
-<p>#剥第一层洋葱<br>rows = table.findAll(“tr”)</p>
-<p>#存储CSV<br>csvFile = open(“../files/editors.csv”, ‘wt’, newline=’’, encoding=’utf-8’)<br>writer = csv.writer(csvFile)</p>
-<p>try:<br>    for row in rows:<br>        csvRow = []</p>
-<pre><code>#继续一层层剥洋葱
-for cell in row.findAll([&apos;td&apos;, &apos;th&apos;]):
-    csvRow.append(cell.get_text())
-writer.writerow(csvRow)
-</code></pre><p>finally:<br>    csvFile.close()<br>``` </p>
-<p>这样就可以得到存储在当前目录的CSV文件了。 </p>
-<p>用Notepad++打开可以看，用excel打开会乱码。  </p>
-<p>虐狗节，撸代码，还有谁。  </p>
-<p>哈哈哈哈。</p>
+        <p><img src="http://upload-images.jianshu.io/upload_images/2847713-5ab02602ced5504d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>ERROR 1045 (28000): Access denied for user’root’@’localhost’(using password:YES)</p>
+<a id="more"></a>
+<p>1.问题：命令提示符窗口，在MySQL安装bin目录下运行指令：</p>
+<p>X:<em>Location</em>\bin\mysql&gt; mysql -u root -p<br>（每个人根据自己路劲选择不同目录。）<br>出现：</p>
+<p>Enter password:<br>输入或者不输入回车后出现错误：</p>
+<p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)<br>或</p>
+<p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: NO)<br>这时去你的根目录配置你的mysql配置文件my.ini<br>如果还美哦与搭建环境请参考：<br>MySQL-5.6.13免安装版配置方法</p>
+<p>记事本打开my.ini，在[mysqld]这个条目下加入</p>
+<p>skip-grant-tables<br>保存退出后重启mysql<br>重启方法1：<br>1.点击“开始”-&gt;“运行”(快捷键Win+R)。<br>2.启动：输入 net stop mysql<br>3.停止：输入 net start mysql<br>重启方法2：<br>如果1不行，到 计算机管理–&gt;服务和应用程序–&gt;服务–&gt;MYSQL–&gt;右键–&gt;启动.</p>
+<p>这时候在cmd里面输入mysql -u root -p就可以不用密码登录了，出现password：的时候直接回车可以进入，<br>不会出现ERROR 1045 (28000)，没有权限很多操作都会受限制。</p>
+<p>下面这样（斜体为操作后命令提示的结果，不输入）：<br>1.进入mysql数据库：</p>
+<p>mysql&gt; use mysql;<br>Database changed<br>2.给root用户设置新密码，新密码自己输：</p>
+<p>mysql&gt; update user set password=password(“新密码”) where user=”root”;<br>警告：这个命令是5.7之前一些老版本的，如果你用的新的，这样输入会出现错误：</p>
+<p>ERROR 1054 (42S22): Unknown column ‘password’ in ‘fie<br>这是因为5.7版本下的mysql数据库下已经没有password这个字段了，password字段改成了</p>
+<p>authentication_string<br>所以，应该输入如下命令：</p>
+<p>update mysql.user set authentication_string=password(‘root’) where user=’root’ ;<br>Query OK, 1 rows affected (0.01 sec) Rows matched: 1 Changed: 1 Warnings: 0<br>3.刷新数据库</p>
+<p>mysql&gt; flush privileges;<br>Query OK, 0 rows affected (0.00 sec)<br>4.退出mysql：</p>
+<p>mysql&gt; quit<br>Bye<br>5.改好之后，再修改一下my.ini这个文件，把刚才加入my.ini文件的的”skip-grant-tables”这行删除，保存退出再重启mysql就可以了。<br>重启方法见上文。</p>
+<p>到这里以为就完事大吉了，但是，并没有。。</p>
+<p>进入mysql后，有出现了如下错误：</p>
+<p>ERROR 1820 (HY000): You must SET PASSWORD before executing this statement<br>坑了个爹的。。。</p>
+<p>最后发现还需要重设密码！！！（难道刚刚的操作都是在研究如何吃屎么。。。）</p>
+<p>解决方法如下：</p>
+<p>mysql&gt; SET PASSWORD = PASSWORD(‘123456’);<br>对你没看错，就是在设置一边密码。。。当然你不用非弄成123456，这个随意了。。。</p>
 
       
     </div>
@@ -544,9 +537,9 @@ writer.writerow(csvRow)
       
         <div class="post-tags">
           
-            <a href="/tags/Holi/" rel="tag"><i class="fa fa-tag"></i> Holi</a>
+            <a href="/tags/bug/" rel="tag"><i class="fa fa-tag"></i> bug</a>
           
-            <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
+            <a href="/tags/MySQl/" rel="tag"><i class="fa fa-tag"></i> MySQl</a>
           
         </div>
       
@@ -559,8 +552,8 @@ writer.writerow(csvRow)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/10/2016-这一年/" rel="next" title="【迟来的年终总结】2016，这一年">
-                <i class="fa fa-chevron-left"></i> 【迟来的年终总结】2016，这一年
+              <a href="/2017/08/09/SSM简单介绍/" rel="next" title="SSM简单介绍">
+                <i class="fa fa-chevron-left"></i> SSM简单介绍
               </a>
             
           </div>
@@ -568,10 +561,6 @@ writer.writerow(csvRow)
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/21/Python数据存储之MySQL（上）/" rel="prev" title="【爬虫】（六）Python数据存储之MySQL（上）">
-                【爬虫】（六）Python数据存储之MySQL（上） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -623,17 +612,8 @@ writer.writerow(csvRow)
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i4.buimg.com/567571/a84b27b05b920e49.jpg"
@@ -763,22 +743,6 @@ writer.writerow(csvRow)
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#看网页源码的class"><span class="nav-number">1.</span> <span class="nav-text">看网页源码的class</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

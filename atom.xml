@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2017-08-09T03:22:27.000Z</updated>
+  <updated>2017-08-21T09:38:42.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL连接错误</title>
+    <link href="https://x-nicolo.github.io/2017/08/21/MySQL%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF/"/>
+    <id>https://x-nicolo.github.io/2017/08/21/MySQL连接错误/</id>
+    <published>2017-08-21T09:38:42.000Z</published>
+    <updated>2017-08-21T09:38:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-5ab02602ced5504d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>ERROR 1045 (28000): Access denied for user’root’@’localhost’(using password:YES)</p>
+<a id="more"></a>
+<p>1.问题：命令提示符窗口，在MySQL安装bin目录下运行指令：</p>
+<p>X:<em>Location</em>\bin\mysql&gt; mysql -u root -p<br>（每个人根据自己路劲选择不同目录。）<br>出现：</p>
+<p>Enter password:<br>输入或者不输入回车后出现错误：</p>
+<p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)<br>或</p>
+<p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: NO)<br>这时去你的根目录配置你的mysql配置文件my.ini<br>如果还美哦与搭建环境请参考：<br>MySQL-5.6.13免安装版配置方法</p>
+<p>记事本打开my.ini，在[mysqld]这个条目下加入</p>
+<p>skip-grant-tables<br>保存退出后重启mysql<br>重启方法1：<br>1.点击“开始”-&gt;“运行”(快捷键Win+R)。<br>2.启动：输入 net stop mysql<br>3.停止：输入 net start mysql<br>重启方法2：<br>如果1不行，到 计算机管理–&gt;服务和应用程序–&gt;服务–&gt;MYSQL–&gt;右键–&gt;启动.</p>
+<p>这时候在cmd里面输入mysql -u root -p就可以不用密码登录了，出现password：的时候直接回车可以进入，<br>不会出现ERROR 1045 (28000)，没有权限很多操作都会受限制。</p>
+<p>下面这样（斜体为操作后命令提示的结果，不输入）：<br>1.进入mysql数据库：</p>
+<p>mysql&gt; use mysql;<br>Database changed<br>2.给root用户设置新密码，新密码自己输：</p>
+<p>mysql&gt; update user set password=password(“新密码”) where user=”root”;<br>警告：这个命令是5.7之前一些老版本的，如果你用的新的，这样输入会出现错误：</p>
+<p>ERROR 1054 (42S22): Unknown column ‘password’ in ‘fie<br>这是因为5.7版本下的mysql数据库下已经没有password这个字段了，password字段改成了</p>
+<p>authentication_string<br>所以，应该输入如下命令：</p>
+<p>update mysql.user set authentication_string=password(‘root’) where user=’root’ ;<br>Query OK, 1 rows affected (0.01 sec) Rows matched: 1 Changed: 1 Warnings: 0<br>3.刷新数据库</p>
+<p>mysql&gt; flush privileges;<br>Query OK, 0 rows affected (0.00 sec)<br>4.退出mysql：</p>
+<p>mysql&gt; quit<br>Bye<br>5.改好之后，再修改一下my.ini这个文件，把刚才加入my.ini文件的的”skip-grant-tables”这行删除，保存退出再重启mysql就可以了。<br>重启方法见上文。</p>
+<p>到这里以为就完事大吉了，但是，并没有。。</p>
+<p>进入mysql后，有出现了如下错误：</p>
+<p>ERROR 1820 (HY000): You must SET PASSWORD before executing this statement<br>坑了个爹的。。。</p>
+<p>最后发现还需要重设密码！！！（难道刚刚的操作都是在研究如何吃屎么。。。）</p>
+<p>解决方法如下：</p>
+<p>mysql&gt; SET PASSWORD = PASSWORD(‘123456’);<br>对你没看错，就是在设置一边密码。。。当然你不用非弄成123456，这个随意了。。。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-5ab02602ced5504d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;ERROR 1045 (28000): Access denied for user’root’@’localhost’(using password:YES)&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
+    
+      <category term="MySQl" scheme="https://x-nicolo.github.io/tags/MySQl/"/>
+    
+  </entry>
   
   <entry>
     <title>SSM简单介绍</title>
@@ -859,9 +907,9 @@
     
       <category term="java" scheme="https://x-nicolo.github.io/tags/java/"/>
     
-      <category term="数据库" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
       <category term="MySQL" scheme="https://x-nicolo.github.io/tags/MySQL/"/>
+    
+      <category term="数据库" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1263,81 +1311,6 @@
     
     
       <category term="多说" scheme="https://x-nicolo.github.io/tags/%E5%A4%9A%E8%AF%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub Pages自定义域名</title>
-    <link href="https://x-nicolo.github.io/2017/05/04/GitHub-Pages-%E6%94%B9%E5%8F%98%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E4%B8%BAyourname-github-io/"/>
-    <id>https://x-nicolo.github.io/2017/05/04/GitHub-Pages-改变自定义域名为yourname-github-io/</id>
-    <published>2017-05-04T05:28:11.000Z</published>
-    <updated>2017-05-11T08:51:24.735Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://i4.buimg.com/567571/4a3ca3bb37bb5607.png" alt=""></p>
-<hr>
-<p><em>为了不备案也不被和谐。</em></p>
-<hr>
-<a id="more"></a>
-<h2 id="将自定义的Github-Pages域名改为原来的yourname-github-io"><a href="#将自定义的Github-Pages域名改为原来的yourname-github-io" class="headerlink" title="将自定义的Github Pages域名改为原来的yourname.github.io"></a>将自定义的Github Pages域名改为原来的yourname.github.io</h2><p>其实很简单：</p>
-<ul>
-<li>删除本目录下的CANME文件，或者改写CANME文件里的内容为空。</li>
-</ul>
-<p>运行：</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo clean</span></div><div class="line"></div><div class="line"><span class="attribute">hexo g</span></div><div class="line"></div><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure>
-<ul>
-<li>清除浏览器缓存，打开OK！</li>
-</ul>
-<p><em>那么我之前又是怎么自定义域名的呢？</em></p>
-<h2 id="为Github-Pages博客绑定一个免费顶级域名"><a href="#为Github-Pages博客绑定一个免费顶级域名" class="headerlink" title="为Github Pages博客绑定一个免费顶级域名"></a>为Github Pages博客绑定一个免费顶级域名</h2><p>最早用GitHub Pages做个人博客，初始的二级域名就是<a href="https://x-nicolo.github.io/" title="https://x-nicolo.github.io/"><em>https://x-nicolo.github.io/</em></a>，之后用了一个免费顶级域名，在<a href="https://my.freenom.com/clientarea.php" title="freenom" target="_blank" rel="external"><em>Freenom</em></a> 申请，最长可以申请一年的免费域名使用权。申请了一个<em>.cf</em>  的域名。</p>
-<p><strong>申请流程：</strong></p>
-<ul>
-<li>注册用户</li>
-</ul>
-<ul>
-<li>查询选择一个可用的域名</li>
-</ul>
-<ul>
-<li>checkout,continue,填写相关用户信息，提交订单</li>
-</ul>
-<ul>
-<li>拥有自己的顶级域名了，可以在 <a href="https://my.freenom.com/clientarea.php?action=domains" title="MyDomains " target="_blank" rel="external"> <em>MyDomains</em></a> 查看。</li>
-</ul>
-<p><strong>添加CNAME文件</strong><br>在github pages项目根目录上新建一个CNAME文件，在CNAME文件上编辑刚才申请到的域名。比如：<em>xiaosablog.cf</em></p>
-<p><strong>在DNSPod添加A记录</strong></p>
-<ul>
-<li><a href="https://www.dnspod.cn/" title="注册DNSPod" target="_blank" rel="external">注册DNSPod</a>，进入管理中心，选择添加域名。</li>
-</ul>
-<ul>
-<li>为域名添加记录，这里的NS记录是自动生成。</li>
-</ul>
-<ul>
-<li>个人博客可以通过 <em>xiaosablog.cf</em> 和 <em>www.xiaosablog.cf</em> 都能访问，所以需要添加两组A记录。其记录值设置为：192.30.252.153 和 192.30.252.154。这是github pages给出的。根据CNAME文件，这里指定了其所对应的域名，github会自动处理，将<em>x-nicolo.github.io</em> 和<em>xiaosablog.cf</em> 对应起来。</li>
-</ul>
-<p><strong>修改域名DNS地址</strong></p>
-<ul>
-<li>到Freenom修改DNS地址，把域名解析交给DNSPod。</li>
-</ul>
-<ul>
-<li><a href="https://my.freenom.com/clientarea.php?action=domains" target="_blank" rel="external">MyDomains </a> -&gt; Manage Domain -&gt; Management Tools -&gt; NameServers把DNSPod中的两个NS记录写入。</li>
-</ul>
-<ul>
-<li>点击保存，然后等待全球递归DNS服务器刷新（最多72小时).我当时好像就等了72小时。。。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://i4.buimg.com/567571/4a3ca3bb37bb5607.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;为了不备案也不被和谐。&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="日常" scheme="https://x-nicolo.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
