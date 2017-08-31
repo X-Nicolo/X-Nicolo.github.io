@@ -464,8 +464,12 @@
       
 
       
-        <p>问题：部署完tomcat，只显示首页，点击无反应。<br>解决：是JDBC配置的问题。<br><a id="more"></a><br>正确配置：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">jdbc.<span class="attribute">driverClassName</span>=com.mysql.jdbc.Driver</div><div class="line">jdbc.<span class="attribute">url</span>=jdbc:mysql://localhost:3306/bridgedisaster?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;failOverReadOnly=false//本地端口，不是远程连接</div><div class="line">jdbc.<span class="attribute">username</span>=root//打开navicat,连接测试的用户名</div><div class="line">jdbc.<span class="attribute">password</span>=root//连接测试的密码</div></pre></td></tr></table></figure></p>
-
+        <p>问题：部署完tomcat，只显示首页，点击无反应。<br>解决：是JDBC配置的问题。<br><a id="more"></a><br>正确配置：</p>
+<pre><code>jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/bridgedisaster?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;failOverReadOnly=false//本地端口，不是远程连接
+jdbc.username=root//打开navicat,连接测试的用户名
+jdbc.password=root//连接测试的密码
+</code></pre>
       
     </div>
     
@@ -539,6 +543,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/08/31/Python3学习集合/" rel="prev" title="Python3学习集合">
+                Python3学习集合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -605,7 +613,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">69</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -627,7 +635,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -758,7 +766,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共62.3k字</span>
+  <span class="post-count">博客全站共69.7k字</span>
 </div>
 
         
