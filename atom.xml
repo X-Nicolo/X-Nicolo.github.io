@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2017-08-30T08:00:11.000Z</updated>
+  <updated>2017-08-31T03:41:24.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tomcat启动问题（JDBC文件配置问题）</title>
+    <link href="https://x-nicolo.github.io/2017/08/31/tomcat%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98%EF%BC%88JDBC%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%EF%BC%89/"/>
+    <id>https://x-nicolo.github.io/2017/08/31/tomcat启动问题（JDBC文件配置问题）/</id>
+    <published>2017-08-31T03:41:24.000Z</published>
+    <updated>2017-08-31T03:41:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>问题：部署完tomcat，只显示首页，点击无反应。<br>解决：是JDBC配置的问题。<br><a id="more"></a><br>正确配置：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">jdbc.<span class="attribute">driverClassName</span>=com.mysql.jdbc.Driver</div><div class="line">jdbc.<span class="attribute">url</span>=jdbc:mysql://localhost:3306/bridgedisaster?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;failOverReadOnly=false//本地端口，不是远程连接</div><div class="line">jdbc.<span class="attribute">username</span>=root//打开navicat,连接测试的用户名</div><div class="line">jdbc.<span class="attribute">password</span>=root//连接测试的密码</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题：部署完tomcat，只显示首页，点击无反应。&lt;br&gt;解决：是JDBC配置的问题。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
+    
+      <category term="Mysql" scheme="https://x-nicolo.github.io/tags/Mysql/"/>
+    
+      <category term="Tomcat" scheme="https://x-nicolo.github.io/tags/Tomcat/"/>
+    
+  </entry>
   
   <entry>
     <title>PS、视频作品集合</title>
@@ -1240,51 +1267,6 @@
     
     
       <category term="生活" scheme="https://x-nicolo.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【转】【一键关闭445端口】关于防范勒索软件病毒攻击的紧急通知</title>
-    <link href="https://x-nicolo.github.io/2017/05/14/%E5%85%B3%E4%BA%8E%E9%98%B2%E8%8C%83%E5%8B%92%E7%B4%A2%E8%BD%AF%E4%BB%B6%E7%97%85%E6%AF%92%E6%94%BB%E5%87%BB%E7%9A%84%E7%B4%A7%E6%80%A5%E9%80%9A%E7%9F%A5/"/>
-    <id>https://x-nicolo.github.io/2017/05/14/关于防范勒索软件病毒攻击的紧急通知/</id>
-    <published>2017-05-14T01:09:09.000Z</published>
-    <updated>2017-05-14T01:35:51.435Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-2d966ab025b89947.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<hr>
-<p>病毒袭来，转自信息化建设处。一键关闭445端口，并提供Windows各版本补丁下载。</p>
-<hr>
-<a id="more"></a>
-<p>校园网用户：</p>
-<p>近期，国内多所院校出现勒索软件感染情况，磁盘文件会被病毒加密，并显示类似下图所示的勒索界面，只有支付高额赎金才能解密恢复文件，对学习资料和个人数据造成严重损失。</p>
-<p>根据网络安全机构通报，这是不法分子利用NSA黑客武器库泄漏的“永恒之蓝”发起的病毒攻击事件。“永恒之蓝”会扫描开放445文件共享端口的Windows机器，无需用户任何操作，只要开机上网，不法分子就能在电脑和服务器中植入勒索软件、远程控制木马、虚拟货币挖矿机等恶意程序。</p>
-<p>针对这一情况，我校校园网出口已经封掉漏洞端口并在网内启用了其他预防的安全策略，但是用户主机还是可能成为受攻击的对象，在此提醒广大校园网用户，为了您和周围师生的信息安全，请用户尽量做到如下几点：</p>
-<p>1、为计算机安装最新的安全补丁，微软已发布补丁MS17-010修复了“永恒之蓝”攻击的系统漏洞，请尽快安装此安全补丁，网址为<a href="https://technet.microsoft.com/zh-cn/library/security/MS17-010" target="_blank" rel="external">https://technet.microsoft.com/zh-cn/library/security/MS17-010</a>；</p>
-<p>2、强化网络安全意识：不明链接不要点击，不明文件不要下载，不明邮件不要打开；   </p>
-<p>3、尽快（今后定期）备份自己电脑中的重要文件资料到移动硬盘、U盘，备份完后脱机保存该磁盘；</p>
-<p>4、建议仍在使用Windows XP，Windows 2003操作系统的用户尽快升级到 Window 7/Windows 10，或 Windows 2008/2012/2016操作系统。</p>
-<p>5、由于本次Wannacry蠕虫事件的巨大影响，微软总部决定发布已停服的XP和部分服务器版特别补丁<a href="https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks" target="_blank" rel="external">https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks</a></p>
-<p>6、校园网用户如有感染勒索病毒的，为避免影响其他用户，请及时拨打<em>88201710</em> 进行上报，我处将安排工作人员配合处理。</p>
-<p>在此特别提醒各单位的系统管理员，除了上述几点外，请对本单位的业务系统主机进行检查，并关闭445、135、137、138、139端口，关闭网络共享（操作方法见附件），个人用户也可参考操作。</p>
-<p>信息化建设处</p>
-<p>2017年5月13日</p>
-<p><strong>附件</strong><br><strong>一键关闭端口</strong><br><a href="http://opms50p58.bkt.clouddn.com/%E4%B8%80%E9%94%AE%E5%85%B3%E9%97%AD445%E7%AB%AF%E5%8F%A3.rar" target="_blank" rel="external">点击下载</a>  </p>
-<p><strong>其他：</strong><br>NSA武器库免疫补丁下载 解决Windows永恒之蓝 ONION勒索病毒攻击<br>补丁下载地址（官方补丁根据自己系统下载 32位 64位）<br>win7 : <a href="https://mirror.sdu.edu.cn/ms17-010/win7/" target="_blank" rel="external">点击下载</a><br>win8 : <a href="https://mirror.sdu.edu.cn/ms17-010/win8/" target="_blank" rel="external">点击下载</a><br>win10 : <a href="https://mirror.sdu.edu.cn/ms17-010/win10/" target="_blank" rel="external">点击下载</a><br>全部官方版本补丁:<a href="https://technet.microsoft.com/zh-cn/library/security/MS17-010" target="_blank" rel="external">点击下载</a><br>XP win2003 以下 :<a href="https://dl.360safe.com/nsa/nsatool.exe" target="_blank" rel="external">点击下载</a>  （360的）</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-2d966ab025b89947.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;病毒袭来，转自信息化建设处。一键关闭445端口，并提供Windows各版本补丁下载。&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://x-nicolo.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="病毒" scheme="https://x-nicolo.github.io/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
