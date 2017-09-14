@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="图像处理," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Nicolo" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="图像拼接技术是计算机视觉和数字图像处理领域中一个研究的重点。图像拼接是指将描述同一场景的两张或者多张有重叠区域的图像,通过图像配准和图像融合技术拼接成一幅大场景全新图像的过程。">
+<meta name="keywords" content="图像处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图像拼接">
+<meta property="og:url" content="https://x-nicolo.github.io/2017/09/14/图像拼接/index.html">
+<meta property="og:site_name" content="Nicolo">
+<meta property="og:description" content="图像拼接技术是计算机视觉和数字图像处理领域中一个研究的重点。图像拼接是指将描述同一场景的两张或者多张有重叠区域的图像,通过图像配准和图像融合技术拼接成一幅大场景全新图像的过程。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-14T02:59:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图像拼接">
+<meta name="twitter:description" content="图像拼接技术是计算机视觉和数字图像处理领域中一个研究的重点。图像拼接是指将描述同一场景的两张或者多张有重叠区域的图像,通过图像配准和图像融合技术拼接成一幅大场景全新图像的过程。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://x-nicolo.github.io/2017/09/14/图像拼接/"/>
+
+
+
+
+
+  <title>图像拼接 | Nicolo</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84673860-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a2a399dae20cccef6011ba0a407b4792";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+	
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nicolo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">静水流深,闻喧享静</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-work">
+          <a href="/work/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            作品
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://x-nicolo.github.io/2017/09/14/图像拼接/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nicolo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i4.buimg.com/567571/a84b27b05b920e49.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nicolo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">图像拼接</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T10:59:39+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/14/图像拼接/" class="leancloud_visitors" data-flag-title="图像拼接">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  4,774
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>图像拼接技术是计算机视觉和数字图像处理领域中一个研究的重点。图像拼接是指将描述同一场景的两张或者多张有重叠区域的图像,通过图像配准和图像融合技术拼接成一幅大场景全新图像的过程。<br><a id="more"></a></p>
+<h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p>图像的拼接过程示具体应用情况不同有很多步骤，但主要包括三个重要步骤,为：图像的预处理、图像配准以及图像融合。</p>
+<h2 id="1、-图像的预处理"><a href="#1、-图像的预处理" class="headerlink" title="1、 图像的预处理"></a>1、 图像的预处理</h2><p>由于在图像获取的过程中存在这很多干扰，光线不统一的情况，常常产生图像模糊、灰度偏移及几何变形。所以对图像进行预处理是很有必要的。图像预处理的主要目的是为了：消除干扰降低图像的配准难度，提高图像配准的准确度。图像预处理包括：图像去噪、图像投影、图像修正等。</p>
+<h3 id="图像预处理"><a href="#图像预处理" class="headerlink" title="图像预处理"></a>图像预处理</h3><p>通过硬件传感器获取到的模拟图像在转换成数字图像的过程中，由于设备存在一些自身缺陷，所采集到的原始图像中有很多不同的干扰，获取的图像达不到人们期望的质量，就必须对原始图像进行准确、有效的图像去噪，图像修正等图像前期的预处理工作，确保图像之间具有精确到像素级的校准精度。因为，图像预处理阶段的精度对最终拼接图像的质量有直接影响，所以，有必要首先研究图像拼接前的预处理。</p>
+<h4 id="图像的投影模型"><a href="#图像的投影模型" class="headerlink" title="图像的投影模型"></a>图像的投影模型</h4><p>由于图像序列是实体景物在不同坐标系下的二维投影，直接对拍摄图像进行拼接无法满足视觉一致性，所以需要将待拼接的图像分别投影到一个标准的坐标系下，然后再进行图像的拼接。常见的投影模型有：平面投影、柱面投影、球面投影、立方体投影。</p>
+<h5 id="平面投影模式"><a href="#平面投影模式" class="headerlink" title="平面投影模式"></a>平面投影模式</h5><p>平面投影方式是指：一组有重叠的图片序列，把其中一张图片作为基准，将其它图片投影到这个基准坐标系中，使相邻图片重叠区域对齐，平面投影模式是最简单也是最直接的图像投影方式。</p>
+<h5 id="球面投影模式"><a href="#球面投影模式" class="headerlink" title="球面投影模式"></a>球面投影模式</h5><p>球面投影是指：将图像序列投影到以一点为坐标中心的球面上。人的眼睛在看东西时的原理就类似于球面投影，因此，以视点为中心的球面投影模型是最自然的投影模型。但是球面投影模型也存在着一些缺点，比如球面上的像素点不是行列均匀排列的关系，球面不能展开成平面，这些都使得很多图像处理算法很难用在平面投影上。</p>
+<h5 id="立方体投影模型"><a href="#立方体投影模型" class="headerlink" title="立方体投影模型"></a>立方体投影模型</h5><p>立方体投影是为了克服球形投影缺点最近提出的一种新的投影模型。这种投影模型的优点是方便计算机处理与储存图像，缺点是计算机形成的图像的投影比较简单，但对于实景拍摄的图像比较困难，原因是需要很好的校正相机的拍摄位置才不会使图片在投影时出现光学变形，并且这种投影在图像拼接时难以确定立方体定点与边的对应关系。</p>
+<h5 id="柱面投影模型"><a href="#柱面投影模型" class="headerlink" title="柱面投影模型"></a>柱面投影模型</h5><p>柱面投影的核心是以相机为圆柱中心点，相机焦距为半径的一个柱面作为投影面。相比立方体和球面投影方式，柱面投影只能在水平方向上转动，在垂直方向上的转动有一定的限制，只允许在较小的范围上转动。</p>
+<ul>
+<li>柱面投影可以使用计算机内的图像格式直接进行存取。</li>
+<li>柱面可以很好的展开成平面图像，使得图像处理方法更容易进行操作。</li>
+<li>图像采集过程相比较球形投影和立方体投影简单，相机在拍摄过程中只需要固定一点然后旋转拍摄，期间使图像之间有一定的重合即可。</li>
+</ul>
+<p>基于以上对各个投影模型的分析，可以发现不同的投影模式有其特定的应用背景，目前，在图像拼接算法中比较常用的是柱面投影模型，在使用中，需要对相机焦距进行估值，然后将图片投影到以焦距为半径的柱面上，再进行之后的图像拼接算法处理。</p>
+<h4 id="图像去噪"><a href="#图像去噪" class="headerlink" title="图像去噪"></a>图像去噪</h4><p>数字图像噪声产生原因很多，有来自内部的干扰，如：电器机械产生的抖动、相机的热噪声、模数转换产生的误差等，也有来自外部的干扰，如：电磁波的冲击等。在图像拼接中，图像去噪的目的是为了方便之后算法处理过程，同时也起到改善图像视觉效果的作用。</p>
+<p>图像去噪可分为基于图像空间域和基于图像变换域的处理方法。</p>
+<p>图像空间域去噪方法有很多，主要是通过设计一种加权求和滤波器，对图像进行滤波是图像更加的平滑与模糊，通过平滑模糊图像牺牲图像纹理信息的方法来达到去噪的目的，比较常用的有：领域平均法，其算法取掩模内像素灰度值的平均值作为中心像素点的灰度值；空间域低通滤波发，其算法是通过一个低通卷积模版在空间域进行图像卷积运算，达到图像去噪的目的；中值滤波法一种非线性空间域滤波算法，在一定条件下，可以避免线性滤波器带来的图像变模糊的缺点。</p>
+<p>图像变换域去噪方法原理是：将空间域图像线性变换到变换域进行处理，然后将处理后的图片反变换回空间域，达到去除图像噪声的目的。进行线性变换的方法有很多种，其中比较常用的有：傅里叶变换、余弦变换、小波变换以及Ridgelet变换等，各种变换都有各自不同的特点，合理的利用这些特点处理变换域的系数，在反变换回空间域将很有效地达到去除图像噪声的目的。</p>
+<h4 id="图像的增强"><a href="#图像的增强" class="headerlink" title="图像的增强"></a>图像的增强</h4><p>增强的首要目的是处理图像，使其比原始图像更适合于特定目的。</p>
+<p>图像增强的方法分为两大类：空间域法和频域法。“空间域法”是以对图像的像素直接处理为基础的。“频域法”以修改图像的傅氏为基础的。图像空间域增强根据变换函数的不同可分为：对数变换法、幂级数变换法、直方图处理法等；频域增强法有：低通滤波、高通滤波、同态滤波等。</p>
+<h2 id="2、-图像配准"><a href="#2、-图像配准" class="headerlink" title="2、 图像配准"></a>2、 图像配准</h2><p>图像配准的目的是确定一组图像序列的重叠部分和重叠位置，并且对于不同角度、不同时间和不同光照等随机条件下采集的图片做到最佳的配准效果，所以，图像配准算法是图像拼接里最为关键的步骤，图像配准算法的好坏直接影响到最后图像拼接的效率与准确率，近年来，国内外对图像拼接的研究重心基本都是在图像配准上。</p>
+<h4 id="图像配准的原理及概念"><a href="#图像配准的原理及概念" class="headerlink" title="图像配准的原理及概念"></a>图像配准的原理及概念</h4><p>假设给定两幅图像和,其中是两幅图像空间和中的某一点。图像配准算法的目标是找到一种变换,使得变换某一图后两幅图像的相似程度：达到最大。相似性测度是一个跟变换有关并借助两幅图像数据计算出的用来衡量相似程度的函数，最后通过一种数学优化算法找到该函数的最优解，即变换。</p>
+<h4 id="图像配准算法"><a href="#图像配准算法" class="headerlink" title="图像配准算法"></a>图像配准算法</h4><p>图像配准算法可以分为基于区域和基于特征的算法。在待配准的图像中，以一幅图像作为参考图像，其它图像则称为目标图像。图像配准需要将目标图像进行空间几何变换使得与参考图像对齐。基于区域灰度强度的配准方法是通过模板在拼接图像中寻找与参考图像相似度最高的模版，从而找到最佳的配准位置；基于特征的配准方法则是通过匹配几幅图像中相似度最高的特征点，来找到最好的配准效果，其中特征点有：角点、线和轮廓，基于特征的配准算法包括：Harris角点检测算法、SIFT尺度不变转换算法、SURF尺度不变算法等。</p>
+<h5 id="基于空间域像素灰度值的方法。"><a href="#基于空间域像素灰度值的方法。" class="headerlink" title="基于空间域像素灰度值的方法。"></a>基于空间域像素灰度值的方法。</h5><p>早期的像素配准算法一般都是直接利用图像中的像素选定一定区域来建立模板进行拼接,而其中模板的选取一般都不会很复杂，最简单的方法是利用整幅图像作为模版，然后利用选取的模版在相邻有重叠部分的图片上平移，通过计算比较模版覆盖区域的相似程度，找到一种最佳的匹配方式。这种基于灰度的算法计算量大运算速度慢。针对全局图像搜索慢的缺点，Toyama提出了一种在一幅图片中选取一块矩形区域作为模版进行搜索，然后通过计算比较最后的相关度，最后找到相关度最大的位置即为最佳配准位置，该算法相比之前的算法运算速度上有了一定的提升，但计算量仍然很大。Faugeras提出基于多层分辨率金字塔的配准算法，该算法通过从粗到细的顺序寻找相似度最佳的匹配位置，该方法在很大程度上提高了运算速率，但对于图像存在尺度变化、旋转角度大等情况匹配的效果不是很好。</p>
+<p>Faugeras等提出了基于金字塔数据结构的多分辨率图像配准算法,按由粗到细的顺序寻找最佳配准位置,首先算出图像邻域内的像素点的灰度平均值,得到分辨率低一级的数字图像,再照此算法继续下去，可得到一组金字塔式的数字图像,在对两幅待拼接的数字图像都做了此处理后,从两幅数字图像的某一低级的分辨率开始进行搜索,直到搜索到一个最佳的配准位置。此算法的搜索速度很快，拼接图像尺度缩放小的情况下具有良好的效果，但如果图像的旋转的角度很大,配准效果就不是很好。</p>
+<h5 id="基于图像特征的配准算法"><a href="#基于图像特征的配准算法" class="headerlink" title="基于图像特征的配准算法"></a>基于图像特征的配准算法</h5><p>由于基于区域的图像配准算法在试图利用图像的全局信息进行图像配准时，出现计算量大和对图像本身特征敏感的问题，决定了该算法只能应用于一部分图像尺度、几何、亮度变化比较简单的图像，因此，另一种基于特征的图像配准算法就显得更加有效。基于特征的配准算法是目前应用最广的一种图像配准算法，该方法具有计算量少、对图像（尺度、几何、亮度）变化不敏感、配准效果好等特点，这类方法主要是提取图像中对几何、尺度、亮度变化不敏感特征，生成一对图像的特征集合，最后通过计算比较这对特征集合的相似度，寻找出最佳的配准位置。</p>
+<h5 id="图像的几何变换模型"><a href="#图像的几何变换模型" class="headerlink" title="图像的几何变换模型"></a>图像的几何变换模型</h5><p>通常待拼接的图像之间一般都有不同程度的几何形变，为了实现图像的拼接，就必须找到图像之间存在的几何变换模型，空间变换模型的方式有平移模型、刚性模型、相似模型、仿射模型以及投影模型等。</p>
+<p>矩阵M里面未知数的不同形式对应于不同的几何变换。</p>
+<ul>
+<li>刚性变换</li>
+</ul>
+<p>该变换代表相机模型平移和绕光轴旋转运动，对应的物体形状大小不变。</p>
+<ul>
+<li>仿射变换</li>
+</ul>
+<p>仿射变换的特点是：变换是线性的，经过仿射变换的直线仍然是直线。可以表示相机的平移、旋转、缩放运动。仿射变换后的平行线依然是平行线，仿射变换有6个自由度</p>
+<ul>
+<li>透视变换</li>
+</ul>
+<p>透视变换是最一般的变换形式，前面提到的几种变换：刚性变换、仿射变换等都是透视变换的特殊形式，透视变换具有8个自由度</p>
+<p>上面介绍的几种变换是图像拼接中经常用到的模型，每一种图像变换模型都有其各自适用的领域，在数字图像拼接中都会应用其中的某种图像变换模型。图像变换模型的选择将直接关系到拼接图像的结果。</p>
+<h4 id="图像的重采样"><a href="#图像的重采样" class="headerlink" title="图像的重采样"></a>图像的重采样</h4><p>在确定了图像之间的变换矩阵之后，接下来就是对拼接图像进行重采样，将拼接图像上的像素点采样到同一坐标系下。图像重采样有两种方法，分别是：直接法和间接法。</p>
+<p>直接法：是从原始数字图像上的像素点坐标出发，通过变换矩阵求出拼接后图像上对应的像素点的坐标，再将原始图像上像素点的灰度值赋给拼接后数字图像上的对应像素点。</p>
+<p>间接法：是从拼接后图像上像素点坐标出发，求出原始图像上对应的像素点坐标，然后将原始图像上像素点的灰度值赋给拼接后图像上对应坐标的像素点。</p>
+<p>在对坐标点进行矩阵运算求对应坐标点时，无论是直接法还是间接法都会出现计算得出非整数坐标值的问题，因此，需要用到邻域范围内像素点的灰度信息，通过插值的方法求出目标点的灰度值。比较常用的插值算法有：最近邻值法、双线性插值法和立方卷积法。通过分析可以知道，三种算法的精确度由低到高，同时计算复杂度也是由低到高。</p>
+<p>图像配准是图像拼接的关键步骤，直接决定了最后图像拼接的质量。数字图像配准目的是能够找到一个空间变换,使得数字图像序列之间相互重叠的部分的坐标点能够准确地对准。图像配准算法不但要保证图像配准时的准确度,而且要能够减小计算量，图像配准是数字图像拼接技术的关键步骤。</p>
+<h2 id="3、-图像融合"><a href="#3、-图像融合" class="headerlink" title="3、 图像融合"></a>3、 图像融合</h2><p>图像配准后，通过对配准图像重采样就可以进行图像的拼接。但由于图像灰度差异等原因，拼接后的图像很容易出现亮度差异和拼接接缝，所以在图像拼接后需要进行图像融合，使拼接后的图片看起来自然准确。</p>
+<p>在建立参考图像与拼接图像的配准关系后，就可以将图像进行拼接了，由于图像之间无可避免地存在着灰度差异，使得拼接后的图片出现拼缝或者亮度差异的情况。图像融合就是在图像拼接过程中尽量减少亮度差异以及消除拼缝的过程。图像融合分成图像合并和拼缝消除两个过程。</p>
+<h4 id="图像融合意义"><a href="#图像融合意义" class="headerlink" title="图像融合意义"></a>图像融合意义</h4><p>图像融合是指：在确定参考图像与拼接图像的几何变换关系之后，接着将待拼接图像的像素点投影到参考图像坐标系中</p>
+<h4 id="图像融合方法分类"><a href="#图像融合方法分类" class="headerlink" title="图像融合方法分类"></a>图像融合方法分类</h4><p>在图像拼接中，图像融合主要用来将拼接后得到的图像重叠部分进行融合，使图像在视觉上保持一致性，图像融合根据拼缝消除方法的不同可分为：直接平均法、加权平均法和渐入渐出法等。</p>
+<p>图像拼接需要从待拼接图像中检测出重叠部分才能进行拼接，这需要对待拼接图像提取关键信息从而确定图像的拼接部分。之前介绍分析过基于图像像素块查找法和图像特征点提取法，在实际应用中，直接匹配图像像素点运算量大，对图像几何变换、灰度差异、尺度缩放都比较敏感，因此很少直接应用。一般的实际应用中，主要采取了特征点提取的方法。图像的特征点因为具有可重复性、特殊性、鲁棒性，使得在图像拼接中，我们只要提取待拼接图像的特征点，然后通过特征点确定图像直接的配准关系，这无疑大大减小计算量，也提高了匹配的精确度。</p>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><h2 id="一-简介"><a href="#一-简介" class="headerlink" title="一 简介"></a>一 简介</h2><p>图像拼接分为四个步骤：图像匹配、重投影、缝合和融合。  </p>
+<ul>
+<li>图像匹配：是指一对描绘相同场景之间的几张图片的几何对应关系。一组照片可以是不同时间不同位置的拍摄，或者由多个传感器同时拍摄多张图像。</li>
+<li>重投影：通过图像的几何变换，把一系列图片转换成一个共同的坐标系</li>
+<li>缝合：通过合并重叠部分的像素值并保持没有重叠的像素值使之生成更大画布的图像</li>
+<li>融合：通过几何和光度偏移错误通常导致对象的不连续，并在两个图像之间的边界附近产生可见的接缝。因此，为了减小接缝的出现，需要在缝合时或缝合之后使用混合算法.</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢你请我吃糖果！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://i4.buimg.com/567571/acd751d320587fe7.png" alt="Nicolo WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://i1.piimg.com/567571/878342f2b1a28d6a.png" alt="Nicolo Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/图像处理/" rel="tag"><i class="fa fa-tag"></i> 图像处理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/12/Python网络爬虫与信息提取/" rel="next" title="【MOOC】Python网络爬虫与信息提取">
+                <i class="fa fa-chevron-left"></i> 【MOOC】Python网络爬虫与信息提取
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://i4.buimg.com/567571/a84b27b05b920e49.jpg"
+               alt="Nicolo" />
+          <p class="site-author-name" itemprop="name">Nicolo</p>
+           
+              <p class="site-description motion-element" itemprop="description">文艺工科狗，编码艺术家</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/X-Nicolo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/nicoloxiaosa/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=-YWUnJKOnNOTlJ6SkZK9jIzTnpKQ" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://mianhk.github.io/" title="小二三不乌" target="_blank">小二三不乌</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://w3school.com.cn/html/index.asp" title="W3school" target="_blank">W3school</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" title="廖雪峰Python学习" target="_blank">廖雪峰Python学习</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://docs.google.com/document/d/1UAx8wxU5D-STGP72mnfAYnWG0dmLiRcH4kpMxeYr2nU/pub" title="java学习集合YouTube" target="_blank">java学习集合YouTube</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一"><span class="nav-number">1.</span> <span class="nav-text">一</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、-图像的预处理"><span class="nav-number">1.1.</span> <span class="nav-text">1、 图像的预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像预处理"><span class="nav-number">1.1.1.</span> <span class="nav-text">图像预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图像的投影模型"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">图像的投影模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#平面投影模式"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">平面投影模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#球面投影模式"><span class="nav-number">1.1.1.1.2.</span> <span class="nav-text">球面投影模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#立方体投影模型"><span class="nav-number">1.1.1.1.3.</span> <span class="nav-text">立方体投影模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#柱面投影模型"><span class="nav-number">1.1.1.1.4.</span> <span class="nav-text">柱面投影模型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像去噪"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">图像去噪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像的增强"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">图像的增强</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、-图像配准"><span class="nav-number">1.2.</span> <span class="nav-text">2、 图像配准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图像配准的原理及概念"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">图像配准的原理及概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像配准算法"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">图像配准算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基于空间域像素灰度值的方法。"><span class="nav-number">1.2.0.2.1.</span> <span class="nav-text">基于空间域像素灰度值的方法。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于图像特征的配准算法"><span class="nav-number">1.2.0.2.2.</span> <span class="nav-text">基于图像特征的配准算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图像的几何变换模型"><span class="nav-number">1.2.0.2.3.</span> <span class="nav-text">图像的几何变换模型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像的重采样"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">图像的重采样</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、-图像融合"><span class="nav-number">1.3.</span> <span class="nav-text">3、 图像融合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图像融合意义"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">图像融合意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像融合方法分类"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">图像融合方法分类</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二"><span class="nav-number">2.</span> <span class="nav-text">二</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-简介"><span class="nav-number">2.1.</span> <span class="nav-text">一 简介</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Nicolo</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共76.4k字</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("2FAmjccRSDfhTK5tqHkm7pIn-gzGzoHsz", "Eun9PPJHjz1XF6kVqoycMeVa");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/cheat.js"></script>
