@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2017-09-14T02:59:39.000Z</updated>
+  <updated>2017-09-15T13:08:06.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python-Opencv的安装</title>
+    <link href="https://x-nicolo.github.io/2017/09/15/Python-Opencv%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>https://x-nicolo.github.io/2017/09/15/Python-Opencv的安装/</id>
+    <published>2017-09-15T13:08:06.000Z</published>
+    <updated>2017-09-15T13:08:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-586e5ae773aafaa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><strong>Windows下安装python2和python3双版本</strong><br><strong>Python2的Opencv的安装</strong><br><a id="more"></a><br>Python整出的向下不兼容简直是败笔，无奈，还是要处理。<br>一直都在使用Python2，后来爬虫为了和team统一，使用上Python3。<br>现在上手图像处理的一下学习，不想用C++，Opencv有Python的接口，还是Python2成熟点，为了后续的出现问题少，还是用Python2吧。  </p>
+<h2 id="Windows下安装python2和python3双版本"><a href="#Windows下安装python2和python3双版本" class="headerlink" title="Windows下安装python2和python3双版本"></a>Windows下安装python2和python3双版本</h2><h3 id="安装python-2-x"><a href="#安装python-2-x" class="headerlink" title="安装python 2.x"></a>安装python 2.x</h3><p>双击 python-2.7.12.amd64.msi 然后一路 Next就可以了。<br>需要注意的是python 2.x 默认安装在 C盘根目录下。</p>
+<h4 id="配置python-2-x-的环境变量"><a href="#配置python-2-x-的环境变量" class="headerlink" title="配置python 2.x 的环境变量"></a>配置python 2.x 的环境变量</h4><p>此处需要将两个目录添加到path环境变量中：</p>
+<ul>
+<li>python命令文件所在目录： python 2.x安装目录</li>
+<li>pip、easy_install等其他脚本文件所在目录： python 2.x安装目录下的Scripts目录</li>
+</ul>
+<p>将下面这行内容添加到Path变量的开始位置：<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:<span class="symbol">\P</span>ython27;C:<span class="symbol">\P</span>ython27<span class="symbol">\S</span>cripts;</div></pre></td></tr></table></figure></p>
+<p>　　</p>
+<h3 id="安装python-3-x"><a href="#安装python-3-x" class="headerlink" title="安装python 3.x"></a>安装python 3.x</h3><p>此处选择自定义安装，因为要修改默认安装位置。另外这里勾选了 “Add Python 3.5 to PATH” 选项，会自动配置环境变量.</p>
+<h3 id="将python-2-x-和-python-3-x的相关命令区分开来"><a href="#将python-2-x-和-python-3-x的相关命令区分开来" class="headerlink" title="将python 2.x 和 python 3.x的相关命令区分开来"></a>将python 2.x 和 python 3.x的相关命令区分开来</h3><p>解决方案是：将python 3.x 下的所有命令文件名称后都添加一个3，Python ==&gt; python3<br>删除Python35\Scripts下面的pip.exe  </p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>说明：一定要重新启动命令终端，否则的path变量不会被重新加载  </p>
+<p>测试发现pip3有问题，其实就是pip的版本太低了，升级一下就可以了：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python3 -m pip <span class="keyword">install</span> -U pip</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2847713-f441d31553774972.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h2 id="Python2的Opencv的安装"><a href="#Python2的Opencv的安装" class="headerlink" title="Python2的Opencv的安装"></a>Python2的Opencv的安装</h2><h3 id="安装Numpy"><a href="#安装Numpy" class="headerlink" title="安装Numpy"></a>安装Numpy</h3><p>安装numpy，打开cmd，输入pip install numpy<br><img src="http://upload-images.jianshu.io/upload_images/2847713-7558d0330d97a94d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
+<p>测试：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-314adab2d8593842.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
+<h3 id="安装opencv"><a href="#安装opencv" class="headerlink" title="安装opencv"></a>安装opencv</h3><ul>
+<li>在官网自行下载，这里下载的是opencv2.4.13</li>
+<li>复制cv2.pyd 将”\opencv\build\python\2.7\x64”或”\opencv\build\python\2.7\x86”（根据python版本）文件夹中找到cv2.pyd”，复制到Python安装文件的”C:\Python27\Lib\site-packages”文件夹中。</li>
+</ul>
+<p>测试：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-5cea22d10dc5da90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>出现错误。<br>错误原因：Python2的版本为32位，opencv的版本为64为，window的版本为64为。<br>解决方法: 卸载Python2 32bit,安装Python2 63bit。接着重复“Python2的Opencv的安装”</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2847713-024d96636b0aa552.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搞定！  </p>
+<p>在测试：<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">img = cv2.imread(<span class="string">"C:\lena.jpg"</span>)</div><div class="line">cv2.imshow(<span class="string">"lena"</span>,img)</div><div class="line">cv2.waitKey(<span class="number">10000</span>)</div><div class="line">```  </div><div class="line"></div><div class="line">![image.png](http:<span class="comment">//upload-images.jianshu.io/upload_images/2847713-c5c32a4c119f6313.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span></div><div class="line">ok!  </div><div class="line"></div><div class="line">## 补：sublime的Python3和<span class="number">2</span>的配置  </div><div class="line"></div><div class="line">sublime作为Python的日常使用，还是需要在Python2和Python3直接切换的。    </div><div class="line"></div><div class="line">打开Sublime Text <span class="number">3</span>，依次进入Tools--&gt;Build System--&gt;New Build System</div><div class="line"></div><div class="line">Python3的配置：</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: [“D:/Python35/python3.exe”,”-u”,”$file”],<br>    “file_regex”: “^[ ]<em>File \”(…</em>?)\”, line ([0-9]*)”,<br>    “selector”: “source.python”,<br>}<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Pytho<span class="symbol">n2</span>的配置：</div></pre></td></tr></table></figure></p>
+<p>{<br>    “cmd”: [“C:/Python27/python.exe”,”-u”,”$file”],<br>    “file_regex”: “^[ ]<em>File \”(…</em>?)\”, line ([0-9]*)”,<br>    “selector”: “source.python”,<br>}<br>```</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2847713-767c02dc6d52c461.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后，选择需要的即可：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-d1f028373ea61c2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-586e5ae773aafaa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;&lt;strong&gt;Windows下安装python2和python3双版本&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;Python2的Opencv的安装&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
+    
+      <category term="Opencv" scheme="https://x-nicolo.github.io/tags/Opencv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Opencv的安装</title>
+    <link href="https://x-nicolo.github.io/2017/09/15/Opencv%E7%9A%84%E5%AE%89%E8%A3%85/"/>
+    <id>https://x-nicolo.github.io/2017/09/15/Opencv的安装/</id>
+    <published>2017-09-15T13:07:08.000Z</published>
+    <updated>2017-09-15T13:07:08.311Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>图像拼接</title>
@@ -1227,172 +1292,6 @@ jdbc.password=root//连接测试的密码
     
     
       <category term="日常" scheme="https://x-nicolo.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JDBC编程</title>
-    <link href="https://x-nicolo.github.io/2017/05/31/JDBC%E7%BC%96%E7%A8%8B/"/>
-    <id>https://x-nicolo.github.io/2017/05/31/JDBC编程/</id>
-    <published>2017-05-31T01:45:01.000Z</published>
-    <updated>2017-06-04T13:14:23.458Z</updated>
-    
-    <content type="html"><![CDATA[<p>JDBC： Java Database Connectivity<br>一、数据库基础知识<br>二、MySQL入门<br>三、JDBC编程<br><a id="more"></a></p>
-<h2 id="一、数据库基础知识"><a href="#一、数据库基础知识" class="headerlink" title="一、数据库基础知识"></a>一、数据库基础知识</h2><h3 id="1、关系数据模型："><a href="#1、关系数据模型：" class="headerlink" title="1、关系数据模型："></a>1、关系数据模型：</h3><h4 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h4><ul>
-<li>关系：一张二维表</li>
-<li>元祖：表中的一行</li>
-<li>属性：表中的一列</li>
-<li>属性域：属性的取值范围</li>
-<li>主键：唯一的表示表中的元祖</li>
-<li>外键：一个关系中包含另一个关系的主键</li>
-</ul>
-<h4 id="范式："><a href="#范式：" class="headerlink" title="范式："></a>范式：</h4><p>范式：数据库设计需要满足的规范.</p>
-<ul>
-<li>1NF：对属性的原子性约束，不可再分解。不能有嵌套表。</li>
-<li>2NF: 对记录的唯一性约束，要求记录有唯一标示，实体必须是唯一的。所有的主键字段都要依赖与非主键字段。</li>
-<li>3NF：对字段冗余性的约束，要求任何字段都不能派生于其他字段。也就是说非主键字段直接不能相互依赖。</li>
-</ul>
-<h2 id="二、MySQL入门"><a href="#二、MySQL入门" class="headerlink" title="二、MySQL入门"></a>二、MySQL入门</h2><h3 id="1、MySQL数据类型简介"><a href="#1、MySQL数据类型简介" class="headerlink" title="1、MySQL数据类型简介"></a>1、MySQL数据类型简介</h3><h4 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h4><ul>
-<li>TINYINT：1个字节，8位</li>
-<li>SMAILLINT：2个字节，16位</li>
-<li>MEDIUMINT：3个字节，24位</li>
-<li>INT：4个字节，32位</li>
-<li>BIGINT：8个字节，64位</li>
-</ul>
-<h4 id="实数（带有小数部分的数字）"><a href="#实数（带有小数部分的数字）" class="headerlink" title="实数（带有小数部分的数字）"></a>实数（带有小数部分的数字）</h4><ul>
-<li>FLOAT：4个字节，32位</li>
-<li>DOUBLE：8个字节，64位</li>
-<li>DECIMAL：存储精确的小数，指定小数点前后的位数。eg.DECIMAL（20，2），表示小数点后存储两个数字，小数点前存储18个数字。</li>
-</ul>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
-<li>VARCHAR:用于保存可变长度的字符串。</li>
-<li>CHAR:固定长度的字符串。0~255任意值。</li>
-<li>TEXT、BLOB：存储较长的字符串。</li>
-</ul>
-<h4 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h4><ul>
-<li>DATETIME：保存大范围的值，从1001~9999年，精度为秒。8个字节。</li>
-<li>TIMESTAMP：时间戳类型，1970.1.1~2038年，即格林威治时间到现在所经历的秒数。4个字节。</li>
-</ul>
-<h4 id="数据类型选择准则"><a href="#数据类型选择准则" class="headerlink" title="数据类型选择准则"></a>数据类型选择准则</h4><ul>
-<li>最小原则</li>
-<li>简单原则</li>
-<li>避免索引列上的NULL</li>
-</ul>
-<h2 id="三、JDBC编程"><a href="#三、JDBC编程" class="headerlink" title="三、JDBC编程"></a>三、JDBC编程</h2><h3 id="1、JDBC简介"><a href="#1、JDBC简介" class="headerlink" title="1、JDBC简介"></a>1、JDBC简介</h3><h4 id="JDBC概述"><a href="#JDBC概述" class="headerlink" title="JDBC概述"></a>JDBC概述</h4><ul>
-<li>ODBC(Open Database Connectivity)</li>
-<li>JDBC(Java Database Connectivity)</li>
-</ul>
-<h3 id="JDBC的组成"><a href="#JDBC的组成" class="headerlink" title="JDBC的组成"></a>JDBC的组成</h3><ul>
-<li>JDBC API:面向开发人员</li>
-<li>JDBC Driver API：面向底层驱动开发商</li>
-</ul>
-<h4 id="JDBC-Driver-API"><a href="#JDBC-Driver-API" class="headerlink" title="JDBC Driver API"></a>JDBC Driver API</h4><p>主要编程接口：</p>
-<ul>
-<li>DriverManager：装载驱动程序，并为创建数据库连接提供支持</li>
-<li>Connection:连接某一指定的数据库</li>
-<li>Statement：执行SQL语句，获取查询结果的方法。</li>
-</ul>
-<p>JDBC驱动程序主要有四种类型：</p>
-<ul>
-<li>JDBC-ODBC bridge</li>
-<li>部分Java技术的本地API驱动程序</li>
-<li>全部基于Java技术的本地API驱动程序</li>
-<li>全部基于Java技术的本地协议驱动程序</li>
-</ul>
-<h3 id="2、JDBC编程之数据准备"><a href="#2、JDBC编程之数据准备" class="headerlink" title="2、JDBC编程之数据准备"></a>2、JDBC编程之数据准备</h3><h4 id="建两张表："><a href="#建两张表：" class="headerlink" title="建两张表："></a>建两张表：</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">creat <span class="keyword">table</span> tbl_user(</div><div class="line">id <span class="keyword">int</span>(<span class="number">11</span>) <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line">name varchar(<span class="number">50</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> '',</div><div class="line">email varchar(<span class="number">50</span>) nit <span class="literal">null</span> <span class="keyword">default</span> '',</div><div class="line">primary key(id))</div><div class="line">engine = InnoDB</div><div class="line"><span class="keyword">default</span> charset = utf8;</div><div class="line"></div><div class="line"></div><div class="line">creat <span class="keyword">table</span> tbl_address(</div><div class="line">id <span class="keyword">int</span>(<span class="number">11</span>) <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line">city varchar(<span class="number">20</span>) <span class="keyword">default</span> <span class="literal">null</span>,</div><div class="line">country varchar(<span class="number">20</span>) <span class="keyword">default</span> <span class="literal">null</span>,</div><div class="line">primary key (id))</div><div class="line">engine = InnoDB</div><div class="line"><span class="keyword">default</span> charset = utf8;</div></pre></td></tr></table></figure>
-<p><em>注：</em><br><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">id:</span><span class="string">没有业务含义的逻辑主键</span></div><div class="line"><span class="string">auto_increment</span>：自增长</div><div class="line"><span class="keyword">default</span> <span class="string">''</span> ：默认值为空字符串</div><div class="line">engine = InnoDB：设置MySQL的存储引擎，InnoDB是存储引擎的一种，支持事物。</div></pre></td></tr></table></figure></p>
-<h4 id="插入数据："><a href="#插入数据：" class="headerlink" title="插入数据："></a>插入数据：</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tbl_user(<span class="keyword">id</span>, <span class="keyword">name</span>, <span class="keyword">password</span>, email)</div><div class="line"><span class="keyword">values</span></div><div class="line">(<span class="number">1</span>, <span class="string">'xiaosa'</span>, <span class="string">'123456'</span>, <span class="string">'xiaosa.nicolo@qq.com'</span>),</div><div class="line">(<span class="number">2</span>, <span class="string">'nicolo'</span>, <span class="string">'123456'</span>, <span class="string">'1241251168@qq.com'</span>);</div><div class="line"></div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tbl_address(city, country, user_id)</div><div class="line"><span class="keyword">values</span>(<span class="string">'xian'</span>, <span class="string">'china'</span>, <span class="number">1</span>);</div><div class="line"></div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tbl_address(city, country, user_id)</div><div class="line"><span class="keyword">values</span>(<span class="string">'beijing'</span>, <span class="string">'china'</span>, <span class="number">2</span>);</div></pre></td></tr></table></figure>
-<h3 id="3、JDBC编程之数据查询"><a href="#3、JDBC编程之数据查询" class="headerlink" title="3、JDBC编程之数据查询"></a>3、JDBC编程之数据查询</h3><p>安装驱动，下载mysql-connector-java。<br>将mysql-connector-java-5.1.42-bin.jar包拷到WEB-INF目录下。</p>
-<h4 id="JDBC编程流程"><a href="#JDBC编程流程" class="headerlink" title="JDBC编程流程"></a>JDBC编程流程</h4><ol>
-<li>加载驱动</li>
-<li>打开连接</li>
-<li>执行查询</li>
-<li>处理结果</li>
-<li>清理环境</li>
-</ol>
-<h5 id="实现程序："><a href="#实现程序：" class="headerlink" title="实现程序："></a>实现程序：</h5><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> JDBCTest&#123;</div><div class="line">    pubilc <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args)&#123;</div><div class="line">    String sql = <span class="string">"SELECT * FROM tbl_user"</span>;</div><div class="line">    Connection conn = <span class="keyword">null</span>;</div><div class="line">    Statement st = <span class="keyword">null</span>;</div><div class="line">    ResultSet rs = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="comment">//注册MySQL的JDBC驱动程序，class类是继承Object类</span></div><div class="line">        <span class="comment">//forName方法用来初始化参数指定的类并创立一个对应的实例对象</span></div><div class="line">        <span class="keyword">Class</span>.forName(<span class="string">"com.mysql,jdbc.Driver"</span>);</div><div class="line"></div><div class="line">        <span class="comment">//获取MySQL的数据库连接</span></div><div class="line">        <span class="comment">//getConnection方法需要传入三个参数：MySQL数据库的URL、MySQL数据库的用户名、密码</span></div><div class="line">        <span class="comment">////locahost:主机，3306：MySQL的端口,jsp_db:将要使用的数据库</span></div><div class="line">        conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://locahost:3306/jsp_db"</span>,<span class="string">"root"</span>,<span class="string">""</span>);</div><div class="line"></div><div class="line">        <span class="comment">//创建st对象</span></div><div class="line">        st = conn.createStatement();</div><div class="line"></div><div class="line">        <span class="comment">//使用executeQuery方法发生sql语句返回rs结果集</span></div><div class="line">        rs = st.executeQuery(sql);</div><div class="line"></div><div class="line">        <span class="keyword">while</span>(rs.<span class="keyword">next</span>())&#123;</div><div class="line">            System.out.<span class="keyword">print</span>(rs.getInt(<span class="string">"id"</span>) * <span class="string">" "</span>);</div><div class="line">            System.out.<span class="keyword">print</span>(rs.getString(<span class="string">"name"</span>) * <span class="string">" "</span>);</div><div class="line">            System.out.<span class="keyword">print</span>(rs.getString(<span class="string">"password"</span>) * <span class="string">" "</span>);</div><div class="line">            System.out.<span class="keyword">print</span>(rs.getString(<span class="string">"email"</span>) * <span class="string">" "</span>);</div><div class="line">            System.out.<span class="keyword">println</span>();</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;<span class="keyword">finally</span>&#123;</div><div class="line">            <span class="keyword">try</span>&#123;</div><div class="line">                <span class="comment">//关闭rs结果集</span></div><div class="line">                rs.closee();</div><div class="line">                &#125;<span class="keyword">catch</span>(Exception e2)&#123;</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">            <span class="keyword">try</span>&#123;</div><div class="line">                <span class="comment">//关闭st对象</span></div><div class="line">                st close();</div><div class="line">                &#125;<span class="keyword">catch</span>(Exception e3)&#123;</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">            <span class="keyword">try</span>&#123;</div><div class="line">                <span class="comment">//关闭数据库连接</span></div><div class="line">                conn close();</div><div class="line">                &#125;<span class="keyword">catch</span>(Exception e4)&#123;</div><div class="line"></div><div class="line">                &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="4、JDBC编程之数据更新"><a href="#4、JDBC编程之数据更新" class="headerlink" title="4、JDBC编程之数据更新"></a>4、JDBC编程之数据更新</h3><h4 id="数据库连接方法"><a href="#数据库连接方法" class="headerlink" title="数据库连接方法"></a>数据库连接方法</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public static<span class="built_in"> Connection </span>getConnection()&#123;</div><div class="line">   <span class="built_in"> Connection </span>conn = <span class="literal">null</span>;</div><div class="line">    try&#123;</div><div class="line">        Class.forName(<span class="string">"con.mysql.jdbc.Driver"</span>);</div><div class="line">        conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://locahost:3306/jsp_db"</span>,<span class="string">"root"</span>,<span class="string">" "</span>);</div><div class="line">    &#125;catch(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    return conn;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h4 id="插入数据方法"><a href="#插入数据方法" class="headerlink" title="插入数据方法"></a>插入数据方法</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> insert()&#123;</div><div class="line">    <span class="comment">//获取数据库连接</span></div><div class="line">    Connection conn = getConnection();</div><div class="line"></div><div class="line">    <span class="built_in">try</span>&#123;</div><div class="line">        <span class="keyword">String</span> sql = <span class="string">"INSERT INTO tbl_user(name, password, email)"</span> + <span class="string">"VALUES('Tom', '123456', 'tom@qq.com')"</span>;</div><div class="line">        Statement st = conn.createStatement();</div><div class="line">        <span class="keyword">int</span> count = St.executeUpdate(sql);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="string">"向用户表中插入了"</span> + count + <span class="string">" 条记录"</span>)；</div><div class="line">        conn.<span class="built_in">close</span>();</div><div class="line">    &#125;<span class="built_in">catch</span>(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="更新方法"><a href="#更新方法" class="headerlink" title="更新方法"></a>更新方法</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> update()&#123;</div><div class="line"><span class="comment">//获取数据库连接</span></div><div class="line">    Connection conn = getConnection();</div><div class="line"></div><div class="line">    <span class="built_in">try</span>&#123;</div><div class="line">        <span class="keyword">String</span> sql = <span class="string">"UPDATE tbl_user SET email = 'tom@126.com' WHERE name = 'Tom'"</span>;</div><div class="line">        Statement st = conn.createStatement();</div><div class="line">        <span class="keyword">int</span> count = St.executeUpdate(sql);</div><div class="line">        System.out.<span class="built_in">println</span>(<span class="string">"向用户表中更新了"</span> + count + <span class="string">" 条记录"</span>)；</div><div class="line">        conn.<span class="built_in">close</span>();</div><div class="line">    &#125;<span class="built_in">catch</span>(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="删除记录的方法"><a href="#删除记录的方法" class="headerlink" title="删除记录的方法"></a>删除记录的方法</h4><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public static void dele()&#123;</div><div class="line">//获取数据库连接</div><div class="line">    Connection conn = getConnection();</div><div class="line"></div><div class="line">    try&#123;</div><div class="line">        String sql = <span class="string">"<span class="keyword">DELETE</span> FROM tbl_user WHERE name = 'Tom'"</span>;</div><div class="line">        Statement st = conn.createStatement();</div><div class="line">        int count = St.executeUpdate(sql);</div><div class="line">        System.out.println(<span class="string">"从用户表中删除了"</span> + count + <span class="string">" 条记录"</span>)；</div><div class="line">        conn.close();</div><div class="line">    &#125;catch(Exception e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="5、JDBC编程之事务处理"><a href="#5、JDBC编程之事务处理" class="headerlink" title="5、JDBC编程之事务处理"></a>5、JDBC编程之事务处理</h3><h4 id="事务概述"><a href="#事务概述" class="headerlink" title="事务概述"></a>事务概述</h4><ul>
-<li>事务：数据库维护数据一致性的单位，在每个事务结束时都能保持事务的一致性。</li>
-</ul>
-<h4 id="事务的四个基本特征"><a href="#事务的四个基本特征" class="headerlink" title="事务的四个基本特征"></a>事务的四个基本特征</h4><ul>
-<li><p>原子性：事务中的操作都被视为一个逻辑单元。<br>这个事务中的逻辑单元要么全部成功，要么全部失败。事务中的元素是一个整体，是不可分割的。</p>
-</li>
-<li><p>一致性：事务开始之前和事务结束以后，数据库都处于一致性状态。数据库的完整性约束没有被破坏。</p>
-</li>
-<li><p>隔离性：对数据库的修改的多个事务是互相隔离的。说明事务必须是独立的。</p>
-</li>
-<li><p>持久性：事务完成之后，它对数据的影响是永久的，</p>
-</li>
-</ul>
-<h4 id="事物的语句"><a href="#事物的语句" class="headerlink" title="事物的语句"></a>事物的语句</h4><ul>
-<li>开始事物：BEGIN TRANSACTION</li>
-<li>提交事物：COMMIT TRANSACTION</li>
-<li>回滚事物: ROLLBACK TRANSACTION</li>
-</ul>
-<h4 id="编程实现"><a href="#编程实现" class="headerlink" title="编程实现"></a>编程实现</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">public <span class="keyword">class</span> TransactionTest&#123;</div><div class="line"></div><div class="line">public static Connection getConnection()&#123;</div><div class="line">    <span class="comment">//数据库连接</span></div><div class="line">    Connection conn = null;</div><div class="line"></div><div class="line">    try&#123;</div><div class="line">        <span class="keyword">Class</span>.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</div><div class="line">        conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://localhost:3306/jsp_db, root, "</span> ");</div><div class="line">    &#125;catch(Exception <span class="keyword">e</span>)&#123;</div><div class="line">        <span class="keyword">e</span>.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> conn;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public static void insertUserData()&#123;</div><div class="line">    <span class="comment">//插入用户数据</span></div><div class="line"></div><div class="line">    Connection conn = getConnection;</div><div class="line"></div><div class="line">    try&#123;</div><div class="line">        String sql = <span class="string">"INSERT INTO tbl_user(id, name, password, email)"</span> + <span class="string">"VALUES(10, 'Tom', '123456', 'tom@gmail.com')"</span>;</div><div class="line">        Statement <span class="keyword">st</span> = conn.createStatement();</div><div class="line">        int <span class="keyword">count</span> = <span class="keyword">st</span>.executeUpdate(sql);</div><div class="line">        System.<span class="keyword">out</span>.println(<span class="string">"向用户表插入了 "</span> + <span class="keyword">count</span> + <span class="string">" 条记录"</span>);</div><div class="line">        conn.<span class="keyword">close</span>();</div><div class="line">    &#125;catch(Exception <span class="keyword">e</span>)&#123;</div><div class="line">        <span class="keyword">e</span>.printStackTrace();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public static void insertAddressData()&#123;</div><div class="line"></div><div class="line"> Connection conn = getConnection();</div><div class="line"> try&#123;</div><div class="line"> Sting sql = <span class="string">"INSERT INTO tbl_address(id, city, country, user_id)"</span> + <span class="string">"VALUES(1, 'xian','Chian', '10')"</span>;</div><div class="line"> Statement <span class="keyword">st</span> = conn.createStatement();</div><div class="line"> int <span class="keyword">count</span> = <span class="keyword">st</span>.executeUpdate(sql);</div><div class="line"> System.<span class="keyword">out</span>.println(<span class="string">"向地址表中插入了 "</span> + <span class="keyword">count</span> +<span class="string">" 条记录"</span>);</div><div class="line">&#125;catch(Exception <span class="keyword">e</span>)&#123;</div><div class="line">        <span class="keyword">e</span>.printStackTrace();</div><div class="line">    &#125;</div><div class="line">public static void main(String[] agrs)&#123;</div><div class="line">    insertUserData();</div><div class="line">    insertAddressData();</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;JDBC： Java Database Connectivity&lt;br&gt;一、数据库基础知识&lt;br&gt;二、MySQL入门&lt;br&gt;三、JDBC编程&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="java" scheme="https://x-nicolo.github.io/tags/java/"/>
-    
-      <category term="数据库" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-      <category term="MySQL" scheme="https://x-nicolo.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Hexo】bat自动处理hexo命令</title>
-    <link href="https://x-nicolo.github.io/2017/05/27/%E3%80%90Hexo%E3%80%91bat%E8%87%AA%E5%8A%A8%E5%A4%84%E7%90%86hexo%E5%91%BD%E4%BB%A4/"/>
-    <id>https://x-nicolo.github.io/2017/05/27/【Hexo】bat自动处理hexo命令/</id>
-    <published>2017-05-27T01:30:57.000Z</published>
-    <updated>2017-05-27T02:22:18.793Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-bdf7adae569d6197.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<hr>
-<p>每次写新文章都得hexo new “xxx”，写完再hexo g -d，挺麻烦的。<br>就不能写一个脚本来自动执行吗？</p>
-<hr>
-<a id="more"></a>
-<h2 id="一、创建hexo文章"><a href="#一、创建hexo文章" class="headerlink" title="一、创建hexo文章"></a>一、创建hexo文章</h2><p>之前写文章都得打开cmd,输入hexo new “XXX”。<br>然后再去目录下找生成的.md文件打开编辑。<br>这样的机械动作不应该用程序就可以做到吗？</p>
-<h3 id="创建hexo文章-bat"><a href="#创建hexo文章-bat" class="headerlink" title="创建hexo文章.bat"></a>创建hexo文章.bat</h3><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off</div><div class="line"><span class="built_in">set</span> /p <span class="built_in">name</span>=input pages <span class="built_in">name</span>:</div><div class="line"><span class="built_in">echo</span> <span class="built_in">name</span>:%<span class="built_in">name</span>%</div><div class="line"><span class="built_in">echo</span> please wait</div><div class="line">hexo new %<span class="built_in">name</span>% &amp;&amp; <span class="built_in">call</span> <span class="number">3</span>.bat %<span class="built_in">name</span>%</div><div class="line">pause</div></pre></td></tr></table></figure>
-<h3 id="3-bat"><a href="#3-bat" class="headerlink" title="3.bat"></a>3.bat</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">start</span> /<span class="keyword">min</span> /w mshta vbscript:setTimeout(<span class="string">"window.close()"</span>,<span class="number">1000</span>)</div><div class="line">echo The InputValue <span class="keyword">is</span> %<span class="number">1</span></div><div class="line"><span class="keyword">set</span> <span class="keyword">name</span>=%<span class="number">1</span></div><div class="line">echo %<span class="keyword">name</span>%</div><div class="line"><span class="keyword">start</span> /d <span class="string">"C:\asoft\Sublime Text 3"</span>   sublime_text.exe  <span class="string">"D:\Hexo\source\_posts\%name%.md"</span></div><div class="line">pause</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/2847713-6f1684844132ac71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>每次点击“创建hexo文章.bat”输入文章名，sublime Text就会自动打开编辑了。</p>
-<h2 id="二、发布文章到github"><a href="#二、发布文章到github" class="headerlink" title="二、发布文章到github"></a>二、发布文章到github</h2><p>编辑完markdown文章后再发到github上，博客才会显示。<br>一般命令：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo clean</span></div><div class="line"><span class="attribute">hexo g</span></div><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure></p>
-<p>写成脚本：</p>
-<h3 id="发布文章到github-bat"><a href="#发布文章到github-bat" class="headerlink" title="发布文章到github.bat"></a>发布文章到github.bat</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">start</span> <span class="number">1.</span>bat</div><div class="line"><span class="built_in">start</span> /<span class="built_in">min</span> /w mshta vbscript:setTimeout(<span class="string">"window.close()"</span>,<span class="number">1200</span>)</div><div class="line"><span class="built_in">start</span> <span class="number">4.</span>bat</div></pre></td></tr></table></figure>
-<h3 id="1-bat"><a href="#1-bat" class="headerlink" title="1.bat"></a>1.bat</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@echo off</div><div class="line">echo clean</div><div class="line">echo Please wait</div><div class="line">hexo clean</div><div class="line"><span class="keyword">exit</span></div></pre></td></tr></table></figure>
-<h3 id="4-bat"><a href="#4-bat" class="headerlink" title="4.bat"></a>4.bat</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">g</span> -<span class="built_in">d</span></div><div class="line"><span class="keyword">pause</span></div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/2847713-57506d843ae39783.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>写完文章后，点击“发布文章到github.bat”就可以将文章发到github上，就可以在博客上显示了。<br>等有时间再研究下怎么写一个客户端。<br>（这篇文章使用本文程序发布）</p>
-<h3 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h3><p>bat自动处理hexo命令.rar <a href="http://opms50p58.bkt.clouddn.com/bat%E8%87%AA%E5%8A%A8%E5%A4%84%E7%90%86hexo%E5%91%BD%E4%BB%A4.rar" title="点击下载" target="_blank" rel="external">点击下载</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-bdf7adae569d6197.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;每次写新文章都得hexo new “xxx”，写完再hexo g -d，挺麻烦的。&lt;br&gt;就不能写一个脚本来自动执行吗？&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://x-nicolo.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="hexo" scheme="https://x-nicolo.github.io/tags/hexo/"/>
     
   </entry>
   
