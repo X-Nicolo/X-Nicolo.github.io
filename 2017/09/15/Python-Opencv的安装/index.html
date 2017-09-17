@@ -102,7 +102,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Nicolo" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="肖洒" type="application/atom+xml" />
 
 
 
@@ -119,7 +119,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python-Opencv的安装">
 <meta property="og:url" content="https://x-nicolo.github.io/2017/09/15/Python-Opencv的安装/index.html">
-<meta property="og:site_name" content="Nicolo">
+<meta property="og:site_name" content="肖洒">
 <meta property="og:description" content="Windows下安装python2和python3双版本Python2的Opencv的安装">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2847713-586e5ae773aafaa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -170,7 +170,7 @@
 
 
 
-  <title>Python-Opencv的安装 | Nicolo</title>
+  <title>Python-Opencv的安装 | 肖洒</title>
   
 
 
@@ -226,7 +226,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Nicolo</span>
+        <span class="site-title">肖洒</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -346,13 +346,13 @@
     <link itemprop="mainEntityOfPage" href="https://x-nicolo.github.io/2017/09/15/Python-Opencv的安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nicolo">
+      <meta itemprop="name" content="肖洒">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://i4.buimg.com/567571/a84b27b05b920e49.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nicolo">
+      <meta itemprop="name" content="肖洒">
     </span>
 
     
@@ -506,9 +506,9 @@
 <li>在官网自行下载，这里下载的是opencv2.4.13</li>
 <li>复制cv2.pyd 将”\opencv\build\python\2.7\x64”或”\opencv\build\python\2.7\x86”（根据python版本）文件夹中找到cv2.pyd”，复制到Python安装文件的”C:\Python27\Lib\site-packages”文件夹中。</li>
 </ul>
-<p>测试：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-5cea22d10dc5da90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>出现错误。<br>错误原因：Python2的版本为32位，opencv的版本为64为，window的版本为64为。<br>解决方法: 卸载Python2 32bit,安装Python2 63bit。接着重复“Python2的Opencv的安装”</p>
+<p>测试：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-5cea22d10dc5da90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>出现错误。<br>错误原因：Python2的版本为32位，opencv的版本为64位，window的版本为64位。<br>解决方法: 卸载Python2 32bit,安装Python2 64bit。接着重复“Python2的Opencv的安装”</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2847713-024d96636b0aa552.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搞定！  </p>
-<p>在测试：<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="title">img</span> = cv2.imread(<span class="string">"C:\lena.jpg"</span>)</div><div class="line"><span class="title">cv2</span>.imshow(<span class="string">"lena"</span>,img)</div><div class="line"><span class="title">cv2</span>.waitKey(<span class="number">10000</span>)</div></pre></td></tr></table></figure></p>
+<p>再测试：<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="title">img</span> = cv2.imread(<span class="string">"C:\lena.jpg"</span>)</div><div class="line"><span class="title">cv2</span>.imshow(<span class="string">"lena"</span>,img)</div><div class="line"><span class="title">cv2</span>.waitKey(<span class="number">10000</span>)</div></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2847713-c5c32a4c119f6313.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>ok!  </p>
 <h2 id="补：sublime的Python3和2的配置"><a href="#补：sublime的Python3和2的配置" class="headerlink" title="补：sublime的Python3和2的配置"></a>补：sublime的Python3和2的配置</h2><p>sublime作为Python的日常使用，还是需要在Python2和Python3直接切换的。    </p>
 <p>打开Sublime Text 3，依次进入Tools–&gt;Build System–&gt;New Build System</p>
@@ -537,14 +537,14 @@
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="http://i4.buimg.com/567571/acd751d320587fe7.png" alt="Nicolo WeChat Pay"/>
+        <img id="wechat_qr" src="http://i4.buimg.com/567571/acd751d320587fe7.png" alt="肖洒 WeChat Pay"/>
         <p>WeChat Pay</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="http://i1.piimg.com/567571/878342f2b1a28d6a.png" alt="Nicolo Alipay"/>
+        <img id="alipay_qr" src="http://i1.piimg.com/567571/878342f2b1a28d6a.png" alt="肖洒 Alipay"/>
         <p>Alipay</p>
       </div>
     
@@ -655,8 +655,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i4.buimg.com/567571/a84b27b05b920e49.jpg"
-               alt="Nicolo" />
-          <p class="site-author-name" itemprop="name">Nicolo</p>
+               alt="肖洒" />
+          <p class="site-author-name" itemprop="name">肖洒</p>
            
               <p class="site-description motion-element" itemprop="description">文艺工科狗，编码艺术家</p>
           
@@ -822,7 +822,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Nicolo</span>
+  <span class="author" itemprop="copyrightHolder">肖洒</span>
 </div>
 
 
