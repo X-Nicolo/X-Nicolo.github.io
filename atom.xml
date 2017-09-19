@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2017-09-19T09:51:10.087Z</updated>
+  <updated>2017-09-19T09:55:43.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -16,14 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://x-nicolo.github.io/2017/09/19/OpenCV%E5%85%A8%E6%99%AF%E6%8B%BC%E6%8E%A5/"/>
-    <id>https://x-nicolo.github.io/2017/09/19/OpenCV全景拼接/</id>
-    <published>2017-09-19T08:52:23.118Z</published>
-    <updated>2017-09-19T09:51:10.087Z</updated>
+    <title>基于OpenCV全景拼接（Python）</title>
+    <link href="https://x-nicolo.github.io/2017/09/19/%E5%9F%BA%E4%BA%8EOpenCV%E5%85%A8%E6%99%AF%E6%8B%BC%E6%8E%A5%EF%BC%88Python%EF%BC%89/"/>
+    <id>https://x-nicolo.github.io/2017/09/19/基于OpenCV全景拼接（Python）/</id>
+    <published>2017-09-19T09:55:43.000Z</published>
+    <updated>2017-09-19T09:55:43.000Z</updated>
     
-    <content type="html"><![CDATA[<p>title: OpenCV全景拼接<br>date: 2017-09-19 16:52:23<br>updated: 2017-09-19 16:52:23<br>tags: [Python,OpenCV,图像处理]</p>
-<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><p><img src="http://upload-images.jianshu.io/upload_images/2847713-6a62bf8adc3c6f68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>基于OpenCV（Python）的图片拼接和全景图构建。 用两张有重叠区域的图来“缝合”创建一张全景图。构建全景图，利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus)即随机采样一致性和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将给出兼容两个版本的代码。在之后的博客会解决多张图片的拼接，而不仅仅只是针对两张图片。<br><a id="more"></a>  </p>
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-6a62bf8adc3c6f68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>基于OpenCV（Python）的图片拼接和全景图构建。 用两张有重叠区域的图来“缝合”创建一张全景图。构建全景图，利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus)即随机采样一致性和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将给出兼容两个版本的代码。在之后的博客会解决多张图片的拼接，而不仅仅只是针对两张图片。<br><a id="more"></a>  </p>
 <h2 id="OpenCV全景拼接"><a href="#OpenCV全景拼接" class="headerlink" title="OpenCV全景拼接"></a>OpenCV全景拼接</h2><h3 id="全景拼接算法有四部分组成"><a href="#全景拼接算法有四部分组成" class="headerlink" title="全景拼接算法有四部分组成"></a>全景拼接算法有四部分组成</h3><ul>
 <li>Step1:从输入的两张图片里检测关键点、提取局部不变特征。</li>
 <li>Step2:匹配的两幅图像之间的特征</li>
@@ -31,16 +30,18 @@
 <li>Step4:利用Step3得到的单应矩阵应用扭曲变换。</li>
 </ul>
 <p>将所有的步骤都封装在panorama.py，定义一个Stitcher类来构建全图。Stitcher类将会依赖Python的包imutils，安装方法：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip <span class="keyword">install</span> imutils</div></pre></td></tr></table></figure></p>
-<h3 id="关于panorama-py"><a href="#关于panorama-py" class="headerlink" title="关于panorama.py"></a>关于panorama.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># import the necessary packages</span></div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> imutils</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stitcher</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="comment"># determine if we are using OpenCV v3.X</span></div><div class="line">        self.isv3 = imutils.is_cv3()</div></pre></td></tr></table></figure>
-]]></content>
+<h3 id="关于panorama-py"><a href="#关于panorama-py" class="headerlink" title="关于panorama.py"></a>关于panorama.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># import the necessary packages</span></div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> imutils</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stitcher</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="comment"># determine if we are using OpenCV v3.X</span></div><div class="line">        self.isv3 = imutils.is_cv3()</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;title: OpenCV全景拼接&lt;br&gt;date: 2017-09-19 16:52:23&lt;br&gt;updated: 2017-09-19 16:52:23&lt;br&gt;tags: [Python,OpenCV,图像处理]&lt;/p&gt;
-&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程&quot;&gt;&lt;/a&gt;categories: 编程&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-6a62bf8adc3c6f68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;基于OpenCV（Python）的图片拼接和全景图构建。 用两张有重叠区域的图来“缝合”创建一张全景图。构建全景图，利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus)即随机采样一致性和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将给出兼容两个版本的代码。在之后的博客会解决多张图片的拼接，而不仅仅只是针对两张图片。&lt;br&gt;
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-6a62bf8adc3c6f68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;基于OpenCV（Python）的图片拼接和全景图构建。 用两张有重叠区域的图来“缝合”创建一张全景图。构建全景图，利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus)即随机采样一致性和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将给出兼容两个版本的代码。在之后的博客会解决多张图片的拼接，而不仅仅只是针对两张图片。&lt;br&gt;
     
     </summary>
     
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Python,OpenCV,图像处理]" scheme="https://x-nicolo.github.io/tags/Python-OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
