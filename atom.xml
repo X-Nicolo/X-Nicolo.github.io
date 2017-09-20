@@ -41,7 +41,11 @@
       <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-      <category term="Python,OpenCV,图像处理]" scheme="https://x-nicolo.github.io/tags/Python-OpenCV-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+      <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
+    
+      <category term="图像处理" scheme="https://x-nicolo.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="OpenCV" scheme="https://x-nicolo.github.io/tags/OpenCV/"/>
     
   </entry>
   
