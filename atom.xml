@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>+010007-06-07T13:36:14.000Z</updated>
+  <updated>2017-09-27T02:42:01.640Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -16,32 +16,76 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【顶置】【年度目标】Python网络数据采集（updating）</title>
-    <link href="https://x-nicolo.github.io/10007/06/07/%E3%80%90%E9%A1%B6%E7%BD%AE%E3%80%91%E3%80%90%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A0%87%E3%80%91Python%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%EF%BC%88updating%EF%BC%89/"/>
-    <id>https://x-nicolo.github.io/10007/06/07/【顶置】【年度目标】Python网络数据采集（updating）/</id>
-    <published>+010007-06-07T13:36:14.000Z</published>
-    <updated>+010007-06-07T13:36:14.000Z</updated>
+    <title></title>
+    <link href="https://x-nicolo.github.io/2017/09/27/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88Python%EF%BC%89/"/>
+    <id>https://x-nicolo.github.io/2017/09/27/OpenCV学习笔记（Python）/</id>
+    <published>2017-09-27T02:16:28.031Z</published>
+    <updated>2017-09-27T02:42:01.640Z</updated>
     
-    <content type="html"><![CDATA[<p>先填坑。<br><a id="more"></a><br><strong><em>第一部分 创建爬虫</em></strong></p>
-<p><strong>第1章 初见网络爬虫</strong><br><strong>第2章 复杂HTML解析</strong><br><strong>第3章 开始采集</strong><br><strong>第4章 使用API</strong><br><strong>第5章 存储数据</strong><br><strong>第6章 读取文档</strong>  </p>
-<p><strong><em>第二部分 高级数据采集</em></strong></p>
-<p><strong>第7章 数据清洗</strong><br><strong>第8章 自然语言处理</strong><br><strong>第9章 穿越网页表单与登录窗口进行采集</strong><br><strong>第10章 采集JavaScript</strong><br><strong>第11章 图像识别与文字处理</strong><br><strong>第12章 避开采集陷阱</strong><br><strong>第13章 用爬虫测试网站</strong><br><strong>第14章 远程采集</strong></p>
+    <content type="html"><![CDATA[<p>title: OpenCV学习笔记（Python）<br>date: 2017-09-27 10:16:28<br>updated: 2017-09-27 10:16:28<br>tags: [Python,OpenCV]</p>
+<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><p><img src="http://upload-images.jianshu.io/upload_images/2847713-5070d33b54defa93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><a id="more"></a>  </p>
+<p>###　一 OpenCV中的GUI特性  </p>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><h5 id="读入图像"><a href="#读入图像" class="headerlink" title="读入图像"></a>读入图像</h5><p>使用函数 cv2.imread() 读入图像。</p>
+<ul>
+<li>cv2.IMREAD_COLOR：读入一副彩色图像。图像的透明度会被忽略，这是默认参数。</li>
+<li>cv2.IMREAD_GRAYSCALE：以灰度模式读入图像  </li>
+<li>cv2.IMREAD_UNCHANGED：读入一幅图像，并且包括图像的 alpha 通道  </li>
+</ul>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-<span class="number">8</span> -*-</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line"># Load an <span class="built_in">color</span> image <span class="built_in">in</span> grayscale</div><div class="line">img = cv2.imread(<span class="string">'messi5.jpg'</span>,<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<p><strong>警告：</strong> 就算图像的路径是错的， OpenCV 也不会提醒你的，但是当你使用命<br>令print img时得到的结果是None。  </p>
+<h5 id="显示图像"><a href="#显示图像" class="headerlink" title="显示图像"></a>显示图像</h5><p>使用函数 cv2.imshow() 显示图像。窗口会自动调整为图像大小。第一个参数是窗口的名字，其次才是我们的图像。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">cv2</span><span class="selector-class">.imshow</span>(<span class="string">'image'</span>,img)</div><div class="line"><span class="selector-tag">cv2</span><span class="selector-class">.waitKey</span>(<span class="number">0</span>)</div><div class="line"><span class="selector-tag">cv2</span><span class="selector-class">.destroyAllWindows</span>()</div></pre></td></tr></table></figure></p>
+<p>cv2.waitKey() 是一个键盘绑定函数。需要指出的是它的时间尺度是毫秒级。函数等待特定的几毫秒，看是否有键盘输入。特定的几毫秒之内，如果按下任意键，这个函数会返回按键的 ASCII 码值，程序将会继续运行。如果没有键盘输入，返回值为-1，如果我们设置这个函数的参数为0，那它将会无限期的等待键盘输入。它也可以被用来检测特定键是否被按下，例如按键 a 是否被按下。  </p>
+<p>cv2.destroyAllWindows() 可以轻易删除任何建立的窗口。如果想删除特定的窗口可以使用 cv2.destroyWindow()，在括号内输入你想删除的窗口名。  </p>
+<p>建议：一种特殊的情况是，也可以先创建一个窗口，之后再加载图像。这种情况下，可以决定窗口是否可以调整大小。使用到的函数cv2.namedWindow()。初始设定函数标签是cv2.WINDOW_AUTOSIZE。但是如果把标签改成cv2.WINDOW_NORMAL，就可以调整窗口大小了。当图像维度太大，或者要添加轨迹条时，调整窗口大小将会很有用.<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line">cv2.namedWindow(<span class="string">'image'</span>, cv2.WINDOW_NORMAL)</div><div class="line">cv2.imshow(<span class="string">'image'</span>,img)</div><div class="line">cv2.waitKey(<span class="number">0</span>)</div><div class="line">cv2.destroyAllWindows()</div></pre></td></tr></table></figure></p>
+<h5 id="保存图像"><a href="#保存图像" class="headerlink" title="保存图像"></a>保存图像</h5><p>使用函数 cv2.imwrite() 来保存一个图像。首先需要一个文件名，之后才是要保存的图像。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">cv2</span><span class="selector-class">.imwrite</span>(<span class="string">'messigray.png'</span>,img)</div></pre></td></tr></table></figure></p>
+<p>下面的程序将会加载一个灰度图， 显示图片，按下’s’键保存后退出，或者按下 ESC 键退出不保存。  </p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy as np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line">img = cv2.imread(<span class="string">'messi5.jpg'</span>,<span class="number">0</span>)</div><div class="line">cv2.imshow(<span class="string">'image'</span>,img)</div><div class="line">k = ccv2.waitKey(<span class="number">0</span>)&amp;<span class="number">0xFF</span></div><div class="line"><span class="keyword">if</span> k == <span class="number">27</span>: # wait <span class="keyword">for</span> ESC <span class="built_in">key</span> to <span class="built_in">exit</span></div><div class="line">    cv2.destroyAllWindows()</div><div class="line">elif k == ord(<span class="string">'s'</span>): # wait <span class="keyword">for</span> <span class="string">'s'</span> <span class="built_in">key</span> to <span class="built_in">save</span> and <span class="built_in">exit</span></div><div class="line">    cv2.imwrite(<span class="string">'messigray.png'</span>,img)</div><div class="line">    cv2.destroyAllWindows()</div></pre></td></tr></table></figure>
+<p><strong>警告：</strong> 如果用的是 32 位系统，需要将 k = cv2.waitKey(0)&amp;0xFF 这行改成<br>k = cv2.waitKey(0)。    </p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;先填坑。&lt;br&gt;
+      &lt;p&gt;title: OpenCV学习笔记（Python）&lt;br&gt;date: 2017-09-27 10:16:28&lt;br&gt;updated: 2017-09-27 10:16:28&lt;br&gt;tags: [Python,OpenCV]&lt;/p&gt;
+&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程&quot;&gt;&lt;/a&gt;categories: 编程&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-5070d33b54defa93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;
     
     </summary>
     
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://x-nicolo.github.io/2017/09/26/%E3%80%90%E9%A1%B6%E7%BD%AE%E3%80%91%E3%80%90%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A0%87%E3%80%91Python%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%EF%BC%88updating%EF%BC%89/"/>
+    <id>https://x-nicolo.github.io/2017/09/26/【顶置】【年度目标】Python网络数据采集（updating）/</id>
+    <published>2017-09-26T13:36:15.032Z</published>
+    <updated>2017-09-27T11:26:44.472Z</updated>
     
-      <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
+    <content type="html"><![CDATA[<p>title: 【顶置】【年度目标】Python网络数据采集（updating）<br>date: 9999-99-99 21:36:14<br>updated: 9999-99-99 21:36:14<br>tags: [爬虫,Python,数据分析]</p>
+<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><blockquote>
+<ol>
+<li>“网络数据采集是为普通大众所喜闻乐见的计算机巫术”。</li>
+<li>bug 是产品生命中的挑战，好产品是不断面对 bug 并战胜 bug 的结果。</li>
+</ol>
+</blockquote>
+<p>有人说编程语言就是宗教，不同语言的设计哲学不同，行为方式各异，“非我族类，其心必异”，但本着美好生活、快乐修行的初衷，我们对所有语言都时刻保持敬畏之心，尊重信仰自由，努力做好自己的功课。对爱好Python的人来说，人生苦短，Python当歌！<br><a id="more"></a><br>先填坑。<br><strong><em>第一部分 创建爬虫</em></strong></p>
+<p><strong>第1章 初见网络爬虫</strong><br><strong>第2章 复杂HTML解析</strong><br><strong>第3章 开始采集</strong><br><strong>第4章 使用API</strong><br><strong>第5章 存储数据</strong><br><strong>第6章 读取文档</strong>  </p>
+<p><strong><em>第二部分 高级数据采集</em></strong></p>
+<p><strong>第7章 数据清洗</strong><br><strong>第8章 自然语言处理</strong><br><strong>第9章 穿越网页表单与登录窗口进行采集</strong><br><strong>第10章 采集JavaScript</strong><br><strong>第11章 图像识别与文字处理</strong><br><strong>第12章 避开采集陷阱</strong><br><strong>第13章 用爬虫测试网站</strong></p>
+<h2 id="第14章-远程采集"><a href="#第14章-远程采集" class="headerlink" title="第14章 远程采集"></a><strong>第14章 远程采集</strong></h2><h2 id="第一部分-创建爬虫"><a href="#第一部分-创建爬虫" class="headerlink" title="第一部分 创建爬虫"></a>第一部分 创建爬虫</h2>]]></content>
     
-      <category term="爬虫" scheme="https://x-nicolo.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <summary type="html">
     
-      <category term="数据分析" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      &lt;p&gt;title: 【顶置】【年度目标】Python网络数据采集（updating）&lt;br&gt;date: 9999-99-99 21:36:14&lt;br&gt;updated: 9999-99-99 21:36:14&lt;br&gt;tags: [爬虫,Python,数据分析]&lt;/p&gt;
+&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程&quot;&gt;&lt;/a&gt;categories: 编程&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;“网络数据采集是为普通大众所喜闻乐见的计算机巫术”。&lt;/li&gt;
+&lt;li&gt;bug 是产品生命中的挑战，好产品是不断面对 bug 并战胜 bug 的结果。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有人说编程语言就是宗教，不同语言的设计哲学不同，行为方式各异，“非我族类，其心必异”，但本着美好生活、快乐修行的初衷，我们对所有语言都时刻保持敬畏之心，尊重信仰自由，努力做好自己的功课。对爱好Python的人来说，人生苦短，Python当歌！&lt;br&gt;
+    
+    </summary>
+    
     
   </entry>
   
@@ -1302,32 +1346,6 @@ jdbc.password=root//连接测试的密码
     
     
       <category term="Java" scheme="https://x-nicolo.github.io/tags/Java/"/>
-    
-      <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
-    
-      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pip无法正常使用解决办法</title>
-    <link href="https://x-nicolo.github.io/2017/06/05/pip%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>https://x-nicolo.github.io/2017/06/05/pip无法正常使用解决办法/</id>
-    <published>2017-06-05T09:17:50.000Z</published>
-    <updated>2017-09-26T12:30:54.730Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>python -m pip install xxx<br>相当于import,叫做当做模块来启动</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;解决办法：&quot;&gt;&lt;a href=&quot;#解决办法：&quot; class=&quot;headerlink&quot; title=&quot;解决办法：&quot;&gt;&lt;/a&gt;解决办法：&lt;/h3&gt;&lt;p&gt;python -m pip install xxx&lt;br&gt;相当于import,叫做当做模块来启动&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
     
       <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
     
