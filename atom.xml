@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2017-09-28T01:07:17.833Z</updated>
+  <updated>2017-09-28T01:11:46.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -16,14 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://x-nicolo.github.io/2017/09/28/%E3%80%90%E9%A1%B6%E7%BD%AE%E3%80%91%E3%80%90%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A0%87%E3%80%91Python%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%EF%BC%88updating%EF%BC%89%20-%20%E5%89%AF%E6%9C%AC/"/>
-    <id>https://x-nicolo.github.io/2017/09/28/【顶置】【年度目标】Python网络数据采集（updating） - 副本/</id>
-    <published>2017-09-28T01:06:46.392Z</published>
-    <updated>2017-09-28T01:07:17.833Z</updated>
+    <title>【顶置】【年度目标】Python网络数据采集（updating）</title>
+    <link href="https://x-nicolo.github.io/2017/09/28/%E2%80%9C%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%98%AF%E4%B8%BA%E6%99%AE%E9%80%9A%E5%A4%A7%E4%BC%97%E6%89%80%E5%96%9C%E9%97%BB%E4%B9%90%E8%A7%81%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%AB%E6%9C%AF%E2%80%9D%E3%80%82/"/>
+    <id>https://x-nicolo.github.io/2017/09/28/“网络数据采集是为普通大众所喜闻乐见的计算机巫术”。/</id>
+    <published>2017-09-28T01:11:46.000Z</published>
+    <updated>2017-09-28T01:11:46.000Z</updated>
     
-    <content type="html"><![CDATA[<p>title: 【顶置】【年度目标】Python网络数据采集（updating）<br>date: 2018-01-01 21:36:14<br>updated: 2018-01-01 21:36:14<br>tags: [爬虫,Python,数据分析]</p>
-<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><blockquote>
+    <content type="html"><![CDATA[<blockquote>
 <ol>
 <li>“网络数据采集是为普通大众所喜闻乐见的计算机巫术”。</li>
 <li>bug 是产品生命中的挑战，好产品是不断面对 bug 并战胜 bug 的结果。</li>
@@ -40,8 +39,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: 【顶置】【年度目标】Python网络数据采集（updating）&lt;br&gt;date: 2018-01-01 21:36:14&lt;br&gt;updated: 2018-01-01 21:36:14&lt;br&gt;tags: [爬虫,Python,数据分析]&lt;/p&gt;
-&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程&quot;&gt;&lt;/a&gt;categories: 编程&lt;/h2&gt;&lt;blockquote&gt;
+      &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;“网络数据采集是为普通大众所喜闻乐见的计算机巫术”。&lt;/li&gt;
 &lt;li&gt;bug 是产品生命中的挑战，好产品是不断面对 bug 并战胜 bug 的结果。&lt;/li&gt;
@@ -51,6 +49,14 @@
     
     </summary>
     
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
+    
+      <category term="爬虫" scheme="https://x-nicolo.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="数据分析" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
@@ -86,45 +92,6 @@
     
       &lt;p&gt;title: OpenCV学习笔记（Python）&lt;br&gt;date: 2017-09-27 10:16:28&lt;br&gt;updated: 2017-09-27 10:16:28&lt;br&gt;tags: [Python,OpenCV]&lt;/p&gt;
 &lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程&quot;&gt;&lt;/a&gt;categories: 编程&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-5070d33b54defa93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;  &lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://x-nicolo.github.io/2017/09/26/%E3%80%90%E9%A1%B6%E7%BD%AE%E3%80%91%E3%80%90%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A0%87%E3%80%91Python%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%EF%BC%88updating%EF%BC%89/"/>
-    <id>https://x-nicolo.github.io/2017/09/26/【顶置】【年度目标】Python网络数据采集（updating）/</id>
-    <published>2017-09-26T13:36:15.032Z</published>
-    <updated>2017-09-28T00:51:50.481Z</updated>
-    
-    <content type="html"><![CDATA[<p>title: 【顶置】【年度目标】Python网络数据采集（updating）<br>date: 2018-01-01 21:36:14<br>updated: 2018-01-01 21:36:14<br>tags: [爬虫,Python,数据分析]</p>
-<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><blockquote>
-<ol>
-<li>“网络数据采集是为普通大众所喜闻乐见的计算机巫术”。</li>
-<li>bug 是产品生命中的挑战，好产品是不断面对 bug 并战胜 bug 的结果。</li>
-</ol>
-</blockquote>
-<p>有人说编程语言就是宗教，不同语言的设计哲学不同，行为方式各异，“非我族类，其心必异”，但本着美好生活、快乐修行的初衷，我们对所有语言都时刻保持敬畏之心，尊重信仰自由，努力做好自己的功课。对爱好Python的人来说，人生苦短，Python当歌！ </p>
-<a id="more"></a>  
-<p>先填坑。</p>
-<p><strong><em>第一部分 创建爬虫</em></strong></p>
-<p><strong>第1章 初见网络爬虫</strong><br><strong>第2章 复杂HTML解析</strong><br><strong>第3章 开始采集</strong><br><strong>第4章 使用API</strong><br><strong>第5章 存储数据</strong><br><strong>第6章 读取文档</strong>  </p>
-<p><strong><em>第二部分 高级数据采集</em></strong></p>
-<p><strong>第7章 数据清洗</strong><br><strong>第8章 自然语言处理</strong><br><strong>第9章 穿越网页表单与登录窗口进行采集</strong><br><strong>第10章 采集JavaScript</strong><br><strong>第11章 图像识别与文字处理</strong><br><strong>第12章 避开采集陷阱</strong><br><strong>第13章 用爬虫测试网站</strong></p>
-<h2 id="第14章-远程采集"><a href="#第14章-远程采集" class="headerlink" title="第14章 远程采集"></a><strong>第14章 远程采集</strong></h2><h2 id="第一部分-创建爬虫"><a href="#第一部分-创建爬虫" class="headerlink" title="第一部分 创建爬虫"></a>第一部分 创建爬虫</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;title: 【顶置】【年度目标】Python网络数据采集（updating）&lt;br&gt;date: 2018-01-01 21:36:14&lt;br&gt;updated: 2018-01-01 21:36:14&lt;br&gt;tags: [爬虫,Python,数据分析]&lt;/p&gt;
-&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程&quot;&gt;&lt;/a&gt;categories: 编程&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;“网络数据采集是为普通大众所喜闻乐见的计算机巫术”。&lt;/li&gt;
-&lt;li&gt;bug 是产品生命中的挑战，好产品是不断面对 bug 并战胜 bug 的结果。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;有人说编程语言就是宗教，不同语言的设计哲学不同，行为方式各异，“非我族类，其心必异”，但本着美好生活、快乐修行的初衷，我们对所有语言都时刻保持敬畏之心，尊重信仰自由，努力做好自己的功课。对爱好Python的人来说，人生苦短，Python当歌！ &lt;/p&gt;
     
     </summary>
     
@@ -1357,6 +1324,41 @@ jdbc.password=root//连接测试的密码
     
     
       <category term="数据结构" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【更正】Java调用Python</title>
+    <link href="https://x-nicolo.github.io/2017/06/05/%E3%80%90%E6%9B%B4%E6%AD%A3%E3%80%91Java%E8%B0%83%E7%94%A8Python/"/>
+    <id>https://x-nicolo.github.io/2017/06/05/【更正】Java调用Python/</id>
+    <published>2017-06-05T09:21:25.000Z</published>
+    <updated>2017-09-26T11:40:22.540Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p><a href="https://x-nicolo.github.io/2017/02/28/Java%E8%B0%83%E7%94%A8Python/">错误一</a><br><a href="https://x-nicolo.github.io/2017/03/14/Java%E8%B0%83%E7%94%A8Python%E7%9A%84%E9%94%99%E8%AF%AF-1/">错误二</a><br>之前两篇博客都讨论过这个问题，现在才算是弄清楚了。　　<br>这个反转真的是。。。够了。。。　　<br>还需要学习啊。</p>
+<hr>
+<a id="more"></a>
+<h1 id="JAVA-to-Python"><a href="#JAVA-to-Python" class="headerlink" title="JAVA to Python"></a>JAVA to Python</h1><h2 id="关于Java如何调用Python的问题"><a href="#关于Java如何调用Python的问题" class="headerlink" title="关于Java如何调用Python的问题"></a>关于Java如何调用Python的问题</h2><h3 id="方法一：Java自带函数gettime-runtime-exe"><a href="#方法一：Java自带函数gettime-runtime-exe" class="headerlink" title="方法一：Java自带函数gettime.runtime.exe()"></a>方法一：Java自带函数gettime.runtime.exe()</h3><p>功能：模拟cmd命令行。<br>例如：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">String s</span> = <span class="string">"python C:/Python27/py/studentInf/all.py"</span> + <span class="string">" "</span> + stuId + <span class="string">" "</span> + stuPassword + <span class="string">" "</span> + userId + <span class="string">" "</span> + schoolId;</div><div class="line"><span class="attribute">Process process</span> = Runtime.getRuntime().exec(s);</div></pre></td></tr></table></figure></p>
+<p>Python接收参数:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">import</span> <span class="selector-tag">sys</span></div><div class="line"><span class="selector-tag">xs</span><span class="selector-class">.login</span>(<span class="selector-tag">sys</span><span class="selector-class">.argv</span><span class="selector-attr">[1]</span>, <span class="selector-tag">sys</span><span class="selector-class">.argv</span><span class="selector-attr">[2]</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="方法二：利用jython-jar"><a href="#方法二：利用jython-jar" class="headerlink" title="方法二：利用jython.jar"></a>方法二：利用jython.jar</h3><p>该方法可以解决传递形参的问题。也可以执行Python程序。<br>遇到的问题：需要确定好jython的路径问题和其他设置的路径问题。</p>
+<h4 id="注意：该方法只适用Python2。"><a href="#注意：该方法只适用Python2。" class="headerlink" title="注意：该方法只适用Python2。"></a>注意：该方法只适用Python2。</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;https://x-nicolo.github.io/2017/02/28/Java%E8%B0%83%E7%94%A8Python/&quot;&gt;错误一&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://x-nicolo.github.io/2017/03/14/Java%E8%B0%83%E7%94%A8Python%E7%9A%84%E9%94%99%E8%AF%AF-1/&quot;&gt;错误二&lt;/a&gt;&lt;br&gt;之前两篇博客都讨论过这个问题，现在才算是弄清楚了。　　&lt;br&gt;这个反转真的是。。。够了。。。　　&lt;br&gt;还需要学习啊。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="https://x-nicolo.github.io/tags/Java/"/>
+    
+      <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
+    
+      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
     
   </entry>
   
