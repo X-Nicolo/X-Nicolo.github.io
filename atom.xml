@@ -61,6 +61,62 @@
   </entry>
   
   <entry>
+    <title>【MOOC】Python网络爬虫与信息提取</title>
+    <link href="https://x-nicolo.github.io/2017/10/15/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/"/>
+    <id>https://x-nicolo.github.io/2017/10/15/Python网络爬虫与信息提取/</id>
+    <published>2017-10-15T11:52:13.000Z</published>
+    <updated>2017-09-12T11:52:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-d092ff3b7905fb2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>Python网络爬虫与信息提取-北京理工大学-嵩天<br>发布大学：北京理工大学<br>发布课程：Python网络爬虫与信息提取<br>授课老师：嵩天<br>课程简介：<em>“The website is the API.”</em>网络爬虫逐渐成为自动获取网络信息的主要形式<br>还等什么？快写个爬虫探索世界吧！<br><a id="more"></a></p>
+<h2 id="单元1：Requests库入门"><a href="#单元1：Requests库入门" class="headerlink" title="单元1：Requests库入门"></a>单元1：Requests库入门</h2><h3 id="Request库的安装"><a href="#Request库的安装" class="headerlink" title="Request库的安装"></a>Request库的安装</h3><p>win + R,pip install requests  </p>
+<h3 id="Requests库的7个主要方法"><a href="#Requests库的7个主要方法" class="headerlink" title="Requests库的7个主要方法"></a>Requests库的7个主要方法</h3><ul>
+<li>requests.request() 构造一个请求，支撑以下各方法的基础方法  </li>
+<li>requests.get() 获取HTML网页的主要方法，对应于HTTP的GET  </li>
+<li>requests.head 获取HTML网页头信息的方法，对应于HTTP的HEAD</li>
+<li>requests.post 向HTML网页提交POST请求的方法，对应于HTTP的POST</li>
+<li>requests.put() 向HTML网页提交PUT请求的方法，对应于HTTP的PUT</li>
+<li>requests.patch() 向HTML网页提交局部修改请求，对应于HTTP的PATCH</li>
+<li>requests.delete（） 向HTML页面提交删除请求，对应于HTTP的DELETE  </li>
+</ul>
+<h4 id="requests-get"><a href="#requests-get" class="headerlink" title="requests.get()"></a>requests.get()</h4><p>r = requests.get(url) 获得一个网页最简单的方法<br><img src="http://upload-images.jianshu.io/upload_images/2847713-f6d2a1889af84b8c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>r = requests.get(url)完整的使用方法：r = requests.get(url,params=None,<strong>kwargs)<br>url:拟获取页面的URL链接<br>params: URL中的额外参数、字典或字节流格式，可选  
+</strong>kwargs:12个控制访问的参数<br>根据源代码可知，Requests库的7个主要方法,后面6个都是调用requests.request()来实现的</p>
+<p>requests库的2个重要对象<br><img src="http://upload-images.jianshu.io/upload_images/2847713-54f0a6349888634f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
+<p>Response对象的属性    </p>
+<ul>
+<li>r.status_code:HTTP请求的返回状态，200表示连接成功，404表示失败  </li>
+<li>r.text:HTTP响应内容的字符串形式，即URL对应的页面内容  </li>
+<li>r.encoding：从HTTP header中猜测的响应内容编码方式  </li>
+<li>r.apparent_encoding:从内容中分析出响应内容编码方式（备选编码方式）</li>
+<li>r.content:HTTP响应内容的二进制形式  </li>
+</ul>
+<p>基本流程：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-3481c920f9fddfe8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>理解Response的编码<br>r.encoding:从HTTP header中猜测的响应内容编码形式<br>r.apparent_encoding：从内容中分析出的响应内容编码方式（备选编码方式）  </p>
+<h3 id="requests库的主要解析方法"><a href="#requests库的主要解析方法" class="headerlink" title="requests库的主要解析方法"></a>requests库的主要解析方法</h3><p><img src="http://upload-images.jianshu.io/upload_images/2847713-a0c6d3646f58094c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="requests的13个访问控制参数"><a href="#requests的13个访问控制参数" class="headerlink" title="requests的13个访问控制参数"></a>requests的13个访问控制参数</h4><p>requests.request(method,url,**kwargs)  </p>
+<p>**kwargs:控制访问的参数，均为可选项<br>params：字典或字节序列，作为参数增加到URL中</p>
+<p>例子：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">kv = &#123;<span class="string">'key1'</span>:<span class="string">'value1'</span>,<span class="string">'key2'</span>:<span class="string">'value2'</span>&#125;</div><div class="line">r = requests.request(<span class="string">'get'</span>,<span class="string">'http://python123.io/ws,params=kv'</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(r.url)</span></span></div></pre></td></tr></table></figure></p>
+<p>结果:<a href="http://python123.io/ws?key1=value1&amp;key2=value2" target="_blank" rel="external">http://python123.io/ws?key1=value1&amp;key2=value2</a></p>
+<p>通过改方法可以把一些键值对增加到URL中。<br>服务器可以根据此去筛选一些资源。  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-d092ff3b7905fb2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Python网络爬虫与信息提取-北京理工大学-嵩天&lt;br&gt;发布大学：北京理工大学&lt;br&gt;发布课程：Python网络爬虫与信息提取&lt;br&gt;授课老师：嵩天&lt;br&gt;课程简介：&lt;em&gt;“The website is the API.”&lt;/em&gt;网络爬虫逐渐成为自动获取网络信息的主要形式&lt;br&gt;还等什么？快写个爬虫探索世界吧！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
+    
+      <category term="爬虫" scheme="https://x-nicolo.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>OpenCV学习笔记（Python）</title>
     <link href="https://x-nicolo.github.io/2017/09/28/OpenCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88Python%EF%BC%89-1/"/>
     <id>https://x-nicolo.github.io/2017/09/28/OpenCV学习笔记（Python）-1/</id>
@@ -85,6 +141,7 @@
 <p>下面的程序将会加载一个灰度图， 显示图片，按下’s’键保存后退出，或者按下 ESC 键退出不保存。  </p>
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy as np</div><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line">img = cv2.imread(<span class="string">'messi5.jpg'</span>,<span class="number">0</span>)</div><div class="line">cv2.imshow(<span class="string">'image'</span>,img)</div><div class="line">k = ccv2.waitKey(<span class="number">0</span>)&amp;<span class="number">0xFF</span></div><div class="line"><span class="keyword">if</span> k == <span class="number">27</span>: # wait <span class="keyword">for</span> ESC <span class="built_in">key</span> to <span class="built_in">exit</span></div><div class="line">    cv2.destroyAllWindows()</div><div class="line">elif k == ord(<span class="string">'s'</span>): # wait <span class="keyword">for</span> <span class="string">'s'</span> <span class="built_in">key</span> to <span class="built_in">save</span> and <span class="built_in">exit</span></div><div class="line">    cv2.imwrite(<span class="string">'messigray.png'</span>,img)</div><div class="line">    cv2.destroyAllWindows()</div></pre></td></tr></table></figure>
 <p><strong>警告：</strong> 如果用的是 32 位系统，需要将 k = cv2.waitKey(0)&amp;0xFF 这行改成<br>k = cv2.waitKey(0)。    </p>
+<h3 id="附录：数字图像处理基础知识"><a href="#附录：数字图像处理基础知识" class="headerlink" title="附录：数字图像处理基础知识"></a>附录：数字图像处理基础知识</h3><p><img src="http://oeiseebmx.bkt.clouddn.com/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E8%AF%BE%E4%BB%B6%E5%90%88%E9%9B%86%20%E6%9D%8E%E6%B4%81%E8%80%81%E5%B8%88.pdf" alt="数字图像处理基础知识"></p>
 ]]></content>
     
     <summary type="html">
@@ -320,56 +377,6 @@
     
     
       <category term="图像处理" scheme="https://x-nicolo.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【MOOC】Python网络爬虫与信息提取</title>
-    <link href="https://x-nicolo.github.io/2017/09/12/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96/"/>
-    <id>https://x-nicolo.github.io/2017/09/12/Python网络爬虫与信息提取/</id>
-    <published>2017-09-12T11:52:13.000Z</published>
-    <updated>2017-09-12T11:52:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-d092ff3b7905fb2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>Python网络爬虫与信息提取-北京理工大学-嵩天<br>发布大学：北京理工大学<br>发布课程：Python网络爬虫与信息提取<br>授课老师：嵩天<br>课程简介：<em>“The website is the API.”</em>网络爬虫逐渐成为自动获取网络信息的主要形式<br>还等什么？快写个爬虫探索世界吧！<br><a id="more"></a></p>
-<h2 id="单元1：Requests库入门"><a href="#单元1：Requests库入门" class="headerlink" title="单元1：Requests库入门"></a>单元1：Requests库入门</h2><h3 id="Request库的安装"><a href="#Request库的安装" class="headerlink" title="Request库的安装"></a>Request库的安装</h3><p>win + R,pip install requests  </p>
-<h3 id="Requests库的7个主要方法"><a href="#Requests库的7个主要方法" class="headerlink" title="Requests库的7个主要方法"></a>Requests库的7个主要方法</h3><ul>
-<li>requests.request() 构造一个请求，支撑以下各方法的基础方法  </li>
-<li>requests.get() 获取HTML网页的主要方法，对应于HTTP的GET  </li>
-<li>requests.head 获取HTML网页头信息的方法，对应于HTTP的HEAD</li>
-<li>requests.post 向HTML网页提交POST请求的方法，对应于HTTP的POST</li>
-<li>requests.put() 向HTML网页提交PUT请求的方法，对应于HTTP的PUT</li>
-<li>requests.patch() 向HTML网页提交局部修改请求，对应于HTTP的PATCH</li>
-<li>requests.delete（） 向HTML页面提交删除请求，对应于HTTP的DELETE  </li>
-</ul>
-<h4 id="requests-get"><a href="#requests-get" class="headerlink" title="requests.get()"></a>requests.get()</h4><p>r = requests.get(url) 获得一个网页最简单的方法<br><img src="http://upload-images.jianshu.io/upload_images/2847713-f6d2a1889af84b8c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>r = requests.get(url)完整的使用方法：r = requests.get(url,params=None,<strong>kwargs)<br>url:拟获取页面的URL链接<br>params: URL中的额外参数、字典或字节流格式，可选  
-</strong>kwargs:12个控制访问的参数<br>根据源代码可知，Requests库的7个主要方法,后面6个都是调用requests.request()来实现的</p>
-<p>requests库的2个重要对象<br><img src="http://upload-images.jianshu.io/upload_images/2847713-54f0a6349888634f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  </p>
-<p>Response对象的属性    </p>
-<ul>
-<li>r.status_code:HTTP请求的返回状态，200表示连接成功，404表示失败  </li>
-<li>r.text:HTTP响应内容的字符串形式，即URL对应的页面内容  </li>
-<li>r.encoding：从HTTP header中猜测的响应内容编码方式  </li>
-<li>r.apparent_encoding:从内容中分析出响应内容编码方式（备选编码方式）</li>
-<li>r.content:HTTP响应内容的二进制形式  </li>
-</ul>
-<p>基本流程：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-3481c920f9fddfe8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>理解Response的编码<br>r.encoding:从HTTP header中猜测的响应内容编码形式<br>r.apparent_encoding：从内容中分析出的响应内容编码方式（备选编码方式）  </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-d092ff3b7905fb2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Python网络爬虫与信息提取-北京理工大学-嵩天&lt;br&gt;发布大学：北京理工大学&lt;br&gt;发布课程：Python网络爬虫与信息提取&lt;br&gt;授课老师：嵩天&lt;br&gt;课程简介：&lt;em&gt;“The website is the API.”&lt;/em&gt;网络爬虫逐渐成为自动获取网络信息的主要形式&lt;br&gt;还等什么？快写个爬虫探索世界吧！&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
-    
-      <category term="爬虫" scheme="https://x-nicolo.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
@@ -1359,9 +1366,9 @@ jdbc.password=root//连接测试的密码
     
       <category term="Java" scheme="https://x-nicolo.github.io/tags/Java/"/>
     
-      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
-    
       <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
+    
+      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
     
   </entry>
   

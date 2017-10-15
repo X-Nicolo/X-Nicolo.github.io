@@ -118,7 +118,7 @@
 <meta name="keywords" content="Python,爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【MOOC】Python网络爬虫与信息提取">
-<meta property="og:url" content="https://x-nicolo.github.io/2017/09/12/Python网络爬虫与信息提取/index.html">
+<meta property="og:url" content="https://x-nicolo.github.io/2017/10/15/Python网络爬虫与信息提取/index.html">
 <meta property="og:site_name" content="肖洒">
 <meta property="og:description" content="Python网络爬虫与信息提取-北京理工大学-嵩天发布大学：北京理工大学发布课程：Python网络爬虫与信息提取授课老师：嵩天课程简介：“The website is the API.”网络爬虫逐渐成为自动获取网络信息的主要形式还等什么？快写个爬虫探索世界吧！">
 <meta property="og:locale" content="zh-Hans">
@@ -126,6 +126,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2847713-f6d2a1889af84b8c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2847713-54f0a6349888634f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2847713-3481c920f9fddfe8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2847713-a0c6d3646f58094c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2017-09-12T11:52:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【MOOC】Python网络爬虫与信息提取">
@@ -159,7 +160,7 @@
 
 
 
-  <link rel="canonical" href="https://x-nicolo.github.io/2017/09/12/Python网络爬虫与信息提取/"/>
+  <link rel="canonical" href="https://x-nicolo.github.io/2017/10/15/Python网络爬虫与信息提取/"/>
 
 
 
@@ -338,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://x-nicolo.github.io/2017/09/12/Python网络爬虫与信息提取/">
+    <link itemprop="mainEntityOfPage" href="https://x-nicolo.github.io/2017/10/15/Python网络爬虫与信息提取/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="肖洒">
@@ -367,8 +368,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T19:52:13+08:00">
-                2017-09-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-15T19:52:13+08:00">
+                2017-10-15
               </time>
             
 
@@ -409,8 +410,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/12/Python网络爬虫与信息提取/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/09/12/Python网络爬虫与信息提取/" itemprop="commentsCount"></span>
+                <a href="/2017/10/15/Python网络爬虫与信息提取/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/15/Python网络爬虫与信息提取/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -419,7 +420,7 @@
 
           
           
-             <span id="/2017/09/12/Python网络爬虫与信息提取/" class="leancloud_visitors" data-flag-title="【MOOC】Python网络爬虫与信息提取">
+             <span id="/2017/10/15/Python网络爬虫与信息提取/" class="leancloud_visitors" data-flag-title="【MOOC】Python网络爬虫与信息提取">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -444,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  508
+                  625
                 </span>
               
 
@@ -506,6 +507,12 @@
 </ul>
 <p>基本流程：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-3481c920f9fddfe8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>理解Response的编码<br>r.encoding:从HTTP header中猜测的响应内容编码形式<br>r.apparent_encoding：从内容中分析出的响应内容编码方式（备选编码方式）  </p>
+<h3 id="requests库的主要解析方法"><a href="#requests库的主要解析方法" class="headerlink" title="requests库的主要解析方法"></a>requests库的主要解析方法</h3><p><img src="http://upload-images.jianshu.io/upload_images/2847713-a0c6d3646f58094c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="requests的13个访问控制参数"><a href="#requests的13个访问控制参数" class="headerlink" title="requests的13个访问控制参数"></a>requests的13个访问控制参数</h4><p>requests.request(method,url,**kwargs)  </p>
+<p>**kwargs:控制访问的参数，均为可选项<br>params：字典或字节序列，作为参数增加到URL中</p>
+<p>例子：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">kv = &#123;<span class="string">'key1'</span>:<span class="string">'value1'</span>,<span class="string">'key2'</span>:<span class="string">'value2'</span>&#125;</div><div class="line">r = requests.request(<span class="string">'get'</span>,<span class="string">'http://python123.io/ws,params=kv'</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(r.url)</span></span></div></pre></td></tr></table></figure></p>
+<p>结果:<a href="http://python123.io/ws?key1=value1&amp;key2=value2" target="_blank" rel="external">http://python123.io/ws?key1=value1&amp;key2=value2</a></p>
+<p>通过改方法可以把一些键值对增加到URL中。<br>服务器可以根据此去筛选一些资源。  </p>
 
       
     </div>
@@ -568,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/11/数据结构笔记（二）/" rel="next" title="数据结构笔记（二）">
-                <i class="fa fa-chevron-left"></i> 数据结构笔记（二）
+              <a href="/2017/09/28/OpenCV学习笔记（Python）-1/" rel="next" title="OpenCV学习笔记（Python）">
+                <i class="fa fa-chevron-left"></i> OpenCV学习笔记（Python）
               </a>
             
           </div>
@@ -578,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/14/图像拼接/" rel="prev" title="图像拼接">
-                图像拼接 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/01/“网络数据采集是为普通大众所喜闻乐见的计算机巫术”。/" rel="prev" title="【顶置】【年度目标】Python网络数据采集（updating）">
+                【顶置】【年度目标】Python网络数据采集（updating） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -788,7 +795,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单元1：Requests库入门"><span class="nav-number">1.</span> <span class="nav-text">单元1：Requests库入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Request库的安装"><span class="nav-number">1.1.</span> <span class="nav-text">Request库的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requests库的7个主要方法"><span class="nav-number">1.2.</span> <span class="nav-text">Requests库的7个主要方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#requests-get"><span class="nav-number">1.2.1.</span> <span class="nav-text">requests.get()</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单元1：Requests库入门"><span class="nav-number">1.</span> <span class="nav-text">单元1：Requests库入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Request库的安装"><span class="nav-number">1.1.</span> <span class="nav-text">Request库的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requests库的7个主要方法"><span class="nav-number">1.2.</span> <span class="nav-text">Requests库的7个主要方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#requests-get"><span class="nav-number">1.2.1.</span> <span class="nav-text">requests.get()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requests库的主要解析方法"><span class="nav-number">1.3.</span> <span class="nav-text">requests库的主要解析方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#requests的13个访问控制参数"><span class="nav-number">1.3.1.</span> <span class="nav-text">requests的13个访问控制参数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -832,7 +839,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共82.3k字</span>
+  <span class="post-count">博客全站共82.4k字</span>
 </div>
 
         
@@ -944,7 +951,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 95528, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 95528, xid: "2017/09/12/Python网络爬虫与信息提取/"});
+		_hcwp.push({widget:"Stream", widget_id: 95528, xid: "2017/10/15/Python网络爬虫与信息提取/"});
 		
 
 		(function() {
