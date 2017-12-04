@@ -152,9 +152,9 @@
     
       <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
     
-      <category term="数据分析" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
       <category term="爬虫" scheme="https://x-nicolo.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="数据分析" scheme="https://x-nicolo.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
@@ -165,8 +165,13 @@
     <published>2017-12-04T12:12:55.000Z</published>
     <updated>2017-12-04T12:12:55.000Z</updated>
     
-    <content type="html"><![CDATA[<p>突然想更博了，这不是因为闲了，是因为安卓程序包的下载好慢啊。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-a65fa7855abb9781.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20171204201651.jpg"><br>轮子哥说他都是用编译的时间来刷微博，那我也不知羞耻的（不想学习）来更博。  </p>
-<a id="more"></a>    
+    <content type="html"><![CDATA[<p>突然想更博了，这不是因为闲了，是因为安卓程序包的下载好慢啊。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-a65fa7855abb9781.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20171204201651.jpg"><br>轮子哥说他都是用编译的时间来刷微博，那我也不知羞耻的（不想学习）来更博。    </p>
+<a id="more"></a> 
+<p>敲代码的水平没有增长多少，PS和做事匹配倒是提高了不少。</p>
+<ul>
+<li><a href="http://oeiseebmx.bkt.clouddn.com/%E5%BF%AB%E9%93%831121PPT%E8%A7%86%E9%A2%91_x264.mp4" target="_blank" rel="external">快铃PPT</a></li>
+<li><a href="http://opms50p58.bkt.clouddn.com/%E5%BF%AB%E9%93%83_%E6%B4%BB%E5%8A%9B%E5%B7%A5%E4%BD%9C%E5%AE%A4.mp4" target="_blank" rel="external">快铃宣传视频</a>  </li>
+</ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/2847713-88ed85d7ffbc1199.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微信图片_20171204211938.jpg"><br><img src="http://upload-images.jianshu.io/upload_images/2847713-adafaf84351ff247.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微信图片_20171204212036.jpg"><br><img src="http://upload-images.jianshu.io/upload_images/2847713-3c7633cc3e6ef614.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微信图片_20171204212044.jpg"><br>谈谈这次的全国移动终端的比赛吧。  </p>
 <h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p>一个偶然的机会加入工作室，从还没开始学Python就直接上手爬虫。最深的体会就是，结果导向的驱动真的最有用。看了一万本书可能真的不如亲手去操作一番。<br>开始学Python，了解协议，抓包，去学HTML，去学数据库。我都不敢相信我本科四年搞硬件的。整个流程走下来，好像是真的有学习到很多。但是还是差很远，现在也是。从不认为自己牛逼，敬畏一切可敬畏的。  </p>
 <h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>后面就是多花时间去尝试，去调代码，从一开始的不知道写什么，到后来去想能不能用好一点的算法去实现。感谢团队的力量，代码写到半夜也是有的。<br>这是一段很难忘的经历。去明白、去了解一个产品从无到有的流程。  </p>
@@ -181,7 +186,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;突然想更博了，这不是因为闲了，是因为安卓程序包的下载好慢啊。&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-a65fa7855abb9781.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;TIM截图20171204201651.jpg&quot;&gt;&lt;br&gt;轮子哥说他都是用编译的时间来刷微博，那我也不知羞耻的（不想学习）来更博。  &lt;/p&gt;
+      &lt;p&gt;突然想更博了，这不是因为闲了，是因为安卓程序包的下载好慢啊。&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-a65fa7855abb9781.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;TIM截图20171204201651.jpg&quot;&gt;&lt;br&gt;轮子哥说他都是用编译的时间来刷微博，那我也不知羞耻的（不想学习）来更博。    &lt;/p&gt;
     
     </summary>
     
