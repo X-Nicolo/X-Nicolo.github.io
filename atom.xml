@@ -159,6 +159,66 @@
   </entry>
   
   <entry>
+    <title>安卓开发笔记</title>
+    <link href="https://x-nicolo.github.io/2017/12/04/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"/>
+    <id>https://x-nicolo.github.io/2017/12/04/安卓开发笔记/</id>
+    <published>2017-12-04T08:07:35.000Z</published>
+    <updated>2017-12-04T08:07:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>别问我为什么突然要搞安卓，我不想回答。但我觉得应该很有趣。  </p>
+<p>笔记整理来自 <a href="http://www.runoob.com/android/android-application-components.html" target="_blank" rel="external">菜鸟教程</a>  </p>
+<a id="more"></a>  
+<h3 id="Android-架构"><a href="#Android-架构" class="headerlink" title="Android 架构"></a>Android 架构</h3><p>Android操作系统是一个软件组件的栈，在架构图中它大致可以分为五个部分和四个主要层。<br><img src="http://www.runoob.com/wp-content/uploads/2015/06/android_architecture.jpg" alt="">  </p>
+<h4 id="Linux内核"><a href="#Linux内核" class="headerlink" title="Linux内核"></a>Linux内核</h4><p>提供进程管理，内存管理，设备管理，网络和大量的设备驱动。  </p>
+<h4 id="程序库"><a href="#程序库" class="headerlink" title="程序库"></a>程序库</h4><p>包括开源的Web浏览器引擎Webkit，知名的 libc 库，用于仓库存储和应用数据共享的SQLite数据库，用于播放、录制音视频的库，用于网络安全的 SSL 库等。   </p>
+<h4 id="Android程序库"><a href="#Android程序库" class="headerlink" title="Android程序库"></a>Android程序库</h4><p>这个类别包括了专门为 Android 开发的基于 Java 的程序库。这个类别程序库的示例包括应用程序框架库，如用户界面构建，图形绘制和数据库访问。  </p>
+<h4 id="Android运行时"><a href="#Android运行时" class="headerlink" title="Android运行时"></a>Android运行时</h4><p>这个部分提供名为 Dalvik 虚拟机的关键组件，类似于 Java 虚拟机，但专门为 Android 设计和优化。  </p>
+<h4 id="应用框架"><a href="#应用框架" class="headerlink" title="应用框架"></a>应用框架</h4><p>应用框架层以Java类的形式为应用程序提供许多高级的服务。应用程序开发者被允许在应用中使用这些服务。  </p>
+<h4 id="应用程序"><a href="#应用程序" class="headerlink" title="应用程序"></a>应用程序</h4><p>顶层中有所有的Android应用程序。这些应用程序包括通讯录，浏览器，游戏等。  </p>
+<h3 id="Android-应用程序组件"><a href="#Android-应用程序组件" class="headerlink" title="Android 应用程序组件"></a>Android 应用程序组件</h3><p>应用程序组件是一个Android应用程序的基本构建块。这些组件由应用清单文件松耦合的组织。AndroidManifest.xml描述了应用程序的每个组件，以及他们如何交互。  </p>
+<p>Android应用程序中使用的四个主要组件:  </p>
+<ul>
+<li>Activities  描述UI，并且处理用户与机器屏幕的交互。</li>
+<li>Services    处理与应用程序关联的后台操作。</li>
+<li>Broadcast Receivers 处理Android操作系统和应用程序之间的通信。</li>
+<li>Content Providers   处理数据和数据库管理方面的问题。  </li>
+</ul>
+<h4 id="Activities"><a href="#Activities" class="headerlink" title="Activities"></a>Activities</h4><p>一个活动标识一个具有用户界面的单一屏幕。<br>当应用程序拥有多于一个活动，其中的一个会被标记为当应用程序启动的时候显示。<br>一个活动是Activity类的一个子类。  </p>
+<h4 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h4><p>服务是运行在后台，执行长时间操作的组件。   </p>
+<p>一个服务是Service类的子类。   </p>
+<h4 id="Broadcast-Receivers"><a href="#Broadcast-Receivers" class="headerlink" title="Broadcast Receivers"></a>Broadcast Receivers</h4><p>广播接收器简单地响应从其他应用程序或者系统发来的广播消息。  </p>
+<p>广播接收器是BroadcastReceiver类的一个子类，每个消息以Intent对象的形式来广播。  </p>
+<h4 id="Content-Providers"><a href="#Content-Providers" class="headerlink" title="Content Providers"></a>Content Providers</h4><p>内容提供者组件通过请求从一个应用程序到另一个应用程序提供数据。<br>内容提供者是ContentProvider类的子类，并实现一套标准的API，以便其他应用程序来执行事务。  </p>
+<h4 id="附件组件"><a href="#附件组件" class="headerlink" title="附件组件"></a>附件组件</h4><p>有一些附件的组件用于以上提到的实体、他们之间逻辑、及他们之间连线的构造。这些组件如下：  </p>
+<ul>
+<li>Fragments   代表活动中的一个行为或者一部分用户界面。</li>
+<li>Views   绘制在屏幕上的UI元素，包括按钮，列表等。</li>
+<li>Layouts 控制屏幕格式，展示视图外观的View的继承。</li>
+<li>Intents 组件间的消息连线。</li>
+<li>Resources   外部元素，例如字符串资源、常量资源及图片资源等。</li>
+<li>Manifest    应用程序的配置文件。  </li>
+</ul>
+<h3 id="Android-Hello-World-实例"><a href="#Android-Hello-World-实例" class="headerlink" title="Android Hello World 实例"></a>Android Hello World 实例</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;别问我为什么突然要搞安卓，我不想回答。但我觉得应该很有趣。  &lt;/p&gt;
+&lt;p&gt;笔记整理来自 &lt;a href=&quot;http://www.runoob.com/android/android-application-components.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;菜鸟教程&lt;/a&gt;  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="Java" scheme="https://x-nicolo.github.io/tags/Java/"/>
+    
+      <category term="图像处理" scheme="https://x-nicolo.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="Android" scheme="https://x-nicolo.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="https://x-nicolo.github.io/2017/12/04/%E5%AE%89%E5%8D%93%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91/"/>
     <id>https://x-nicolo.github.io/2017/12/04/安卓快速开发/</id>
@@ -1129,58 +1189,6 @@ jdbc.password=root//连接测试的密码
     
     
       <category term="test" scheme="https://x-nicolo.github.io/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSP</title>
-    <link href="https://x-nicolo.github.io/2017/07/31/JSP/"/>
-    <id>https://x-nicolo.github.io/2017/07/31/JSP/</id>
-    <published>2017-07-31T07:23:37.000Z</published>
-    <updated>2017-09-26T11:43:13.796Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="window下Tomcat的下载安装及配置"><a href="#window下Tomcat的下载安装及配置" class="headerlink" title="window下Tomcat的下载安装及配置"></a>window下Tomcat的下载安装及配置</h2><p>1、安装<br>2、基本语法<br>3、项目导出及部署<br>4、JSP注释<br><a id="more"></a></p>
-<h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><p>绿色软件，下载解压即安装成功。</p>
-<h4 id="安装目录："><a href="#安装目录：" class="headerlink" title="安装目录："></a>安装目录：</h4><ul>
-<li>bin:存放启动和关闭tomcat的脚本</li>
-<li>conf：存放tomcat服务器的各种配置文件</li>
-<li>lib：存放tomcat的依赖jar包</li>
-<li>logs：存放tomcat执行时生成的日志文件</li>
-<li>temp：存放一些临时文件</li>
-<li>webapps：存放web应用</li>
-<li>work：存放一些中间文件</li>
-<li>LICENSE</li>
-<li>NOTTICE</li>
-<li>tomcat.ico</li>
-<li>Uninstall.exe<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4>安装目录</li>
-</ul>
-<h3 id="2、基本语法"><a href="#2、基本语法" class="headerlink" title="2、基本语法"></a>2、基本语法</h3><ol>
-<li>用 JSP 向浏览器输出 hello world<figure class="highlight mojolicious"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="perl">@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=ISO-8859-1"</span></span></div><div class="line"><span class="perl">    pageEncoding=<span class="string">"ISO-8859-1"</span></span><span class="xml">%&gt;</span></div><div class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=ISO-8859-1"</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></div><div class="line"><span class="xml">JSP表达式输出：<span class="tag">&lt;<span class="name">%=</span></span></span><span class="perl"><span class="string">"hello world"</span> </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="perl"></span></div><div class="line"><span class="perl">String str = <span class="string">"hello world"</span>;</span></div><div class="line"><span class="perl">out.<span class="keyword">print</span>(str);</span></div><div class="line"><span class="perl"></span></div><div class="line"><span class="perl"></span><span class="xml">%&gt;</span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="3、项目导出及部署"><a href="#3、项目导出及部署" class="headerlink" title="3、项目导出及部署"></a>3、项目导出及部署</h3><ul>
-<li>export-warfile</li>
-<li>将war文件放进.\Tomcat8\webapps目录下。</li>
-<li>启动tomcat后war文件自动解压</li>
-<li>浏览器浏览localhost:8080/JSPStyudy/01/hello.jsp</li>
-</ul>
-<h3 id="4、JSP注释"><a href="#4、JSP注释" class="headerlink" title="4、JSP注释"></a>4、JSP注释</h3><p>HTML注释：<br><figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="comment">&lt;!-- this is body--&gt;</span></span></div><div class="line"><span class="xml"><span class="comment">&lt;!-- today is </span></span><span class="vbscript">&lt;%=<span class="keyword">new</span> java.util.<span class="built_in">Date</span>().toString() %&gt;</span><span class="xml"><span class="comment"> --&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>JSP注释：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%<span class="comment">--</span></div><div class="line">this <span class="keyword">is</span> JSP comments.</div><div class="line"><span class="comment">--%&gt;</span></div></pre></td></tr></table></figure></p>
-<p>JSP程序段中的注释：<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;%<span class="comment">--</span></div><div class="line">   //<span class="built_in">String</span> str = <span class="string">"hello world"</span>; 单行注释</div><div class="line">   <span class="comment">/*多行注释*/</span></div><div class="line"><span class="comment">--%&gt;</span></div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;window下Tomcat的下载安装及配置&quot;&gt;&lt;a href=&quot;#window下Tomcat的下载安装及配置&quot; class=&quot;headerlink&quot; title=&quot;window下Tomcat的下载安装及配置&quot;&gt;&lt;/a&gt;window下Tomcat的下载安装及配置&lt;/h2&gt;&lt;p&gt;1、安装&lt;br&gt;2、基本语法&lt;br&gt;3、项目导出及部署&lt;br&gt;4、JSP注释&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Java" scheme="https://x-nicolo.github.io/tags/Java/"/>
-    
-      <category term="Web" scheme="https://x-nicolo.github.io/tags/Web/"/>
     
   </entry>
   
