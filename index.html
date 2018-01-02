@@ -419,7 +419,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  585
+                  588
                 </span>
               
 
@@ -457,24 +457,15 @@
 
       
         
-          
-            <p>title: 跳一跳刷分指南（作弊攻略）<br>date: 2018-01-02 21:39:09<br>updated: 2018-01-02 21:39:09<br>tags: [Python]</p>
-<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><p><img src="http://upload-images.jianshu.io/upload_images/2847713-a0cb36f928fde35d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="794994122028961310.jpg"><br>自从刷了分好多好友都来问我，我还是写一个指（作）南（弊）吧。<br>游戏虽好玩，且刷且珍惜。（谢好友们不删之恩<br>没耐心的直接拉到最后的总结，两步到位。  </p>
-<h3 id="外挂"><a href="#外挂" class="headerlink" title="外挂"></a>外挂</h3><p>最近在微博看到好多物理外挂，还有一些基于图像识别的外挂。其实都算是伤神费力，毛爷爷说过，看问题要抓住关键矛盾,一切问题迎刃而解。所以抓包去看看。  </p>
-<h3 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h3><p>以前使用过fiddle，觉得非常nice。但是这玩意在电脑端抓包，不还得设置代理，再去抓微信数据，比较烦，所以找个安卓机直接抓包。  </p>
-<h4 id="Packet-Capture"><a href="#Packet-Capture" class="headerlink" title="Packet Capture"></a>Packet Capture</h4><p>安卓机上下载这个，一步一步来，会提示安装证书，安装即可。安装好后长这样：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-0bbbd607f45c0642.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="409430815870541656.png">  </p>
-<h4 id="session-ID"><a href="#session-ID" class="headerlink" title="session ID"></a>session ID</h4><p>点三角形开始的按钮，在抓包软件里找到微信，然后打开跳一跳玩一把。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-4ea2220505b7098c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="709930993861369338.jpg">  </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2847713-c3e7e96f594ff3e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="839620930425149610.png">  </p>
-<p>返回抓包软件，查找有SSL的文件，点开找json文件，找session ID。  </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2847713-71dabab8fe2a5380.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="236073869604834277.jpg"><br>就在这里。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-4520c8d34165e640.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20180102211438.jpg"><br>把session ID后面双引号的序列保存下来。  </p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>此为开源的一个代码，直接改下面的session_id，和自己想要的”score”: 10086就可以，应该能跑起来，但是python的环境配置有时还是挺恶心的。<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">import json</div><div class="line">import time</div><div class="line">from Crypto.Cipher import AES</div><div class="line">import base64</div><div class="line"></div><div class="line">action_data = &#123;</div><div class="line">    <span class="string">"score"</span>: 10086,</div><div class="line">    <span class="string">"times"</span>: 666,</div><div class="line">    <span class="string">"game_data"</span>: <span class="string">"&#123;&#125;"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">session_id = <span class="string">"5TrXoE7IXtM/Nr7vITnbU9bmR53VH0u8RkVnm6m/Fezg=="</span></div><div class="line"></div><div class="line">aes_key = session_id</div><div class="line">aes_iv  = aes_key</div><div class="line"></div><div class="line">cryptor = AES.new(aes_key, AES.MODE_CBC, aes_iv)</div><div class="line"></div><div class="line">str_action_data = json.dumps(action_data).encode(<span class="string">"utf-8"</span>)</div><div class="line">print(<span class="string">"json_str_action_data "</span>, str_action_data)</div><div class="line"></div><div class="line"><span class="comment">#Pkcs7</span></div><div class="line">length = 16 - (len(str_action_data) % 16)</div><div class="line">str_action_data += bytes([length])*length</div><div class="line"></div><div class="line">cipher_action_data = base64.b64encode(cryptor.encrypt(str_action_data)).decode(<span class="string">"utf-8"</span>)</div><div class="line">print(<span class="string">"action_data "</span>, cipher_action_data)</div><div class="line"></div><div class="line">post_data = &#123;</div><div class="line">  <span class="string">"base_req"</span>: &#123;</div><div class="line">    <span class="string">"session_id"</span>: session_id,</div><div class="line">    <span class="string">"fast"</span>: 1,</div><div class="line">  &#125;,</div><div class="line">  <span class="string">"action_data"</span>: cipher_action_data</div><div class="line">&#125;</div><div class="line"></div><div class="line">headers = &#123;</div><div class="line">    <span class="string">"charset"</span>: <span class="string">"utf-8"</span>,</div><div class="line">    <span class="string">"Accept-Encoding"</span>: <span class="string">"gzip"</span>,</div><div class="line">    <span class="string">"referer"</span>: <span class="string">"https://servicewechat.com/wx7c8d593b2c3a7703/3/page-frame.html"</span>,</div><div class="line">    <span class="string">"content-type"</span>: <span class="string">"application/json"</span>,</div><div class="line">    <span class="string">"User-Agent"</span>: <span class="string">"MicroMessenger/6.6.1.1200(0x26060130) NetType/WIFI Language/zh_CN"</span>,</div><div class="line">    <span class="string">"Content-Length"</span>: <span class="string">"0"</span>,</div><div class="line">    <span class="string">"Host"</span>: <span class="string">"mp.weixin.qq.com"</span>,</div><div class="line">    <span class="string">"Connection"</span>: <span class="string">"Keep-Alive"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">url = <span class="string">"https://mp.weixin.qq.com/wxagame/wxagame_settlement"</span></div><div class="line"></div><div class="line"></div><div class="line">response = requests.post(url, json=post_data, headers=headers)</div><div class="line">print(json.loads(response.text))</div></pre></td></tr></table></figure></p>
-<h3 id="web提交"><a href="#web提交" class="headerlink" title="web提交"></a>web提交</h3><p>当然，游戏通关的策略当然是越简单越好，有位大神写了一个这个程序的Java版，直接可以web端提交。<br><a href="https://zhaoxuyang.com/%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E6%8A%93%E5%8C%85%E6%94%B9%E5%88%86-java%E5%AE%9E%E7%8E%B0/" target="_blank" rel="external">【点这个】填写sessionID和想要的分数，提交即可</a><br>真的是太暴力了。。这个漏洞目前还没修复。  </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>抓包，获取sessionID（请看<a href="">Packet Capture</a>）</li>
-<li>web提交  </li>
-</ul>
-
-          
+          <p>title: 跳一跳刷分指南（作弊攻略）<br>date: 2018-01-02 21:39:09<br>updated: 2018-01-02 21:39:09<br>tags: [Python]</p>
+<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><p>略略略。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/02/跳一跳刷分指南（作弊攻略）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
