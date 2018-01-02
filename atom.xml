@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2017-12-19T13:03:46.000Z</updated>
+  <updated>2018-01-02T13:35:31.187Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://x-nicolo.github.io/2018/01/02/%E8%B7%B3%E4%B8%80%E8%B7%B3%E5%88%B7%E5%88%86%E6%8C%87%E5%8D%97/"/>
+    <id>https://x-nicolo.github.io/2018/01/02/跳一跳刷分指南/</id>
+    <published>2018-01-02T12:52:30.160Z</published>
+    <updated>2018-01-02T13:35:31.187Z</updated>
+    
+    <content type="html"><![CDATA[<p>title: 跳一跳刷分指南（作弊攻略）<br>date: 2018-01-02 20:53:37<br>updated: 2018-01-02 20:53:37<br>tags: [python]</p>
+<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><p><img src="http://upload-images.jianshu.io/upload_images/2847713-a0cb36f928fde35d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="794994122028961310.jpg"><br>自从我刷了分好多好友都来问我，我还是写一个指（作）南（弊）吧。<br>游戏虽好玩，且刷且珍惜。（谢好友们不删之恩<br>没耐心的直接拉到最后的总结，两步到位。  </p>
+<h3 id="外挂"><a href="#外挂" class="headerlink" title="外挂"></a>外挂</h3><p>最近在微博看到好多物理外挂，还有一些基于图像识别的外挂。其实都算是伤神费力，毛爷爷说过，看问题要抓住关键矛盾,一切问题迎刃而解。所以抓包去看看。  </p>
+<h3 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h3><p>以前使用过fiddle，觉得非常nice。但是这玩意在电脑端抓包，不还得设置代理，再去抓微信数据，比较烦，所以找个安卓机直接抓包。  </p>
+<h4 id="Packet-Capture"><a href="#Packet-Capture" class="headerlink" title="Packet Capture"></a>Packet Capture</h4><p>安卓机上下载这个，一步一步来，会提示安装证书，安装即可。安装好后长这样：<br><img src="http://upload-images.jianshu.io/upload_images/2847713-0bbbd607f45c0642.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="409430815870541656.png">  </p>
+<h4 id="session-ID"><a href="#session-ID" class="headerlink" title="session ID"></a>session ID</h4><p>点三角形开始的按钮，在抓包软件里找到微信，然后打开跳一跳玩一把。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-4ea2220505b7098c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="709930993861369338.jpg">  </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2847713-c3e7e96f594ff3e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="839620930425149610.png">  </p>
+<p>返回抓包软件，查找有SSL的文件，点开找json文件，找session ID。  </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2847713-71dabab8fe2a5380.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="236073869604834277.jpg"><br>就在这里。<br><img src="http://upload-images.jianshu.io/upload_images/2847713-4520c8d34165e640.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TIM截图20180102211438.jpg"><br>把session ID后面双引号的序列保存下来。  </p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>此为开源的一个代码，直接改下面的session_id，和自己想要的”score”: 10086就可以，应该能跑起来，但是python的环境配置有时还是挺恶心的。<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">import json</div><div class="line">import time</div><div class="line">from Crypto.Cipher import AES</div><div class="line">import base64</div><div class="line"></div><div class="line">action_data = &#123;</div><div class="line">    <span class="string">"score"</span>: 10086,</div><div class="line">    <span class="string">"times"</span>: 666,</div><div class="line">    <span class="string">"game_data"</span>: <span class="string">"&#123;&#125;"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">session_id = <span class="string">"5TrXoE7IXtM/Nr7vITnbU9bmR53VH0u8RkVnm6m/Fezg=="</span></div><div class="line"></div><div class="line">aes_key = session_id[0:16]</div><div class="line">aes_iv  = aes_key</div><div class="line"></div><div class="line">cryptor = AES.new(aes_key, AES.MODE_CBC, aes_iv)</div><div class="line"></div><div class="line">str_action_data = json.dumps(action_data).encode(<span class="string">"utf-8"</span>)</div><div class="line">print(<span class="string">"json_str_action_data "</span>, str_action_data)</div><div class="line"></div><div class="line"><span class="comment">#Pkcs7</span></div><div class="line">length = 16 - (len(str_action_data) % 16)</div><div class="line">str_action_data += bytes([length])*length</div><div class="line"></div><div class="line">cipher_action_data = base64.b64encode(cryptor.encrypt(str_action_data)).decode(<span class="string">"utf-8"</span>)</div><div class="line">print(<span class="string">"action_data "</span>, cipher_action_data)</div><div class="line"></div><div class="line">post_data = &#123;</div><div class="line">  <span class="string">"base_req"</span>: &#123;</div><div class="line">    <span class="string">"session_id"</span>: session_id,</div><div class="line">    <span class="string">"fast"</span>: 1,</div><div class="line">  &#125;,</div><div class="line">  <span class="string">"action_data"</span>: cipher_action_data</div><div class="line">&#125;</div><div class="line"></div><div class="line">headers = &#123;</div><div class="line">    <span class="string">"charset"</span>: <span class="string">"utf-8"</span>,</div><div class="line">    <span class="string">"Accept-Encoding"</span>: <span class="string">"gzip"</span>,</div><div class="line">    <span class="string">"referer"</span>: <span class="string">"https://servicewechat.com/wx7c8d593b2c3a7703/3/page-frame.html"</span>,</div><div class="line">    <span class="string">"content-type"</span>: <span class="string">"application/json"</span>,</div><div class="line">    <span class="string">"User-Agent"</span>: <span class="string">"MicroMessenger/6.6.1.1200(0x26060130) NetType/WIFI Language/zh_CN"</span>,</div><div class="line">    <span class="string">"Content-Length"</span>: <span class="string">"0"</span>,</div><div class="line">    <span class="string">"Host"</span>: <span class="string">"mp.weixin.qq.com"</span>,</div><div class="line">    <span class="string">"Connection"</span>: <span class="string">"Keep-Alive"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">url = <span class="string">"https://mp.weixin.qq.com/wxagame/wxagame_settlement"</span></div><div class="line"></div><div class="line"></div><div class="line">response = requests.post(url, json=post_data, headers=headers)</div><div class="line">print(json.loads(response.text))</div></pre></td></tr></table></figure></p>
+<h3 id="web提交"><a href="#web提交" class="headerlink" title="web提交"></a>web提交</h3><p>当然，游戏通关的策略当然是越简单越好，有位大神写了一个这个程序的Java版，直接可以web端提交。<br><a href="https://zhaoxuyang.com/%E5%BE%AE%E4%BF%A1%E8%B7%B3%E4%B8%80%E8%B7%B3%E6%8A%93%E5%8C%85%E6%94%B9%E5%88%86-java%E5%AE%9E%E7%8E%B0/" target="_blank" rel="external">【点这个】填写sessionID和想要的分数，提交即可</a><br>真的是太暴力了。。这个漏洞目前还没修复。  </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>抓包，获取sessionID（请看<a href="">Packet Capture</a>）</li>
+<li>web提交  </li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;title: 跳一跳刷分指南（作弊攻略）&lt;br&gt;date: 2018-01-02 20:53:37&lt;br&gt;updated: 2018-01-02 20:53:37&lt;br&gt;tags: [python]&lt;/p&gt;
+&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>西电睿思年度非官方关键字榜单</title>
@@ -1128,94 +1162,6 @@ jdbc.password=root//连接测试的密码
       <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
     
       <category term="MySQl" scheme="https://x-nicolo.github.io/tags/MySQl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SSM简单介绍</title>
-    <link href="https://x-nicolo.github.io/2017/08/09/SSM%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/"/>
-    <id>https://x-nicolo.github.io/2017/08/09/SSM简单介绍/</id>
-    <published>2017-08-09T03:22:27.000Z</published>
-    <updated>2017-08-09T03:22:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>SSM：Struts、Spring、Mybatis<br>SSM三层集成框架系统总体设计：模块划分、数据库表，存储过程</p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>J2EE框架是一种非常流行的Web开发框架。J2EE框架完整地定义了一套标准的应用开发体系结构和部署环境。基于SSH的轻量级组件模型的出现，为中小企业的应用开发提供了新的解决问题的方法。但SSH框架中持久层技术Hibernate是一种“全自动”式的ORM实现方案，该方案对数据库设计模式要求苛刻，且限制使用存储过程，给数据操作较多、表结构多变的系统的开发带来了很大的不便。SSM轻量级开发框架解决了这个问题，该框架中的数据持久层技术是MyBatis。MyBatis是一种“半自动”式的ORM实现方案，它在SQL开发的工作量和数据库移植性方面的让步，为系统设计提供了最大的自由空间。<br><a id="more"></a></p>
-<h2 id="相关技术"><a href="#相关技术" class="headerlink" title="相关技术"></a>相关技术</h2><h3 id="J2EE简介"><a href="#J2EE简介" class="headerlink" title="J2EE简介"></a>J2EE简介</h3><p>基于J2EE的Web应用被划分为表示层、控制层、业务逻辑层和数据持久层，每一层在系统实现中起到不同的作用。这四层开发模式能够更好的实现“高内聚、低耦合”。将项目划分为不同的层次，有利于系统的开发、部署和维护。</p>
-<h3 id="J2EE的分层"><a href="#J2EE的分层" class="headerlink" title="J2EE的分层"></a>J2EE的分层</h3><ul>
-<li>表现层：JSP页面+JavaScript。表现层主要负责处理客户端界面。它是Web应用的末端，通过页面元素标签的布局和CSS样式，进行页面设计。表现层利用轻量级JavaScript脚本技术–jQuery进行页面数据处理。Ajax技术可以实现页面局部刷新，给用户提供良好的界面体验效果。</li>
-<li>控制层：JavaBean(处理前后台参数传递)+Action（控制页面跳转+逻辑控制）。控制层是表现层和业务逻辑层之间的桥梁。控制层负责接收和响应用户的请求；封装用户数据；将用户请求提交给业务逻辑层进行处理并将处理结果通过EJB、页面标签或回调函数返回给客户端界面。</li>
-<li>业务逻辑层：Service接口+具体实现（调用Dao组件，处理业务逻辑）。业务逻辑层主要负责业务逻辑，是整个应用的核心。业务逻辑层关联控制层和数据持久层。该层一方面接收控制层传入的请求数据，通过业务逻辑处理把处理结果数据作为响应返回给控制层；另一方面为数据持久层提供操作的数据，并接收数据持久层返回的数据。</li>
-<li>数据持久层：Dao接口+SQL具体实现+数据库。数据持久层负责与数据库交互。数据持久层负责在数据对象和关系数据库之间建立一种映射关系，实现对数据的持久化访问。数据持久层提供了数据访问方法，能够使程序员避免手工编写程序访问数据持久层。数据持久层能够完成对各种数据进行持久化的编程工作，并为业务逻辑层提供服务。</li>
-</ul>
-<h4 id="表示层框架"><a href="#表示层框架" class="headerlink" title="表示层框架"></a>表示层框架</h4><p>Struts 1.0/Struts 2.0是当前Web系统开发使用最广泛的表示层框架技术。<br>Struts1.0是最早的MVC框架，包括模型、视图、控制器三部分。模型由实现业务逻辑的JavaBean构成；控制层由ActionServlet来实现；视图主要由一组JSP文件构成。</p>
-<h4 id="业务逻辑层框架"><a href="#业务逻辑层框架" class="headerlink" title="业务逻辑层框架"></a>业务逻辑层框架</h4><p>Spring是开发人员首选的业务逻辑层轻量级解决方案。Spring被称为JavaEE应用的一站式解决方案。Spring本身提供了一个设计优良的MVC框架–SpringMVC，该框架一直被数据操作量少的小型项目广泛使用。<br>Spring是J2EE框架的中间层容器，具有强大的整合框架能力。Spring可以向上与MVC框架无缝整合，向下可以与各种持久层框架无缝整合。Spring框架能够通过配置文件很好的将控制层框架和数据持久层框架整合到一起。强大的整合框架能力使之成业务逻辑层首选实现框架。</p>
-<h4 id="数据持久层框架"><a href="#数据持久层框架" class="headerlink" title="数据持久层框架"></a>数据持久层框架</h4><p>数据持久层框架的作用是将数据库存储从服务层中分离出来，降低耦合度。持久层设计的关键问题就是如何在对象和关系型数据库之间建立一种映射关系。持久层框架现分为两大主流：自己编写JDBC实现SQL语句；使用O/RMapping技术实现的“全自动”式（如Hibernate）和“半自动”式（如iBatis,MyBatis）的ORM实现方案。</p>
-<h5 id="JDBC框架"><a href="#JDBC框架" class="headerlink" title="JDBC框架"></a>JDBC框架</h5><p>JDBC框架是一种能够解决性能障碍的持久层框架。该框架只有在请求的时候才能被调用，能够节省内存。可是JDBC的实现当时需要开发人员非常精通SQL和JDBC，需要写很多的DAO方法，而且每一次数据请求都要开启和关闭数据连接。</p>
-<h5 id="Hibernate框架"><a href="#Hibernate框架" class="headerlink" title="Hibernate框架"></a>Hibernate框架</h5><p>JDBC框架适合小型简单项目。对于企业级项目，Hibernate是被广为推行的一个运行效率较高的持久层框架。它将Java对象（POJO）映射成持久化类，使应用程序能够以面向对象的方式来操作POJO，并将这些操作转换为底层的SQL语句来执行。企业级大型项目使用Hibernate，能够大大提高项目开发效率。</p>
-<h5 id="MyBatis框架介绍"><a href="#MyBatis框架介绍" class="headerlink" title="MyBatis框架介绍"></a>MyBatis框架介绍</h5><p>MyBatis是iBatis的升级版本。MyBatis为Java提供了更为强大的功能。</p>
-<ul>
-<li>MyBatis实现了Dao接口绑定，使用更加方便。MyBatis使用简单的XML或注解用于配置和原始映射，将接口和JAVA的POJOs(Plan Old JAVA Objects，普通的JAVA对象)映射成数据库中的记录。</li>
-<li>对象关系映射的改进，数据操作执行效率更高。在MyBatis中，除了兼容ibatis2.x中的“嵌套查询”方式外，还提供了直接“嵌套结果”的方式，其效果相当于直接通过一句SQL语句将查询出的数据传输对象(DTO)自动封装成所需要的对象。</li>
-<li>MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及结果集的检索。</li>
-</ul>
-<h2 id="基于J2EE的SSM框架开发技术"><a href="#基于J2EE的SSM框架开发技术" class="headerlink" title="基于J2EE的SSM框架开发技术"></a>基于J2EE的SSM框架开发技术</h2><p>SSM框架是由Struts，Spring和MyBatis三个框架集成的。SSM框架自上而下被分别分为表现层、控制层、业务逻辑层和数据持久层。</p>
-<p><img src="http://opms50p58.bkt.clouddn.com/SSM%E6%A1%86%E6%9E%B6.png" alt="SSM框架"></p>
-<h3 id="SSM框架的集成"><a href="#SSM框架的集成" class="headerlink" title="SSM框架的集成"></a>SSM框架的集成</h3><p>业务逻辑层利用Spring框架的依赖注入实现对业务逻辑接口和DAO接口的实例<br>托管；在对象关系映射方面，利用Spring对数据库连接池的托管和对MyBatis框架的<br>支持；开发人员需要完成Spring配置文件applicationContext.xml中对数据源以及不同<br>模块所对应的bean进行配置，同时还要定义业务逻辑接口及其实现。<br>数据持久层利用MyBatis来实现半自动化对象的关系映射。这种方式为系统设计<br>提供了更大的自由空间，开发人员可以编写具体的SQL语句或存储过程。另外，开<br>发人员需要完成对MyBatis的配置文件SqlMapConfig.xml的配置，来实现DAO接口<br>及其实现的映射。</p>
-<h3 id="SSM框架的实现原理"><a href="#SSM框架的实现原理" class="headerlink" title="SSM框架的实现原理"></a>SSM框架的实现原理</h3><p>以“流程流转角色列表框的数据显示”功能的实现为例，来详细描述表示层、控制层、业务逻辑层和数据持久层的具体实现细节，以此介绍SSM框架的实现原理。表现层负责页面的设计以及处理用户请求，该层使用DIV分区和CSS样式表进行元素布局并使用jQuery提供的post方法来实现用户的请求与响应。控制层、业务逻辑层和数据持久层进行后台业务处理，通过层与层之间的相互交互来实现用户数据的处理和响应。</p>
-<p><img src="http://opms50p58.bkt.clouddn.com/SSM%E6%B5%81%E7%A8%8B.png" alt="SSM流程流转"></p>
-<ul>
-<li>表现层代码实现包括新建列表元素、获取用户角色、通过AJAX函数进行前后台数据交互这三部分。</li>
-<li>控制层Struts2框架需要进行web.xml文件、struts.xml文件和Spring的配置文件ApplicationContext.xml等文件的配置。web.xml文件需要配置请求过滤器；struts.xml文件和ApplicationContext.xml文件用来配置请求转发路径。</li>
-</ul>
-<h3 id="系统架构的设计"><a href="#系统架构的设计" class="headerlink" title="系统架构的设计"></a>系统架构的设计</h3><p>C／S架构与B／S架构是常用的两种系统架构。C／S架构即客户机一服务器架构。C／S架构充分利用客户端和服务器端的硬件环境，将任务合理分配到客户端和服务器端来实现，降低了系统的通讯开销。B／S架构即浏览器一服务器结构。在这种架构下，用户工作界面通过浏览器来实现，事务逻辑在服务器端实现。下文将简要的介绍两种框架的优缺点。</p>
-<h4 id="C／S架构的优缺点"><a href="#C／S架构的优缺点" class="headerlink" title="C／S架构的优缺点"></a>C／S架构的优缺点</h4><h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><p>服务器运行时的数据负荷轻。C／S架构的体系结构由客户端应用程序和数据库服务器程序组成。客户端应用程序运行于用户自己的电脑，当需要数据操作时，客户端程序自动寻找服务器程序并发送请求。服务器程序按照规则作出应答，返回结果。该过程简单，服务器的数据负荷低。</p>
-<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><p>系统维护量大。在系统运行时，需要在客户端和服务器端建立数据同步，因此，需要在两者之间建立实时的通讯连接，维持两地的数据库服务器在线运行。网络管理人员既要对服务器维护管理，又要对客户端维护管理，同时还需要较高的投资和技术支持，维护成本高。</p>
-<h4 id="B／S架构的优缺点"><a href="#B／S架构的优缺点" class="headerlink" title="B／S架构的优缺点"></a>B／S架构的优缺点</h4><h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5><p>系统维护量少，软件升级方便。B／S架构的软件系统只需管理服务器即可，客户端使用浏览器，一般不需要做维护。随着系统版本的不断升级，浏览器的升级和维护也越来越容易，使用起来越来越简单。</p>
-<p>#####　缺点<br>服务器运行时的数据负荷重。B／S架构的系统软件安装在服务器端，事务逻辑在服务器端来实现，所有应用服务器运行数据负荷较重。一旦发生服务器“崩溃”，后果不堪设想，因此需要备有备份数据库的服务器。</p>
-<p>通过以上两种架构的优缺点的比较，可以发现：<br>1)B／S架构的系统维护工作量比C／S架构的少。<br>2)B／S架构降低了客户端电脑负荷，降低了总成本。<br>3)从数据一致性和实时性方面考虑，B／S架构优于C／S架构。</p>
-<h3 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h3><p>MVC是一种架构型模式，它本身不引入新的功能，只是知道我们把Web应用结构做的更加合理，实现逻辑与页面相分离。在MVC模式中，应用程序被划分为了模型、视图和控制器三个部分。</p>
-<ul>
-<li>模型部分包含了应用程序的业务逻辑和业务数据</li>
-<li>视图部分封装了应用程序的输出形式，也就是通常所说的页面或者是界面</li>
-<li>控制器部分负责协调模型和视图，根据用户请求来选择要调用哪个模型来处理业务，以及最终由哪个视图为用户做出应答。</li>
-</ul>
-<p>MVC的组件关系图描述了模型、视图、控制器这三个部分的交互关系，下面按照交互顺序来详细描述一下它们的交互关系：</p>
-<ul>
-<li>首先是展示视图给用户，用户在这个视图上进行操作，并填写一些业务数据</li>
-<li>然后用户会点击提交按钮来发出请求</li>
-<li>视图发出的用户请求会到达控制器，在请求中包含了想要完成什么样的业务功能以及相关的数据</li>
-<li>控制器会来处理用户的请求，会把请求中的数据进行封装，然后选择并调用合适的模型，请求模型进行装状态更新，然后选择接下来要展示给用户的视图</li>
-<li>模型会去处理用户请求的业务功能，同时进行模型状态的维护和更新</li>
-<li>当模型状态发生改变的时候，模型会通知相应的视图，告诉视图它的状态发生了改变</li>
-<li>视图接到模型的通知后，会向模型进行状态查询，获取需要展示的数据，然后按照视图本身的展示方式，把这些数据展示出来。接下来就是等待用户下一次操作，再次从头轮回了。</li>
-</ul>
-<h3 id="Ajax技术"><a href="#Ajax技术" class="headerlink" title="Ajax技术"></a>Ajax技术</h3><p>当浏览器向Web服务器发送一个请求时，服务器接收并处理传来的表单，然后返回一个新的页面。这个做法浪费了许多宽带，因为在前后两个页面中的大部分HTML代码是相同的。而出现的Ajax技术无需重新加载相同的页面，只是通过在后台与服务器进行少量数据交换，使得页面实现异步更新，不仅Web服务器的处理时间大大减少了，用户界面的响应时间也快多了。</p>
-<p>Ajax技术在大多数现代浏览器中都能使用，而且不需要任何专门的软件和硬件。Ajax是一种客户端方法，它并不关心服务器是什么。Ajax是由HTML、JavaScript技术、DHTML和DOM组成。</p>
-<p>Ajax应用程序的优势在于以下3方面。</p>
-<ul>
-<li>通过异步模式，提升了用户体验。</li>
-<li>优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用</li>
-<li>Ajax引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载。</li>
-</ul>
-<h3 id="jQuery技术"><a href="#jQuery技术" class="headerlink" title="jQuery技术"></a>jQuery技术</h3><p>jQuery凭借简介的语法和跨平台的兼容性，极大的简化了JavaScript开发遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax的操作。而独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。</p>
-<p>jQuery强调的理念是写的少，做的多。jQuery独特的选择器、链式的DOM操作、事件处理机制和封装完善的Ajax都是其他JavaScript库望尘莫及的。概况起来，jQuery有以下优势：开源、轻量级、强大的选择器、出色的DOM操作的封装、可靠的事件处理机制、完善的Ajax、不污染顶级变量、出色的浏览器兼容性、链式操作方式、丰富的插件支持和完善文档等。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;SSM：Struts、Spring、Mybatis&lt;br&gt;SSM三层集成框架系统总体设计：模块划分、数据库表，存储过程&lt;/p&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;J2EE框架是一种非常流行的Web开发框架。J2EE框架完整地定义了一套标准的应用开发体系结构和部署环境。基于SSH的轻量级组件模型的出现，为中小企业的应用开发提供了新的解决问题的方法。但SSH框架中持久层技术Hibernate是一种“全自动”式的ORM实现方案，该方案对数据库设计模式要求苛刻，且限制使用存储过程，给数据操作较多、表结构多变的系统的开发带来了很大的不便。SSM轻量级开发框架解决了这个问题，该框架中的数据持久层技术是MyBatis。MyBatis是一种“半自动”式的ORM实现方案，它在SQL开发的工作量和数据库移植性方面的让步，为系统设计提供了最大的自由空间。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Java" scheme="https://x-nicolo.github.io/tags/Java/"/>
-    
-      <category term="SSM" scheme="https://x-nicolo.github.io/tags/SSM/"/>
-    
-      <category term="后台" scheme="https://x-nicolo.github.io/tags/%E5%90%8E%E5%8F%B0/"/>
     
   </entry>
   
