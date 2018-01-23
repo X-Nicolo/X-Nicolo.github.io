@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2018-01-23T03:04:02.032Z</updated>
+  <updated>2018-01-23T03:10:30.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -16,23 +16,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://x-nicolo.github.io/2018/01/23/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%EF%BC%88HTML%EF%BC%89/"/>
-    <id>https://x-nicolo.github.io/2018/01/23/前端入门学习（HTML）/</id>
-    <published>2018-01-23T02:58:06.077Z</published>
-    <updated>2018-01-23T03:04:02.032Z</updated>
+    <title>前端入门学习--HTML</title>
+    <link href="https://x-nicolo.github.io/2018/01/23/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0-HTML/"/>
+    <id>https://x-nicolo.github.io/2018/01/23/前端入门学习-HTML/</id>
+    <published>2018-01-23T03:10:30.000Z</published>
+    <updated>2018-01-23T03:10:30.000Z</updated>
     
-    <content type="html"><![CDATA[<p>title: 前端入门学习（HTML）<br>date: 2018-01-23 10:58:06<br>updated: 2018-01-23 10:58:06<br>tags: [前端,HTML]</p>
-<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><p>写在前面。<br>毕设开题已经完了，题目是基于移动设备的三维测量系统的研究与实现。用手机实现三维重建。还是比较有意思的。无奈，实在不想入安卓的坑。个人觉得前端是未来发展的方向，HTML5、小程序等等，前端都可以做。反观安卓，总觉得没前途。<br>所以有没有用前端的方法来实现APP呢？有的！之前实习的公司就是用Ionic 2实现了一个APP。而且前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>写在前面。<br>毕设开题已经完了，题目是基于移动设备的三维测量系统的研究与实现。用手机实现三维重建。还是比较有意思的。无奈，实在不想入安卓的坑。个人觉得前端是未来发展的方向，HTML5、小程序等等，前端都可以做。反观安卓，总觉得没前途。<br>所以有没有用前端的方法来实现APP呢？有的！之前实习的公司就是用Ionic 2实现了一个APP。而且前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。<br><a id="more"></a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;title: 前端入门学习（HTML）&lt;br&gt;date: 2018-01-23 10:58:06&lt;br&gt;updated: 2018-01-23 10:58:06&lt;br&gt;tags: [前端,HTML]&lt;/p&gt;
-&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程&quot;&gt;&lt;/a&gt;categories: 编程&lt;/h2&gt;&lt;p&gt;写在前面。&lt;br&gt;毕设开题已经完了，题目是基于移动设备的三维测量系统的研究与实现。用手机实现三维重建。还是比较有意思的。无奈，实在不想入安卓的坑。个人觉得前端是未来发展的方向，HTML5、小程序等等，前端都可以做。反观安卓，总觉得没前途。&lt;br&gt;所以有没有用前端的方法来实现APP呢？有的！之前实习的公司就是用Ionic 2实现了一个APP。而且前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。&lt;br&gt;
+      &lt;p&gt;写在前面。&lt;br&gt;毕设开题已经完了，题目是基于移动设备的三维测量系统的研究与实现。用手机实现三维重建。还是比较有意思的。无奈，实在不想入安卓的坑。个人觉得前端是未来发展的方向，HTML5、小程序等等，前端都可以做。反观安卓，总觉得没前途。&lt;br&gt;所以有没有用前端的方法来实现APP呢？有的！之前实习的公司就是用Ionic 2实现了一个APP。而且前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。&lt;br&gt;
     
     </summary>
     
+      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="前端" scheme="https://x-nicolo.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="HTML" scheme="https://x-nicolo.github.io/tags/HTML/"/>
     
   </entry>
   
