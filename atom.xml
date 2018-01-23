@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2018-01-02T13:51:55.000Z</updated>
+  <updated>2018-01-23T03:04:02.032Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://x-nicolo.github.io/2018/01/23/%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%EF%BC%88HTML%EF%BC%89/"/>
+    <id>https://x-nicolo.github.io/2018/01/23/前端入门学习（HTML）/</id>
+    <published>2018-01-23T02:58:06.077Z</published>
+    <updated>2018-01-23T03:04:02.032Z</updated>
+    
+    <content type="html"><![CDATA[<p>title: 前端入门学习（HTML）<br>date: 2018-01-23 10:58:06<br>updated: 2018-01-23 10:58:06<br>tags: [前端,HTML]</p>
+<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><p>写在前面。<br>毕设开题已经完了，题目是基于移动设备的三维测量系统的研究与实现。用手机实现三维重建。还是比较有意思的。无奈，实在不想入安卓的坑。个人觉得前端是未来发展的方向，HTML5、小程序等等，前端都可以做。反观安卓，总觉得没前途。<br>所以有没有用前端的方法来实现APP呢？有的！之前实习的公司就是用Ionic 2实现了一个APP。而且前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。<br><a id="more"></a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;title: 前端入门学习（HTML）&lt;br&gt;date: 2018-01-23 10:58:06&lt;br&gt;updated: 2018-01-23 10:58:06&lt;br&gt;tags: [前端,HTML]&lt;/p&gt;
+&lt;h2 id=&quot;categories-编程&quot;&gt;&lt;a href=&quot;#categories-编程&quot; class=&quot;headerlink&quot; title=&quot;categories: 编程&quot;&gt;&lt;/a&gt;categories: 编程&lt;/h2&gt;&lt;p&gt;写在前面。&lt;br&gt;毕设开题已经完了，题目是基于移动设备的三维测量系统的研究与实现。用手机实现三维重建。还是比较有意思的。无奈，实在不想入安卓的坑。个人觉得前端是未来发展的方向，HTML5、小程序等等，前端都可以做。反观安卓，总觉得没前途。&lt;br&gt;所以有没有用前端的方法来实现APP呢？有的！之前实习的公司就是用Ionic 2实现了一个APP。而且前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>跳一跳刷分指南（作弊攻略）</title>
@@ -1117,54 +1138,6 @@ jdbc.password=root//连接测试的密码
       <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
     
       <category term="爬虫" scheme="https://x-nicolo.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL连接错误</title>
-    <link href="https://x-nicolo.github.io/2017/08/21/MySQL%E8%BF%9E%E6%8E%A5%E9%94%99%E8%AF%AF/"/>
-    <id>https://x-nicolo.github.io/2017/08/21/MySQL连接错误/</id>
-    <published>2017-08-21T09:38:42.000Z</published>
-    <updated>2017-08-21T09:38:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/2847713-5ab02602ced5504d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>ERROR 1045 (28000): Access denied for user’root’@’localhost’(using password:YES)</p>
-<a id="more"></a>
-<p>1.问题：命令提示符窗口，在MySQL安装bin目录下运行指令：</p>
-<p>X:<em>Location</em>\bin\mysql&gt; mysql -u root -p<br>（每个人根据自己路劲选择不同目录。）<br>出现：</p>
-<p>Enter password:<br>输入或者不输入回车后出现错误：</p>
-<p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)<br>或</p>
-<p>ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: NO)<br>这时去你的根目录配置你的mysql配置文件my.ini<br>如果还美哦与搭建环境请参考：<br>MySQL-5.6.13免安装版配置方法</p>
-<p>记事本打开my.ini，在[mysqld]这个条目下加入</p>
-<p>skip-grant-tables<br>保存退出后重启mysql<br>重启方法1：<br>1.点击“开始”-&gt;“运行”(快捷键Win+R)。<br>2.启动：输入 net stop mysql<br>3.停止：输入 net start mysql<br>重启方法2：<br>如果1不行，到 计算机管理–&gt;服务和应用程序–&gt;服务–&gt;MYSQL–&gt;右键–&gt;启动.</p>
-<p>这时候在cmd里面输入mysql -u root -p就可以不用密码登录了，出现password：的时候直接回车可以进入，<br>不会出现ERROR 1045 (28000)，没有权限很多操作都会受限制。</p>
-<p>下面这样（斜体为操作后命令提示的结果，不输入）：<br>1.进入mysql数据库：</p>
-<p>mysql&gt; use mysql;<br>Database changed<br>2.给root用户设置新密码，新密码自己输：</p>
-<p>mysql&gt; update user set password=password(“新密码”) where user=”root”;<br>警告：这个命令是5.7之前一些老版本的，如果你用的新的，这样输入会出现错误：</p>
-<p>ERROR 1054 (42S22): Unknown column ‘password’ in ‘fie<br>这是因为5.7版本下的mysql数据库下已经没有password这个字段了，password字段改成了</p>
-<p>authentication_string<br>所以，应该输入如下命令：</p>
-<p>update mysql.user set authentication_string=password(‘root’) where user=’root’ ;<br>Query OK, 1 rows affected (0.01 sec) Rows matched: 1 Changed: 1 Warnings: 0<br>3.刷新数据库</p>
-<p>mysql&gt; flush privileges;<br>Query OK, 0 rows affected (0.00 sec)<br>4.退出mysql：</p>
-<p>mysql&gt; quit<br>Bye<br>5.改好之后，再修改一下my.ini这个文件，把刚才加入my.ini文件的的”skip-grant-tables”这行删除，保存退出再重启mysql就可以了。<br>重启方法见上文。</p>
-<p>到这里以为就完事大吉了，但是，并没有。。</p>
-<p>进入mysql后，有出现了如下错误：</p>
-<p>ERROR 1820 (HY000): You must SET PASSWORD before executing this statement<br>坑了个爹的。。。</p>
-<p>最后发现还需要重设密码！！！（难道刚刚的操作都是在研究如何吃屎么。。。）</p>
-<p>解决方法如下：</p>
-<p>mysql&gt; SET PASSWORD = PASSWORD(‘123456’);<br>对你没看错，就是在设置一边密码。。。当然你不用非弄成123456，这个随意了。。。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2847713-5ab02602ced5504d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;ERROR 1045 (28000): Access denied for user’root’@’localhost’(using password:YES)&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
-    
-      <category term="MySQl" scheme="https://x-nicolo.github.io/tags/MySQl/"/>
     
   </entry>
   
