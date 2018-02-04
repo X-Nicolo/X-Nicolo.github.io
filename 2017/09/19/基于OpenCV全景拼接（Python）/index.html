@@ -114,13 +114,13 @@
 
 
 
-<meta name="description" content="基于OpenCV（Python）的图片拼接和全景图构建。“缝合”两张有重叠区域的图来创建一张全景图。构建全景图利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus，随机采样一致性)和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将">
+<meta name="description" content="翻译自https://www.pyimagesearch.com基于OpenCV（Python）的图片拼接和全景图构建。“缝合”两张有重叠区域的图来创建一张全景图。构建全景图利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus，随机采样一致性)和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.">
 <meta name="keywords" content="Python,OpenCV,图像处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于OpenCV全景拼接（Python）">
 <meta property="og:url" content="https://x-nicolo.github.io/2017/09/19/基于OpenCV全景拼接（Python）/index.html">
 <meta property="og:site_name" content="肖洒">
-<meta property="og:description" content="基于OpenCV（Python）的图片拼接和全景图构建。“缝合”两张有重叠区域的图来创建一张全景图。构建全景图利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus，随机采样一致性)和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将">
+<meta property="og:description" content="翻译自https://www.pyimagesearch.com基于OpenCV（Python）的图片拼接和全景图构建。“缝合”两张有重叠区域的图来创建一张全景图。构建全景图利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus，随机采样一致性)和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2847713-6a62bf8adc3c6f68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2847713-d3f50736f5e32149.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -128,7 +128,7 @@
 <meta property="og:updated_time" content="2017-09-19T09:55:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于OpenCV全景拼接（Python）">
-<meta name="twitter:description" content="基于OpenCV（Python）的图片拼接和全景图构建。“缝合”两张有重叠区域的图来创建一张全景图。构建全景图利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus，随机采样一致性)和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将">
+<meta name="twitter:description" content="翻译自https://www.pyimagesearch.com基于OpenCV（Python）的图片拼接和全景图构建。“缝合”两张有重叠区域的图来创建一张全景图。构建全景图利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus，随机采样一致性)和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2847713-6a62bf8adc3c6f68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2,900
+                  2,907
                 </span>
               
 
@@ -480,7 +480,8 @@
       
 
       
-        <p><img src="http://upload-images.jianshu.io/upload_images/2847713-6a62bf8adc3c6f68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>基于OpenCV（Python）的图片拼接和全景图构建。“缝合”两张有重叠区域的图来创建一张全景图。构建全景图利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus，随机采样一致性)和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将给出兼容两个版本的代码。在之后的博客会解决多张图片的拼接，而不仅仅只是针对两张图片。<br><a id="more"></a>  </p>
+        <p><img src="http://upload-images.jianshu.io/upload_images/2847713-6a62bf8adc3c6f68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">    </p>
+<p>翻译自<a href="https://www.pyimagesearch.com" target="_blank" rel="external">https://www.pyimagesearch.com</a><br>基于OpenCV（Python）的图片拼接和全景图构建。“缝合”两张有重叠区域的图来创建一张全景图。构建全景图利用到了计算机视觉和图像处理技术有：关键点检测、局部不变特征、关键点匹配、RANSAC(Random Sample Consensus，随机采样一致性)和透视变形。因为在处理关键点检测和局部不变性在OpenCV 2.4.X和OpenCV 3.X中有很大的不同，比如SIFT和SURF。这里将给出兼容两个版本的代码。在之后的博客会解决多张图片的拼接，而不仅仅只是针对两张图片。<br><a id="more"></a>  </p>
 <h2 id="OpenCV全景拼接"><a href="#OpenCV全景拼接" class="headerlink" title="OpenCV全景拼接"></a>OpenCV全景拼接</h2><h3 id="全景拼接算法有四部分组成"><a href="#全景拼接算法有四部分组成" class="headerlink" title="全景拼接算法有四部分组成"></a>全景拼接算法有四部分组成</h3><ul>
 <li>Step1:从输入的两张图片里检测关键点、提取局部不变特征。</li>
 <li>Step2:匹配的两幅图像之间的特征</li>
@@ -833,7 +834,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共113.8k字</span>
+  <span class="post-count">博客全站共115.2k字</span>
 </div>
 
         
