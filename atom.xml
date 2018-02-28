@@ -1014,9 +1014,9 @@
     
       <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
     
-      <category term="图像处理" scheme="https://x-nicolo.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
       <category term="OpenCV" scheme="https://x-nicolo.github.io/tags/OpenCV/"/>
+    
+      <category term="图像处理" scheme="https://x-nicolo.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
