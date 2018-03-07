@@ -475,7 +475,7 @@
     <published>2018-01-23T03:10:30.000Z</published>
     <updated>2018-01-23T03:10:30.000Z</updated>
     
-    <content type="html"><![CDATA[<p>写在前面。<br>毕设开题已经完了，题目是基于移动设备的三维测量系统的研究与实现。用手机实现三维重建。还是比较有意思的。无奈，实在不想入安卓的坑。个人觉得前端是未来发展的方向，HTML5、小程序等等，前端都可以做。反观安卓，总觉得没前途。<br>所以有没有用前端的方法来实现APP呢？有的！之前实习的公司就是用Ionic 2实现了一个APP。基础是前端的知识，而且前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。<br><a id="more"></a><br>All from <a href="http://www.w3school.com.cn/html/html_links.asp" target="_blank" rel="external">W3school.</a></p>
+    <content type="html"><![CDATA[<p>写在前面。<br>前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。<br><a id="more"></a><br>All from <a href="http://www.w3school.com.cn/html/html_links.asp" target="_blank" rel="external">W3school.</a></p>
 <h3 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h3><p>HTML是用来描述网页的一种语言。指的是超文本标记语言（Hyper Text Markup Language）,不是一种编程语言，而是一种标记语言。</p>
 <h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><p>HTML标签是由尖括号包围的关键词比如html，便签通常是成对出现的，比如<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>和<span class="tag">&lt;/<span class="name">b</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>第一个是开始，第二个标签是结束。  </p>
@@ -606,7 +606,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;写在前面。&lt;br&gt;毕设开题已经完了，题目是基于移动设备的三维测量系统的研究与实现。用手机实现三维重建。还是比较有意思的。无奈，实在不想入安卓的坑。个人觉得前端是未来发展的方向，HTML5、小程序等等，前端都可以做。反观安卓，总觉得没前途。&lt;br&gt;所以有没有用前端的方法来实现APP呢？有的！之前实习的公司就是用Ionic 2实现了一个APP。基础是前端的知识，而且前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。&lt;br&gt;
+      &lt;p&gt;写在前面。&lt;br&gt;前端知识真的还是比较有用的。一直要把前端的学习提上日程，因为各种事情各种拖延，写爬虫的时候也是捎带学习前端的东西，还是需要系统的了解下。&lt;br&gt;
     
     </summary>
     
