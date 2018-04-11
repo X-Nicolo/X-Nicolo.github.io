@@ -23,6 +23,7 @@
     <updated>2018-03-30T11:55:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>学的比较杂，忘得比较快。好记性不如烂键盘。  </p>
+<a id="more"></a>
 <h2 id="华为机试题"><a href="#华为机试题" class="headerlink" title="华为机试题"></a>华为机试题</h2><h3 id="字符串最后一个单词的长度"><a href="#字符串最后一个单词的长度" class="headerlink" title="字符串最后一个单词的长度"></a>字符串最后一个单词的长度</h3><p>Question；<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">题目描述</div><div class="line">计算字符串最后一个单词的长度，单词以空格隔开。 </div><div class="line"><span class="section">输入描述:</span></div><div class="line">一行字符串，非空，长度小于5000。</div><div class="line"></div><div class="line"><span class="section">输出描述:</span></div><div class="line">整数N，最后一个单词的长度。</div><div class="line"></div><div class="line">示例1</div><div class="line">输入</div><div class="line">hello world</div><div class="line">输出</div><div class="line">5</div></pre></td></tr></table></figure></p>
 <p>Solution:<br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">str</span> = <span class="keyword">input</span>().strip().split()</div><div class="line"><span class="keyword">print</span>(len(<span class="keyword">str</span>[<span class="number">-1</span>]))</div></pre></td></tr></table></figure></p>
 <h4 id="strip"><a href="#strip" class="headerlink" title="strip()"></a>strip()</h4><p>usage:  strip()方法用于移除字符串头尾指定的字符（默认为空格)  </p>
@@ -57,7 +58,6 @@
     <summary type="html">
     
       &lt;p&gt;学的比较杂，忘得比较快。好记性不如烂键盘。  &lt;/p&gt;
-&lt;h2 id=&quot;华为机试题&quot;&gt;&lt;a href=&quot;#华为机试题&quot; class=&quot;headerlink&quot; title=&quot;华为机试题&quot;&gt;&lt;/a&gt;华为机试题&lt;/h2&gt;&lt;h3 id=&quot;字符串最后一个单词的长度&quot;&gt;&lt;a href=
     
     </summary>
     
