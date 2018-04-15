@@ -117,7 +117,7 @@
 <meta name="description" content="文艺工科狗，编码艺术家">
 <meta property="og:type" content="website">
 <meta property="og:title" content="肖洒">
-<meta property="og:url" content="https://x-nicolo.github.io/tags/Mysql/index.html">
+<meta property="og:url" content="https://x-nicolo.github.io/tags/MySQL/index.html">
 <meta property="og:site_name" content="肖洒">
 <meta property="og:description" content="文艺工科狗，编码艺术家">
 <meta property="og:locale" content="zh-Hans">
@@ -152,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="https://x-nicolo.github.io/tags/Mysql/"/>
+  <link rel="canonical" href="https://x-nicolo.github.io/tags/MySQL/"/>
 
 
 
 
 
-  <title>标签: Mysql | 肖洒</title>
+  <title>标签: MySQL | 肖洒</title>
   
 
 
@@ -344,7 +344,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Mysql<small>标签</small>
+        <h1>MySQL<small>标签</small>
         </h1>
       </div>
 
@@ -356,9 +356,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/08/31/tomcat启动问题（JDBC文件配置问题）/" itemprop="url">
+            <a class="post-title-link" href="/2017/05/31/JDBC编程/" itemprop="url">
               
-                <span itemprop="name">tomcat启动问题（JDBC文件配置问题）</span>
+                <span itemprop="name">JDBC编程</span>
               
             </a>
         
@@ -366,9 +366,93 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-31T11:41:24+08:00"
-              content="2017-08-31" >
-          08-31
+              datetime="2017-05-31T09:45:01+08:00"
+              content="2017-05-31" >
+          05-31
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/03/14/Python之爬虫和数据小解析/" itemprop="url">
+              
+                <span itemprop="name">【爬虫】（八）Python之爬虫和数据小解析</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-03-14T21:08:42+08:00"
+              content="2017-03-14" >
+          03-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/02/28/Python数据存储之MySQL（下）/" itemprop="url">
+              
+                <span itemprop="name">【爬虫】（七）Python数据存储之MySQL（下）</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-02-28T18:44:10+08:00"
+              content="2017-02-28" >
+          02-28
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/02/21/Python数据存储之MySQL（上）/" itemprop="url">
+              
+                <span itemprop="name">【爬虫】（六）Python数据存储之MySQL（上）</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-02-21T10:48:05+08:00"
+              content="2017-02-21" >
+          02-21
         </time>
       </div>
 
@@ -790,82 +874,6 @@
               success: function(counter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>
-<!--崩溃欺骗-->
-<script type="text/javascript" src="/js/src/cheat.js"></script>ounter.get('time'));
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
