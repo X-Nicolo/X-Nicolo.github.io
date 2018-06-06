@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://x-nicolo.github.io/"/>
-  <updated>2018-06-05T09:38:26.000Z</updated>
+  <updated>2018-06-06T03:36:44.000Z</updated>
   <id>https://x-nicolo.github.io/</id>
   
   <author>
@@ -14,6 +14,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javaReview</title>
+    <link href="https://x-nicolo.github.io/2018/06/06/JavaReview/"/>
+    <id>https://x-nicolo.github.io/2018/06/06/JavaReview/</id>
+    <published>2018-06-06T03:36:44.000Z</published>
+    <updated>2018-06-06T03:36:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java基础再回顾,all from 尚硅谷。<br><a id="more"></a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Java基础再回顾,all from 尚硅谷。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Python100Days</title>
@@ -3833,37 +3852,6 @@
       <category term="Python" scheme="https://x-nicolo.github.io/tags/Python/"/>
     
       <category term="学习" scheme="https://x-nicolo.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tomcat启动问题（JDBC文件配置问题）</title>
-    <link href="https://x-nicolo.github.io/2017/08/31/tomcat%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98%EF%BC%88JDBC%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%EF%BC%89/"/>
-    <id>https://x-nicolo.github.io/2017/08/31/tomcat启动问题（JDBC文件配置问题）/</id>
-    <published>2017-08-31T03:41:24.000Z</published>
-    <updated>2017-08-31T03:41:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>问题：部署完tomcat，只显示首页，点击无反应。<br>解决：是JDBC配置的问题。<br><a id="more"></a><br>正确配置：</p>
-<pre><code>jdbc.driverClassName=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/bridgedisaster?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;autoReconnect=true&amp;failOverReadOnly=false//本地端口，不是远程连接
-jdbc.username=root//打开navicat,连接测试的用户名
-jdbc.password=root//连接测试的密码
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题：部署完tomcat，只显示首页，点击无反应。&lt;br&gt;解决：是JDBC配置的问题。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="编程" scheme="https://x-nicolo.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="bug" scheme="https://x-nicolo.github.io/tags/bug/"/>
-    
-      <category term="Mysql" scheme="https://x-nicolo.github.io/tags/Mysql/"/>
-    
-      <category term="Tomcat" scheme="https://x-nicolo.github.io/tags/Tomcat/"/>
     
   </entry>
   
