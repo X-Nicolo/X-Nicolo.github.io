@@ -123,6 +123,7 @@
 <meta property="og:description" content="招聘季即将到来，如何实时的得知招聘信息呢？自然是爬虫+微信了。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-0df71c32cd18bc36.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-0df204fa527c2b96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-3b281e954e9b5859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-5b062097ea604b31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-caa3d1b099e85ff0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -464,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  966
+                  968
                 </span>
               
 
@@ -509,6 +510,7 @@
 <li>接受它发出的群聊邀请</li>
 <li>每日更新招聘会信息（现阶段仅支持西电就业信息网招聘会信息）</li>
 </ul>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="https://upload-images.jianshu.io/upload_images/2847713-0df204fa527c2b96.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="微信图片_20180613201454.jpg"></p>
 <p>这是一个西电求职交流群，大家有更好的招聘信息也可以甩到群里。  </p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>原理主要分为两部分：爬虫+微信机器人。  </p>
 <h3 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h3><p>讲道理西电就业信息应该挺好爬的吧，网站虽然丑一点，但是内容才是最重要的。就用最简单的请求方式去获取网站内容，居然Forbidden了。<br><img src="https://upload-images.jianshu.io/upload_images/2847713-3b281e954e9b5859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="26475337410507141.png"><br>那好吧，只能伪装浏览器了。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">headers = &#123;<span class="string">'User-Agent'</span> : <span class="string">'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:29.0) Gecko/20100101 Firefox/29.0'</span>&#125;  </div><div class="line">    req = urllib<span class="selector-class">.request</span><span class="selector-class">.Request</span>(url=url,headers=headers)</div></pre></td></tr></table></figure></p>
@@ -812,7 +814,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#爬虫"><span class="nav-number">2.1.</span> <span class="nav-text">爬虫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信机器人"><span class="nav-number">2.2.</span> <span class="nav-text">微信机器人</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.1.</span> <span class="nav-text">效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#爬虫"><span class="nav-number">2.1.</span> <span class="nav-text">爬虫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信机器人"><span class="nav-number">2.2.</span> <span class="nav-text">微信机器人</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
