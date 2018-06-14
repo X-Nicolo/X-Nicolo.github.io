@@ -127,6 +127,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-3b281e954e9b5859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-5b062097ea604b31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-caa3d1b099e85ff0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2847713-8d498166dd2ce908.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2018-06-13T07:33:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="叮！你的校招提醒微信机器人已上线！">
@@ -465,7 +466,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  968
+                  1,341
                 </span>
               
 
@@ -481,7 +482,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -532,6 +533,15 @@
 <p>至此爬虫+微信机器人的工作均已完成。<br>可是总不能天天手动去运行程序吧，那我为什么不去看就业信息网站上的信息呢。<br><strong>做程序员呢，最重要的就是一定要懒。</strong><br>设置一个定时器呗，每天运行一次。基本上就能满足需求了。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span><span class="params">(n)</span>:</span></div><div class="line">    itchat.auto_login(hotReload=<span class="keyword">True</span>)  <span class="comment"># 可设置hotReload = True</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        jobinfo=<span class="string">''</span></div><div class="line">        wx(xdjob(jobinfo))</div><div class="line">        time.sleep(n)</div></pre></td></tr></table></figure></p>
 <p>这样就行了，主程序运行timer(86400)，每日更新一波。最后再部署到云服务器就好了。  </p>
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这点信息总感觉太少，还望大家多多提供点靠谱的招聘信息网站，有兴趣的也可以联系我，一起把这个功能丰富起来。<br>方便他人，方便自己。</p>
+<h2 id="更新2-0"><a href="#更新2-0" class="headerlink" title="更新2.0"></a>更新2.0</h2><p>同学给的几点建议：  </p>
+<ul>
+<li>去掉过期的招聘会信息  </li>
+<li>增加交大、西工大的招聘会信息  </li>
+<li>增加应届生招聘网站上的信息  </li>
+</ul>
+<p>我是从西电就业信息网直接爬取，网站上的信息并为做过期处理。<br>这样一想有没有可能从其他招聘网站上抓取第二手信息呢，他们应该做过处理。<br>果不其然，海投网！直接解决了第一第二点的建议。<br>上代码：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">xdjob</span></span>(jobinfo):</div><div class="line">    urlXD = <span class="symbol">'https</span>:<span class="comment">//xjh.haitou.cc/xa/uni-29'</span></div><div class="line">    urlXJ = <span class="symbol">'https</span>:<span class="comment">//xjh.haitou.cc/xa/uni-27'</span></div><div class="line">    urlGD = <span class="symbol">'https</span>:<span class="comment">//xjh.haitou.cc/xa/uni-28'</span></div><div class="line">    urlEnterprise=<span class="symbol">'http</span>:<span class="comment">//www.yingjiesheng.com/2019/'</span></div><div class="line">    page_contentN=getPageContent(urlXD)</div><div class="line">    page_contentS=getPageContent(urlXJ)</div><div class="line">    page_contentG = getPageContent(urlGD)</div><div class="line">    job_infoXD=[<span class="string">"--------------------"</span>+<span class="string">"\n"</span>+<span class="string">"【西电招聘会信息】"</span>]+getJobInfo(page_contentN)</div><div class="line">    job_infoXJ=[<span class="string">"--------------------"</span>+<span class="string">"\n"</span>+<span class="string">"【西交招聘会信息】"</span>]+getJobInfo(page_contentS)</div><div class="line">    job_infoGD = [<span class="string">"--------------------"</span>+<span class="string">"\n"</span>+<span class="string">"【瓜大招聘会信息】"</span>] + getJobInfo(page_contentG)</div><div class="line">    job_info = job_infoXD+job_infoXJ+job_infoGD</div><div class="line">    jobinfo='『今日招聘信息，以下数据为机器喵自动获取，仅供参考。有任何问题请艾特我群主爸爸@肖洒』'+<span class="string">"\n"</span></div><div class="line">    <span class="keyword">for</span> i in job_info:</div><div class="line">        jobinfo=jobinfo+ <span class="string">"\n"</span> +i</div><div class="line">    jobinfo=jobinfo + <span class="string">"\n"</span>+<span class="string">"--------------------"</span>+<span class="string">"\n"</span>+<span class="string">"【名企2019校园招聘进度表】"</span> + getEnter(urlEnterprise)</div><div class="line">    <span class="keyword">return</span> jobinfo</div></pre></td></tr></table></figure></p>
+<p>完美！<br>关于第三点，这个应届生的网站真心写的好乱。。不过不能扒的网站呢！<br>上代码：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">def getEnter(urlEnterprise):</div><div class="line">    <span class="attr">page_content</span> = getPageContent(urlEnterprise)</div><div class="line">    <span class="attr">job_content</span> = page_content.findAll(<span class="string">"div"</span>, &#123;<span class="string">"class"</span>: <span class="string">"s_clear tit floatl"</span>&#125;)[<span class="number">2</span>:]</div><div class="line">    <span class="attr">job_info</span> = []</div><div class="line">    for div <span class="keyword">in</span> job_content:</div><div class="line">        <span class="attr">url</span> = div.a.attrs[<span class="string">"href"</span>]</div><div class="line">        <span class="keyword">if</span> url[:<span class="number">4</span>] == <span class="string">"http"</span>:</div><div class="line">            pass</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="attr">url</span> = <span class="string">"http://www.yingjiesheng.com"</span> + url</div><div class="line">        <span class="attr">info</span> = div.get_text() + <span class="string">"\n"</span>+ url</div><div class="line">        job_info.append(info)</div><div class="line">    <span class="attr">jobinfo</span> = <span class="string">""</span></div><div class="line">    for i <span class="keyword">in</span> job_info:</div><div class="line">        <span class="attr">jobinfo</span> = jobinfo + <span class="string">"\n"</span> + i</div><div class="line">    return jobinfo</div></pre></td></tr></table></figure></p>
+<p>最后现在的效果：<br><img src="https://upload-images.jianshu.io/upload_images/2847713-8d498166dd2ce908.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7213390981083791.jpg"></p>
 
       
     </div>
@@ -814,7 +824,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.1.</span> <span class="nav-text">效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#爬虫"><span class="nav-number">2.1.</span> <span class="nav-text">爬虫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信机器人"><span class="nav-number">2.2.</span> <span class="nav-text">微信机器人</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">1.1.</span> <span class="nav-text">效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#爬虫"><span class="nav-number">2.1.</span> <span class="nav-text">爬虫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信机器人"><span class="nav-number">2.2.</span> <span class="nav-text">微信机器人</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新2-0"><span class="nav-number">4.</span> <span class="nav-text">更新2.0</span></a></li></ol></div>
             
 
           </div>
@@ -859,7 +869,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共196.4k字</span>
+  <span class="post-count">博客全站共196.8k字</span>
 </div>
 
         
