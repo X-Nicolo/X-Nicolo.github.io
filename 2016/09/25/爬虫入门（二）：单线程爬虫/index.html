@@ -136,7 +136,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -605,8 +605,8 @@ print html.text
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/24/jeklly+Github pages 添加评论/" rel="next" title="jeklly+Github pages 添加评论">
-                <i class="fa fa-chevron-left"></i> jeklly+Github pages 添加评论
+              <a href="/2016/09/24/爬虫入门（一）：轻量级爬虫/" rel="next" title="爬虫入门（一）：轻量级爬虫">
+                <i class="fa fa-chevron-left"></i> 爬虫入门（一）：轻量级爬虫
               </a>
             
           </div>
@@ -665,6 +665,8 @@ print html.text
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -838,6 +840,13 @@ print html.text
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -903,11 +912,6 @@ print html.text
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
   </div>

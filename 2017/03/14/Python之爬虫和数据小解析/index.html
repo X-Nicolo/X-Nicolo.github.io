@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,MySQL,爬虫,数据处理," />
+  <meta name="keywords" content="MySQL,Python,爬虫,数据处理," />
 
 
 
@@ -115,7 +115,7 @@
 
 
 <meta name="description" content="Holi需要。之前爬的课表，现在需要将那些个一连串的字符串分割成想要的单独的数据，做个性化推送。">
-<meta name="keywords" content="Python,MySQL,爬虫,数据处理">
+<meta name="keywords" content="MySQL,Python,爬虫,数据处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【爬虫】（八）Python之爬虫和数据小解析">
 <meta property="og:url" content="https://x-nicolo.github.io/2017/03/14/Python之爬虫和数据小解析/index.html">
@@ -137,7 +137,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -591,9 +591,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
             <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
             <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
           
@@ -670,6 +670,8 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -843,6 +845,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -908,11 +917,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
   </div>
