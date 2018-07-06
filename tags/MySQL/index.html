@@ -415,14 +415,6 @@
 
       
 
-iv>
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
@@ -461,12 +453,15 @@ iv>
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">54</span>
-                <span class="site     </div>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
-		<div class="swf_clock" align="center">
-			<embed name="honehoneclock" width="160" height="70" align="middle" pluginspage="http://www.ma160" height="70" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock01.swf" type="application/x-shockwave-flash" wmode="transparent" quality="high" bgcolor="#ffffff" allowscriptaed-link motion-element">
+
+        
+          <div class="feed-link motion-element">
             <a href="/atom.xml" rel="alternate">
               <i class="fa fa-rss"></i>
               RSS
@@ -488,7 +483,6 @@ iv>
                 </a>
               </span>
             
-              <span class="links-of-author-item          
               <span class="links-of-author-item">
                 <a href="https://www.instagram.com/xiao_sa_/" target="_blank" title="Instagram">
                   
@@ -500,7 +494,8 @@ iv>
                 </a>
               </span>
             
-              <span class="links-of-author-item"hare?t=qm_mailme&email=-YWUnJKOnNOTlJ6SkZK9jIzTnpKQ" target="_blank" title="E-Mail">
+              <span class="links-of-author-item">
+                <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=-YWUnJKOnNOTlJ6SkZK9jIzTnpKQ" target="_blank" title="E-Mail">
                   
                     <i class="fa fa-fw fa-envelope"></i>
                   
@@ -530,7 +525,6 @@ iv>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                      <li class="links-of-blogroll-item">
                   <a href="https://love2.io/" title="love2.io" target="_blank">love2.io</a>
                 </li>
               
@@ -602,7 +596,7 @@ iv>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共203.5k字</span>
+  <span class="post-count">博客全站共201.9k字</span>
 </div>
 
         
@@ -798,17 +792,19 @@ iv>
             if( countSpan.text() == '') {
               countSpan.text(0);
             }
- r) {
+          }
+        })
+        .fail(function (object, error) {
           console.log("Error: " + error.code + " " + error.message);
         });
     }
 
     function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
-  nter) {
-      var $visitors = $(".leancloud_visitors");
       var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
       query.equalTo("url", url);
       query.find({
         success: function(results) {
@@ -823,10 +819,6 @@ iv>
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-     ;
               }
             });
           } else {
@@ -899,7 +891,7 @@ iv>
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/src/love.js"></script>
 <!--崩溃欺骗-->
-<script type="text/javascript" src="/js/src/cheat.js"></script>ounter.get('time'));
+<script type="text/javascript" src="/js/src/cheat.js"></script>pt type="text/javascript" src="/js/src/cheat.js"></script>ounter.get('time'));
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
