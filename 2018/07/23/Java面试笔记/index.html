@@ -117,14 +117,14 @@
 <meta name="description" content="站在巨人的肩膀上，好记性不如烂键盘。   All from java面试笔记">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试笔记">
+<meta property="og:title" content="Java面试笔记（更新中）">
 <meta property="og:url" content="https://x-nicolo.github.io/2018/07/23/Java面试笔记/index.html">
 <meta property="og:site_name" content="肖洒">
 <meta property="og:description" content="站在巨人的肩膀上，好记性不如烂键盘。   All from java面试笔记">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-07-23T01:19:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java面试笔记">
+<meta name="twitter:title" content="Java面试笔记（更新中）">
 <meta name="twitter:description" content="站在巨人的肩膀上，好记性不如烂键盘。   All from java面试笔记">
 
 
@@ -160,7 +160,7 @@
 
 
 
-  <title>Java面试笔记 | 肖洒</title>
+  <title>Java面试笔记（更新中） | 肖洒</title>
   
 
 
@@ -370,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java面试笔记</h1>
+          <h1 class="post-title" itemprop="name headline">Java面试笔记（更新中）</h1>
         
 
         <div class="post-meta">
@@ -434,7 +434,7 @@
 
           
           
-             <span id="/2018/07/23/Java面试笔记/" class="leancloud_visitors" data-flag-title="Java面试笔记">
+             <span id="/2018/07/23/Java面试笔记/" class="leancloud_visitors" data-flag-title="Java面试笔记（更新中）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  905
+                  1,263
                 </span>
               
 
@@ -480,7 +480,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -558,7 +558,28 @@
 </ul>
 <p>静态变量不属于某个实例对象，而是属于类，所以也称为类变量，只要程序加载了类的字节码，不用创建任何实例对象，静态变量就会被分配空间，静态变量就可以被使用了。  </p>
 <ul>
-<li>总结：实例变量必须创建对象后才可以通过这个对象来使用，静态变量则可以直接使用类名来引用。</li>
+<li>总结：实例变量必须创建对象后才可以通过这个对象来使用，静态变量则可以直接使用类名来引用。  </li>
+</ul>
+<h2 id="封装Encapsulation"><a href="#封装Encapsulation" class="headerlink" title="封装Encapsulation"></a>封装Encapsulation</h2><ul>
+<li>使一个类的变量私有化private  </li>
+<li>提供public方法来调用这些变量。所以外部类是进不去的。这些变量被隐藏在类里。只能通过已经定义的public方法调用。  </li>
+</ul>
+<p>好处：<br>当我们修改我们的实现的代码时，不会破坏其他调用我们这部分代码的代码。可维护性，灵活性和可扩展。  </p>
+<h2 id="多态Polymorphism"><a href="#多态Polymorphism" class="headerlink" title="多态Polymorphism"></a>多态Polymorphism</h2><p>多态就是指一个变量，一个方法或者一个对象可以有不同的形式。  </p>
+<ul>
+<li><p>重载overloading<br>就是一个类里有两个或更多的函数，名字相同而他们的参数不同。  </p>
+</li>
+<li><p>覆盖overriding  </p>
+</li>
+</ul>
+<p>是发生在子类中！也就是说必须有继承的情况下才有覆盖发生。当你继承父类的方法时，如果感到那个方法不爽，功能要变，就把那个函数在子类中重新实现一遍。  </p>
+<h3 id="构造器是否可以被覆盖？"><a href="#构造器是否可以被覆盖？" class="headerlink" title="构造器是否可以被覆盖？"></a>构造器是否可以被覆盖？</h3><p>构造器不能被继承，所以不能被覆盖，但是可以被重载。  </p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口是抽象方法的集合。一个类实现一个或多个接口。因此继承了接口的抽象方法。  </p>
+<h3 id="接口的特点"><a href="#接口的特点" class="headerlink" title="接口的特点"></a>接口的特点</h3><ul>
+<li>不能实例化  </li>
+<li>没有构造体  </li>
+<li>所有方法都是抽象的（abstract）。同时也是隐式的public static。也就是说声明时，可以省略public static。</li>
+<li>只能含有声明为finalstatic的field。  </li>
 </ul>
 
       
@@ -609,7 +630,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://x-nicolo.github.io/2018/07/23/Java面试笔记/" title="Java面试笔记">https://x-nicolo.github.io/2018/07/23/Java面试笔记/</a>
+    <a href="https://x-nicolo.github.io/2018/07/23/Java面试笔记/" title="Java面试笔记（更新中）">https://x-nicolo.github.io/2018/07/23/Java面试笔记/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -880,7 +901,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说一说Java"><span class="nav-number">1.</span> <span class="nav-text">说一说Java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java为什么是高效的？"><span class="nav-number">1.1.</span> <span class="nav-text">Java为什么是高效的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列举出2个IDE"><span class="nav-number">1.2.</span> <span class="nav-text">列举出2个IDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象的特征有那些方面？"><span class="nav-number">1.3.</span> <span class="nav-text">面向对象的特征有那些方面？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-JRE-JVM"><span class="nav-number">1.4.</span> <span class="nav-text">JDK JRE JVM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK"><span class="nav-number">1.4.1.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JRE"><span class="nav-number">1.4.2.</span> <span class="nav-text">JRE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM"><span class="nav-number">1.4.3.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM不是平台独立的"><span class="nav-number">1.4.4.</span> <span class="nav-text">JVM不是平台独立的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是对象？"><span class="nav-number">2.</span> <span class="nav-text">什么是对象？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个类是由哪些变量构成的？"><span class="nav-number">2.1.</span> <span class="nav-text">一个类是由哪些变量构成的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态变量和实例变量的区别？"><span class="nav-number">2.2.</span> <span class="nav-text">静态变量和实例变量的区别？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说一说Java"><span class="nav-number">1.</span> <span class="nav-text">说一说Java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java为什么是高效的？"><span class="nav-number">1.1.</span> <span class="nav-text">Java为什么是高效的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列举出2个IDE"><span class="nav-number">1.2.</span> <span class="nav-text">列举出2个IDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象的特征有那些方面？"><span class="nav-number">1.3.</span> <span class="nav-text">面向对象的特征有那些方面？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-JRE-JVM"><span class="nav-number">1.4.</span> <span class="nav-text">JDK JRE JVM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK"><span class="nav-number">1.4.1.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JRE"><span class="nav-number">1.4.2.</span> <span class="nav-text">JRE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM"><span class="nav-number">1.4.3.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM不是平台独立的"><span class="nav-number">1.4.4.</span> <span class="nav-text">JVM不是平台独立的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是对象？"><span class="nav-number">2.</span> <span class="nav-text">什么是对象？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个类是由哪些变量构成的？"><span class="nav-number">2.1.</span> <span class="nav-text">一个类是由哪些变量构成的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态变量和实例变量的区别？"><span class="nav-number">2.2.</span> <span class="nav-text">静态变量和实例变量的区别？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装Encapsulation"><span class="nav-number">3.</span> <span class="nav-text">封装Encapsulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态Polymorphism"><span class="nav-number">4.</span> <span class="nav-text">多态Polymorphism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造器是否可以被覆盖？"><span class="nav-number">4.1.</span> <span class="nav-text">构造器是否可以被覆盖？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">5.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口的特点"><span class="nav-number">5.1.</span> <span class="nav-text">接口的特点</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -925,7 +946,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共196.5k字</span>
+  <span class="post-count">博客全站共197.2k字</span>
 </div>
 
         
